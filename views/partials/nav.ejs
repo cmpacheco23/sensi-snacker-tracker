@@ -4,6 +4,15 @@
 </head>
 <body>
   <nav>
+    <a href="" class="nav-btn-container">
+      <button type="submit" class="nav-btns">Foods</button>
+    </a>
+    <a href="" class="nav-btn-container">
+      <button type="submit" class="nav-btns">Profiles</button>
+    </a>
+    <a href="" class="nav-btn-container">
+      <button type="submit" class="nav-btns">Recipes</button>
+    </a>
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
@@ -26,4 +35,5 @@
         data-logo_alignment="left"
       ></div>
     <% } %>
+
   </nav>
