@@ -1,0 +1,21 @@
+<%- include('./partials/html-head') %>
+<%- include('./partials/nav') %>
+
+<h1><%= title %></h1>
+<section>
+  <form action="/foods" method="GET">
+    <% foods.forEach(food => { %>
+      <div>
+        <ul>
+          <label>Food Name:</label>
+          <%= food.name %>
+          <li> <label>Category:</label> <%= food.category %></li>
+          <li> <label>Vitamins:</label><%= food.vitamins %></li>
+        </ul>
+      </div>
+  
+    <% }) %>
+  </form>
+</section>
+
+<%- include('./partials/footer') %>

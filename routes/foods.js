@@ -4,6 +4,10 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
+//routers:
+
+router.get('/', foodsCtrl.index)
+
 export {
   router
 }
