@@ -2,7 +2,22 @@
 <%- include('../partials/nav') %>
 
 <h1 class="food-h1s"><%= title %></h1>
-<section>
+<p class="food-ps">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores optio odit officia repellendus iste sint rem impedit tempore. Vitae, nihil fugit beatae cumque nulla impedit non dicta repellendus illum.</p>
+
+<section class="add-form-section">
+  <h1 class="food-h1s" ></h1>
+  <form action="/foods" method="POST">
+    <label for="food-name-input"> Food Name: </label>
+    <input type="text" name="name" id="food-name-input">
+    <label for="food-cat-input"> Category: </label>
+    <input type="text" name="category" id="food-cat-input">
+    <label for="vitamin-input"> Vitamins: </label>
+    <input type="text" name="vitamins" id="vitamin-input">
+  </form>
+
+</section>
+
+<section class="items-all">
   <form action="/foods" method="GET">
     <% foods.forEach(food => { %>
       <div>
