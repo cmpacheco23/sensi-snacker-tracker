@@ -58,3 +58,8 @@ main {
   height: 40px;
   padding-top: 8px;
 }
+
+.food-h1s {
+  display: flex;
+  justify-content: center;
+}
