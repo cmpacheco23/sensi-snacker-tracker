@@ -50,6 +50,7 @@
     <table>
       <thead>
         <tr>
+          <th> </th>
           <th> Added By</th>
           <th> Created On</th>
           <th> Experience / Reaction </th>
@@ -60,6 +61,10 @@
       <% food.reactions.forEach(reaction => { %>
         <tbody>
           <tr>
+            <td> <form action="/foods/<%= food._id %>/reactions/<%= reaction._id %>?_method=DELETE" method="POST">
+              <button type="submit">x</button>
+            </form>
+          </td>
             <td> <%= reaction.owner %></td>
             <td> <%= reaction.createdAt.toLocaleDateString() %></td>
             <td> <%= reaction.text %></td>
