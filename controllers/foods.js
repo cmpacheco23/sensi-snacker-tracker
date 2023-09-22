@@ -82,10 +82,24 @@ function update(req, res){
   })
   }
 
+function deleteFood(req, res){
+  //find food by id and delete
+  Food.findByIdAndDelete(req.params.foodId)
+  .then(food => {
+    // redirect
+    res.redirect('/foods')
+  })
+  .catch (err => {
+    console.log(err)
+    res.redirect('/')
+    })
+} 
+
 export {
   index,
   create,
   show,
   edit,
   update,
+  deleteFood as delete,
 }

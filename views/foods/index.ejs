@@ -33,8 +33,9 @@
             <label>Food Name:</label>
             <%= food.name %>
           </a>
-          <% if (isSelf) { %>
-            <form action="/foods/<%= food._id %>?method=DELETE" method="POST" class="delete-form">
+          <% if (food.owner.equals(user?.profile._id)) { %>
+            <!-- ask ben how to write the line of code above more efficiently using variables -->
+            <form action="/foods/<%= food._id %>?_method=DELETE" method="POST" class="delete-form">
               <button type="submit">Delete</button>
             </form>
           <% } %>
