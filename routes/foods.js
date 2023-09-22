@@ -12,6 +12,7 @@ router.get('/:foodId/edit', isLoggedIn, foodsCtrl.edit)
 router.post('/', isLoggedIn, foodsCtrl.create)
 router.post('/:foodId/reactions', isLoggedIn, foodsCtrl.createReaction)
 router.delete('/:foodId', isLoggedIn, foodsCtrl.delete)
+router.delete('/:foodId/reactions/:reactionId', isLoggedIn, foodsCtrl.deleteReaction)
 router.put('/:foodId', foodsCtrl.update)
 
 export {
