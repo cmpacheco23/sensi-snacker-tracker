@@ -27,9 +27,18 @@ function create(req, res) {
   })
 }
 
-
+function show(req, res){
+  Food.findById(req.params.foodId)
+  .then(food => {
+    res.render('foods/show', {
+      food,
+      title: 'Details'
+    })
+  })
+}
 
 export {
   index,
   create,
+  show,
 }

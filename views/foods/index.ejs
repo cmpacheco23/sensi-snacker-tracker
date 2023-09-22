@@ -29,8 +29,10 @@
     <% foods.forEach(food => { %>
       <div>
         <ul>
-          <label>Food Name:</label>
-          <%= food.name %>
+          <a href="/foods/<%= food._id %>">
+            <label>Food Name:</label>
+            <%= food.name %>
+          </a>
           <li> <label>Category:</label> <%= food.category %></li>
           <li> <label>Vitamins:</label> <%= food.vitamins %></li>
         </ul>
