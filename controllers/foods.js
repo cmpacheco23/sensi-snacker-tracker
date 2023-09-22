@@ -95,6 +95,33 @@ function deleteFood(req, res){
     })
 } 
 
+function createReaction(req, res){
+  //find food by id
+  Food.findById(req.params.foodId)
+  .then(food => {
+    //push the reaction into the food array
+    food.reactions.push(req.body)
+    // save the food
+    food.save()
+    .then(()=>{
+      // redirect to foods/foodId
+      res.redirect(`/foods/${food._id}`)
+    })
+    .catch (err => {
+      console.log(err)
+      res.redirect('/foods')
+      })
+  })
+  .catch (err => {
+    console.log(err)
+    res.redirect('/foods')
+    })
+}
+
+function showReactions(req, res){
+
+}
+
 export {
   index,
   create,
@@ -102,4 +129,6 @@ export {
   edit,
   update,
   deleteFood as delete,
+  createReaction,
+  showReactions,
 }
