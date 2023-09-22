@@ -2,9 +2,11 @@
 <%- include('../partials/nav') %>
 
 <h1 class="food-h1s"><%= food.name %> <%= title %></h1>
-<div class="form-divs-btns">
-  <button type="submit" class="edit-btn"> Edit Details</button>
-</div>
+<% if (user) { %>
+  <div class="form-divs-btns">
+    <button type="submit" class="edit-btn"> Edit Details</button>
+  </div>
+<% } %>
 <section class="items-all">
 
   <form action="/foods/<%= food._id %>" method="GET" class="display-form">
@@ -26,6 +28,6 @@
 </section>
 
 <section>
-  
+
 </section>
 <%- include('../partials/footer') %>

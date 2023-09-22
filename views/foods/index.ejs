@@ -4,7 +4,7 @@
 <h1 class="food-h1s"><%= title %></h1>
 <p class="food-ps">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores optio odit officia repellendus iste sint rem impedit tempore. Vitae, nihil fugit beatae cumque nulla impedit non dicta repellendus illum.</p>
 
-<% if (user) { %>
+<% if (food.owner.equals(user?.profile._id)) { %>
   <section class="add-form-section">
     <h1 class="food-h1s" ></h1>
     <form action="/foods" method="POST">
