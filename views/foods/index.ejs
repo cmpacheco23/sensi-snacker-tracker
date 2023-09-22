@@ -33,6 +33,11 @@
             <label>Food Name:</label>
             <%= food.name %>
           </a>
+          <% if (isSelf) { %>
+            <form action="/foods/<%= food._id %>?method=DELETE" method="POST" class="delete-form">
+              <button type="submit">Delete</button>
+            </form>
+          <% } %>
           <li> <label>Category:</label> <%= food.category %></li>
           <li> <label>Vitamins:</label> <%= food.vitamins %></li>
         </ul>
