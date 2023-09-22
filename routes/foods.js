@@ -11,7 +11,7 @@ router.get('/:foodId', foodsCtrl.show)
 router.get('/:foodId/edit', isLoggedIn, foodsCtrl.edit)
 router.post('/', isLoggedIn, foodsCtrl.create)
 router.put('/:foodId', foodsCtrl.update)
-
+router.delete('/:foodId', isLoggedIn, foodsCtrl.delete)
 export {
   router
 }
