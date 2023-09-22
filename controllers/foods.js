@@ -61,9 +61,26 @@ function edit(req, res){
   })
 }
 
-function update(req, res){
-
-}
+function update(req, res){  
+  //if input is blank delete it so it retains the information currently in database
+  for (let key in req.body) {
+    if (req.body[key] === '') {
+      delete req.body[key];
+      
+    }
+  }
+  //find food by id
+  // ensure we only show the new changes
+  Food.findByIdAndUpdate(req.params.foodId, req.body, {new:true})
+  .then(food => {
+    // redirect to foodId page
+    res.redirect (`/foods/${food._id}`)
+    })
+  .catch (err => {
+  console.log(err)
+  res.redirect('/foods')
+  })
+  }
 
 export {
   index,
