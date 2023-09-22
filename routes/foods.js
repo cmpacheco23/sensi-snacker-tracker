@@ -7,6 +7,7 @@ const router = Router()
 //routers:
 
 router.get('/', foodsCtrl.index)
+router.get('/:foodId', foodsCtrl.show)
 router.post('/', isLoggedIn, foodsCtrl.create)
 
 export {

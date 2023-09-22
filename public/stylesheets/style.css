@@ -83,3 +83,14 @@ main {
   justify-content: center;
   padding: 15px;
 }
+
+.items-all {
+  display: flex;
+  justify-content: center;
+}
+
+.foods-h2 { 
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}

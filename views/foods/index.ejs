@@ -12,7 +12,7 @@
       <input type="text" name="name" id="food-name-input">
       <label for="food-cat-input"> Category: </label>
       <input type="text" name="category" id="food-cat-input">
-      <label for="vitamin-input"> Vitamins: </label>
+      <label for="vitamin-input"> Vitamins: </label> 
       <input type="text" name="vitamins" id="vitamin-input">
       <div class="form-divs-btns">
         <button type="submit" class="form-btns">Add Food</button>
@@ -21,20 +21,25 @@
   </section>
 <% } %>
 
+<h2 class="foods-h2"> Click on a food to view its details and make edits.</h2>
+
 <section class="items-all">
-  <form action="/foods" method="GET">
+
+  <form action="/foods" method="GET" class="display-form">
     <% foods.forEach(food => { %>
       <div>
         <ul>
           <label>Food Name:</label>
           <%= food.name %>
           <li> <label>Category:</label> <%= food.category %></li>
-          <li> <label>Vitamins:</label><%= food.vitamins %></li>
+          <li> <label>Vitamins:</label> <%= food.vitamins %></li>
         </ul>
       </div>
   
     <% }) %>
   </form>
 </section>
+
+<!-- sort by food category -->
 
 <%- include('../partials/footer') %>
