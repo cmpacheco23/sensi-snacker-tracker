@@ -37,10 +37,36 @@ function show(req, res){
       title: 'Details'
     })
   })
+  .catch (err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function edit(req, res){
+  //find the id of the food I want to edit
+  Food.findById(req.params.foodId)
+  .then(food => {
+    //resolve promise
+    res.render('foods/edit')
+    food,
+    //render view of edit form
+    title `Edit ${food.name} Information`
+  })
+  .catch (err => {
+    console.log(err)
+    res.redirect('/foods')
+  })
+}
+
+function update(req, res){
+
 }
 
 export {
   index,
   create,
   show,
+  edit,
+  update,
 }
