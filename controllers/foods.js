@@ -29,7 +29,9 @@ function create(req, res) {
 
 function show(req, res){
   Food.findById(req.params.foodId)
+  .populate('owner')
   .then(food => {
+    console.log(food)
     res.render('foods/show', {
       food,
       title: 'Details'

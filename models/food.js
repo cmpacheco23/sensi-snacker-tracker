@@ -24,7 +24,7 @@ const foodSchema = new Schema ({
     type: String,
     required: true},
   reactions: [reactionSchema],
-  owner: [{type: Schema.Types.ObjectId, ref: 'Profile'}]
+  owner: {type: Schema.Types.ObjectId, ref: 'Profile'}
 }, {
   timestamps: true
 })
