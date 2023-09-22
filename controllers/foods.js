@@ -15,6 +15,19 @@ function index(req, res){
   })
 }
 
+function create(req, res) {
+  req.body.owner = req.user.profile._id
+  Food.create(req.body)
+  .then(food => {
+    res.redirect('/foods')
+  })
+  .catch (err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
+  create,
 }

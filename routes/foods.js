@@ -8,6 +8,7 @@ const router = Router()
 
 router.get('/', foodsCtrl.index)
 
+
 export {
   router
 }

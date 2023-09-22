@@ -72,3 +72,14 @@ main {
   padding: 20px;
   margin: 30px;
 }
+
+.add-form-section {
+  display: flex;
+  justify-content: center;
+}
+
+.form-divs-btns{
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
