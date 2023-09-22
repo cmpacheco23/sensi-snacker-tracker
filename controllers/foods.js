@@ -118,10 +118,6 @@ function createReaction(req, res){
     })
 }
 
-function showReactions(req, res){
-
-}
-
 export {
   index,
   create,
@@ -130,5 +126,4 @@ export {
   update,
   deleteFood as delete,
   createReaction,
-  showReactions,
 }

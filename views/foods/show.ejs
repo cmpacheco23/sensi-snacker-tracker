@@ -30,8 +30,8 @@
 </section>
 
 <section>
-<% if (user) { %>
   <h2>Experience</h2>
+<% if (user) { %>
   <p>Add your experience such as symptoms or reactions</p>
   <form action="/foods/<%= food._id %>/reactions" method="POST">
     <label for="name-textarea">Reaction:</label>
@@ -43,5 +43,32 @@
     <button type="submit">Add Experience</button>
   </form>
 <% } %>
+</section>
+<section class="items-all">
+  <h2></h2>
+  <% if (food.reactions.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th> Added By</th>
+          <th> Created On</th>
+          <th> Experience / Reaction </th>
+          <th> Potential Allergen</th>
+          <th> Potential Condition</th>
+        </tr>
+      </thead>
+      <% food.reactions.forEach(reaction => { %>
+        <tbody>
+          <tr>
+            <td> <%= reaction.owner %></td>
+            <td> <%= reaction.createdAt.toLocaleDateString() %></td>
+            <td> <%= reaction.text %></td>
+            <td> <%= reaction.potentialAllergen %></td>
+            <td> <%= reaction.potentialCondition %></td>
+          </tr>
+        </tbody>
+      <% }) %>
+    </table>
+  <% } %>
 </section>
 <%- include('../partials/footer') %>
