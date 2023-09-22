@@ -7,7 +7,7 @@ const router = Router()
 //routers:
 
 router.get('/', foodsCtrl.index)
-
+router.post('/', isLoggedIn, foodsCtrl.create)
 
 export {
   router
