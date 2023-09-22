@@ -4,7 +4,9 @@
 <h1 class="food-h1s"><%= food.name %> <%= title %></h1>
 <% if (food.owner.equals(user?.profile._id)) { %>
   <div class="form-divs-btns">
-    <button type="submit" class="edit-btn"> Edit Details</button>
+    <a href="/foods/<%= food._id %>/edit">
+      <button type="submit" class="edit-btn"> Edit Details</button>
+    </a>
   </div>
 <% } %>
 <section class="items-all">

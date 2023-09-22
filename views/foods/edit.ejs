@@ -1,7 +1,7 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<h1 class="food-h1s"><%= food.name %> <%= title %></h1>
+<h1 class="food-h1s"><%= title %></h1>
 <% if (food.owner.equals(user?.profile._id)) { %>
   <form action="/foods/<%= food._id %>?_method=PUT" method="POST" autocomplete="off">
     <label for="food-name-input"> Food Name: </label>

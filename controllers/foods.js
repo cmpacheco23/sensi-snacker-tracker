@@ -48,10 +48,12 @@ function edit(req, res){
   Food.findById(req.params.foodId)
   .then(food => {
     //resolve promise
-    res.render('foods/edit')
-    food,
-    //render view of edit form
-    title `Edit ${food.name} Information`
+    res.render('foods/edit', {
+      //render view of edit form
+      title: `Edit ${food.name} Information`,
+      food,
+
+    })
   })
   .catch (err => {
     console.log(err)
