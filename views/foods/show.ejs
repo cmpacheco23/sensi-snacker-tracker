@@ -30,6 +30,18 @@
 </section>
 
 <section>
-
+<% if (user) { %>
+  <h2>Experience</h2>
+  <p>Add your experience such as symptoms or reactions</p>
+  <form action="/foods/<%= food._id %>/reactions" method="POST">
+    <label for="name-textarea">Reaction:</label>
+    <textarea name="text" id="name-textarea" cols="40" rows="6"></textarea>
+    <label for="allergen-input">Potential Allergen: </label>
+    <input type="text" name="potentialAllergen" id="allergen-input">
+    <label for="condition-input">Potential Condition: </label>
+    <input type="text" name="potentialCondition" id="condition-input">
+    <button type="submit">Add Experience</button>
+  </form>
+<% } %>
 </section>
 <%- include('../partials/footer') %>
