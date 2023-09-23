@@ -12,13 +12,15 @@
     </h2>
     <% profile.foods.forEach(food => { %>
       <h3>
-        <%= isSelf ? 'You have' : `${profile.name} hass`%>
+        <%= isSelf ? 'You have' : `${profile.name} has`%>
         been tracking your foods since <%= profile.createdAt.toLocaleDateString() %>
       </h3>
       <li>
         <ul> <%= food.name %></ul>
         <ul> <%= food.category %></ul>
         <ul> <%= food.vitamin %></ul>
+        <ul> <%= food.reactions ? "Yes" : "No" %></ul>
+        
       </li>
     <% }) %>
     <% } else { %>
