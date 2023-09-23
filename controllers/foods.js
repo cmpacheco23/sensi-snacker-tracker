@@ -31,6 +31,8 @@ function create(req, res) {
 function show(req, res){
   Food.findById(req.params.foodId)
   .populate('owner')
+  .populate('reactions.owner')
+  
   //deep populate ref taco cat lecture
   .then(food => {
     console.log(food)
