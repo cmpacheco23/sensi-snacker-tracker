@@ -22,12 +22,12 @@ function show(req, res){
   //find the profile by id
   Profile.findById(req.params.profileId)
   .then(profile => {
-    // resolve promise
     // create isSelf constant
     const isSelf = profile._id.equals(req.user.profile._id)
+    // resolve promise
     res.render('profiles/show', {
       // render show page
-      title: '',
+      title: `${profile.name}'s Profile`,
       profile,
       isSelf
         // title
