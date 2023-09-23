@@ -1,5 +1,6 @@
 import { populate } from "dotenv";
 import { Food } from "../models/food.js";
+import { Profile } from "../models/profile.js";
 
 function index(req, res){
   console.log('fooooodssss!')
@@ -18,9 +19,20 @@ function index(req, res){
 
 function create(req, res) {
   req.body.owner = req.user.profile._id
+
   Food.create(req.body)
   .then(food => {
-    res.redirect('/foods')
+    return Profile.findById(req.user.profile._id).populate('foods')
+    .then(profile => {
+      req.user.profile = profile
+      req.user.profile.foods.push(food)
+      return Promise.all([food.save(), req.user.profile.save()])
+      .then(() => {
+        console.log('AFTER pushing profile', req.user);
+        console.log('Profile after pUSH', req.user.profile);
+        res.redirect('/foods')
+      })
+    })
   })
   .catch (err => {
     console.log(err)
