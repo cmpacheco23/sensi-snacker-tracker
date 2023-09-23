@@ -3,13 +3,11 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema
 
 const reactionSchema = new Schema ({
-  text: {
-    type: String,
-    required: true},
-  owner: [{type: Schema.Types.ObjectId, ref: 'Profile'}],
-  potentialAllergen: String,
-  potentialCondition: String,  
-}, {
+  text: {type: String, required: true},
+    potentialAllergen: String,
+    potentialCondition: String,  
+    owner: {type: Schema.Types.ObjectId, ref: 'Profile'}
+  }, {
   timestamps: true
 })
 
@@ -20,9 +18,9 @@ const foodSchema = new Schema ({
   category: {
     type: String,
     required: true},
-  vitamins: {
+  vitamins: [{
     type: String,
-    required: true},
+    required: true}],
   reactions: [reactionSchema],
   owner: {type: Schema.Types.ObjectId, ref: 'Profile'}
 }, {

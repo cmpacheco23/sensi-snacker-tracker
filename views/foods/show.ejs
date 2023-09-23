@@ -22,7 +22,9 @@
   <h4 class="food-h4"> Want to add a vitamin to <%= food.name %>?</h4>
 
     <select name="vitamins" id="vitamins-select">
-      <option value="<%= food.vitamin %>"> <%= food.vitamin %></option>
+      <% food.vitamins.forEach(vitamin => { %>
+        <option value="<%= vitamin %>"> <%= vitamin %></option>
+      <% }) %>
     </select>
     <div class="form-divs-btns">
       <button type="submit" class="form-btns">Add Vitamin</button>

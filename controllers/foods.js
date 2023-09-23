@@ -1,3 +1,4 @@
+import { populate } from "dotenv";
 import { Food } from "../models/food.js";
 
 function index(req, res){
@@ -30,12 +31,15 @@ function create(req, res) {
 function show(req, res){
   Food.findById(req.params.foodId)
   .populate('owner')
+  //deep populate ref taco cat lecture
   .then(food => {
     console.log(food)
     res.render('foods/show', {
       food,
       title: 'Details'
     })
+    console.log(`the food id issss!${food.reactions._id}`)
+
   })
   .catch (err => {
     console.log(err)
@@ -100,6 +104,7 @@ function createReaction(req, res){
   Food.findById(req.params.foodId)
   .then(food => {
     //push the reaction into the food array
+    req.body.owner = req.user.profile._id
     food.reactions.push(req.body)
     // save the food
     food.save()
