@@ -33,7 +33,6 @@ function create(req, res) {
       console.log('saved profile', profile)
       // .then(() => {
       // })
-
     })
 		// redirect wherever you want
 	})
