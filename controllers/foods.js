@@ -167,7 +167,22 @@ function deleteReaction(req, res){
 }
 
 function addToProfile(req, res){
-  
+  //find the logged in user
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    Food.findById(req.params.foodId)
+    //find the id of the food they want to add
+    .then(food => {
+      //push food into their foods array
+      profile.foods.push(food)
+      // save their profile?
+      profile.save()
+      .then(() => {
+        //redirect
+        res.redirect(`/profiles/${profile._id}`)
+      })
+    })
+  })
 }
 
 export {
