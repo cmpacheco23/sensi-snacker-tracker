@@ -17,7 +17,6 @@ function index(req, res){
 }
 
 
-
 function create(req, res) {
 	req.body.owner = req.user.profile._id
 	Food.create(req.body)
@@ -29,15 +28,16 @@ function create(req, res) {
       console.log('console Profile', profile)
       profile.foods.push(food)
       profile.save()
-      res.redirect('/foods')
-      console.log('saved profile', profile)
+      .then(() =>{
+        res.redirect('/foods')
+
+      })
+      // redirect wherever you want
       // .then(() => {
       // })
     })
-		// redirect wherever you want
 	})
 }
-
 function show(req, res){
   Food.findById(req.params.foodId)
   .populate('owner')
