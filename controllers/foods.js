@@ -165,6 +165,11 @@ function deleteReaction(req, res){
     res.redirect('/foods')
   })
 }
+
+function addToProfile(req, res){
+  
+}
+
 export {
   index,
   create,
@@ -174,4 +179,5 @@ export {
   deleteFood as delete,
   createReaction,
   deleteReaction,
+  addToProfile,
 }
