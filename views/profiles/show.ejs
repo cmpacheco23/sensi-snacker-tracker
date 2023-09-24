@@ -10,16 +10,19 @@
     <h2>
       <%= isSelf ? 'You have' : `${profile.name} has` %> foods see them here!
     </h2>
+    <%= isSelf ? 'You have' : `${profile.name} has`%>
+    been tracking your foods since <%= profile.createdAt.toLocaleDateString() %>
+  </h3>
     <% profile.foods.forEach(food => { %>
       <h3>
-        <%= isSelf ? 'You have' : `${profile.name} has`%>
-        been tracking your foods since <%= profile.createdAt.toLocaleDateString() %>
-      </h3>
       <li>
-        <ul> <%= food.name %></ul>
-        <ul> <%= food.category %></ul>
-        <ul> <%= food.vitamin %></ul>
-        <ul> <%= food.reactions ? "Yes" : "No" %></ul>
+        <ul> Food Name: <a href="<%= food.name %>">
+        <%= food.name %> </a> </ul>
+        <ul> Category: <%= food.category %></ul>
+        <ul> Vitamin: <%= food.vitamins?.join(', ') %></ul>
+        <ul> Reaction: <%= food.reactions ? "Yes" : "No" %></ul>
+        <ul><form action="/foods/<%= food._id %>/add-to-profile" method="POST">
+          <button type="submit"> Add to my profile</button></ul> </form>
         
       </li>
     <% }) %>
