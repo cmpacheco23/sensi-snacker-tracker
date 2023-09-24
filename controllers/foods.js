@@ -19,15 +19,23 @@ function index(req, res){
 
 
 function create(req, res) {
-  req.body.owner = req.user.profile._id
-  Food.create(req.body)
-  .then(food => {
-    res.redirect('/foods')
-  })
-  .catch (err => {
-    console.log(err)
-    res.redirect('/')
-  })
+	req.body.owner = req.user.profile._id
+	Food.create(req.body)
+	.then(food => {
+    console.log('console FOOD', food)
+    Profile.findById(req.user.profile._id)
+    // console.log('console pID', req.user.profile._id)
+    .then(profile => {
+      console.log('console Profile', profile)
+      profile.foods.push(food)
+      profile.save()
+      res.redirect('/foods')
+      console.log('saved profile', profile)
+      // .then(() => {
+      // })
+    })
+		// redirect wherever you want
+	})
 }
 
 function show(req, res){
