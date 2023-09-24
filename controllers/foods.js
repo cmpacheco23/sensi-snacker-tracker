@@ -30,13 +30,21 @@ function create(req, res) {
       profile.save()
       .then(() =>{
         res.redirect('/foods')
-
       })
-      // redirect wherever you want
-      // .then(() => {
-      // })
+      .catch (err => {
+        console.log(err)
+        res.redirect('/')
+      })
+    })
+    .catch (err => {
+      console.log(err)
+      res.redirect('/')
     })
 	})
+  .catch (err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 function show(req, res){
   Food.findById(req.params.foodId)
