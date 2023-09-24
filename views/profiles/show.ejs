@@ -21,11 +21,16 @@
         <ul> Category: <%= food.category %></ul>
         <ul> Vitamin: <%= food.vitamins?.join(', ') %></ul>
         <ul> Reaction: <%= food.reactions ? "Yes" : "No" %></ul>
-        <ul><form action="/foods/<%= food._id %>/add-to-profile" method="POST">
-          <button type="submit"> Add to my profile</button></ul> </form>
-        
+        <% if (!food.owner.equals(user?.profile._id)) { %>
+          <ul> 
+              <form action="/foods/<%= food._id %>/add-to-profile" method="POST">
+              <button type="submit"> Add To My Profile</button>
+              </form>  
+          </ul>
+        <% } %>
+      
       </li>
-    <% }) %>
+      <% }) %>
     <% } else { %>
       <h2>
         <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any foods added!

@@ -175,15 +175,36 @@ function addToProfile(req, res){
     .then(food => {
       //push food into their foods array
       profile.foods.push(food)
+      console.log(`check food id added: ${food._id}`)
+      console.log('profile with new food', profile.foods)
       // save their profile?
       profile.save()
       .then(() => {
         //redirect
+        // console.log(`check food id added: ${food._id}`)
         res.redirect(`/profiles/${profile._id}`)
+
       })
     })
   })
 }
+
+// function deleteFromProfile(req, res){
+//   console.log('delete function')
+//   //find the id of the user
+//   // Profile.findById(req.params.profileId)
+
+//   Profile.findById(req.user.profile._id)
+//   .then(profile => {
+//     console.log('console profile', profile)
+//     profile.foods.id(req.params.foodId).deleteOne()
+//     profile.save()
+//     .then(() => {
+//         res.redirect(`/profiles/${profile._id}`)
+//       })
+//     })
+
+//   }
 
 export {
   index,
@@ -195,4 +216,5 @@ export {
   createReaction,
   deleteReaction,
   addToProfile,
+  // deleteFromProfile,
 }

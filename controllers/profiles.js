@@ -25,6 +25,7 @@ function show(req, res){
   .then(profile => {
     // create isSelf constant
     const isSelf = profile._id.equals(req.user.profile._id)
+    console.log('profile with new food', profile.foods)
     // resolve promise
     res.render('profiles/show', {
       // render show page
