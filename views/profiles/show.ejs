@@ -21,21 +21,36 @@
         <li> Reaction: <%= food.reactions ? "Yes" : "No" %></li>
       </ul>
       <% if (!food.owner.equals(user?.profile._id)) { %>
-        <% function foodExistsInFoods(eachFood) {
-          return profile.foods.some(eachFood => eachFood.equals(food._id))
-        } %>
-        <% if (!foodExistsInFoods()) { %>
-          <form action="/foods/<%= food._id %>/add-to-profile" method="POST">
-            <button type="submit"> Add To My Profile</button>
-          </form> 
+        <!-- if the logged in user isnt the owner of the food -->
+        <!-- run check if food exists function -->
+        <% if (profile.foods.some(eachFood => eachFood.equals(food._id))) { %>
+          <!-- the logged in user doesn't own the food but the food exists in the foods array-->
+            <!-- <h1>logged in user owns this food, nothing to do</h1> -->
+            <h2>I DONT OWN THIS FOOD AND ITS IN MY ARRAY - i'm logged in</h2>
+            <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
+              <button type="submit"> Delete From Profile</button>
+            </form> 
+            <% if (food.owner.equals(user?.profile._id)) { %>
+              <h2>I OWN THIS FOOD AND ITS IN MY ARRAY - i'm logged in</h2>
+              <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
+                <button type="submit"> Delete From Profile</button>
+              </form> 
+            <% } %>
+            <% }%> 
         <% } %>
-        <% } else { %>
-          <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
-            <button type="submit"> Delete From Profile</button>
-          </form>
-      <% } %>
-    <% }) %>
-  <% } else { %>
+        <% if (food.owner.equals(user?.profile._id)) { %>
+          <!-- if the logged in user IS the owner of the food -->
+          <% if (profile.foods.some(eachFood => eachFood.equals(food._id))) { %>
+            <h2>I OWN THIS FOOD, ITS IN MY ARRAY - i'm logged in</h2>
+            <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
+              <button type="submit"> Delete From Profile</button>
+            </form> 
+          <% } %>
+        <% } %>
+        <% }) %>
+
+
+    <% } else { %>
     <h2><%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any foods added!</h2>
   <% } %>
 </main>

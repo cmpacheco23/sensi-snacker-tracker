@@ -21,25 +21,20 @@
         <li> Reaction: <%= food.reactions ? "Yes" : "No" %></li>
       </ul>
       <% if (!food.owner.equals(user?.profile._id)) { %>
-        <% function foodExistsInFoods(eachFood) {
-          return profile.foods.some(eachFood => eachFood.equals(food._id))
-        } %>
-        <% if (!foodExistsInFoods()) { %>
-          <!-- <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
-            <button type="submit"> Delete From Profile</button>
-          </form> -->
-          <form action="/foods/<%= food._id %>/add-to-profile" method="POST">
-            <button type="submit"> Add To My Profile</button>
-          </form> 
-        <% } %>
+        <% function foodExistsInFoods() {
+          return profile.foods.some(eachFood => eachFood.equals(food._id))} %>
+        <% if (foodExistsInFoods()) { %>
+          <% if (food.owner.equals(user?.profile._id)) { %>
+            <h1>logged in user owns this food, nothing to do</h1>
+          <% } %>
         <% } else { %>
-          <!-- <form action="/foods/<%= food._id %>/add-to-profile" method="POST">
-            <button type="submit"> Add To My Profile</button>
-          </form>  -->
-          <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
-          <button type="submit"> Delete From Profile</button>
-          </form>
-      <% } %>
+          <h1>logged isnt the owner of this food but its already in foods array you may delete</h1>
+        <% } %>
+      <% } else { %>
+        <h1>logged isnt the owner of this food AND its not in YOUR foods array you may ADD IT</h1>
+        <% } else { %>
+          <h1>logged user owns this food, nothing to do!</h1>
+          <% } %>
     <% }) %>
   <% } else { %>
     <h2><%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any foods added!</h2>
