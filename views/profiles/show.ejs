@@ -24,15 +24,15 @@
         <% function foodExistsInFoods(eachFood) {
           return profile.foods.some(eachFood => eachFood.equals(food._id))
         } %>
-        <% if (foodExistsInFoods()) { %>
-          <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
-            <button type="submit"> Delete From Profile</button>
-          </form>
-        <% } %>
-        <% } else { %>
+        <% if (!foodExistsInFoods()) { %>
           <form action="/foods/<%= food._id %>/add-to-profile" method="POST">
             <button type="submit"> Add To My Profile</button>
           </form> 
+        <% } %>
+        <% } else { %>
+          <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
+            <button type="submit"> Delete From Profile</button>
+          </form>
       <% } %>
     <% }) %>
   <% } else { %>

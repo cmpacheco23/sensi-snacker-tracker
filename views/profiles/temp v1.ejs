@@ -21,13 +21,24 @@
         <li> Reaction: <%= food.reactions ? "Yes" : "No" %></li>
       </ul>
       <% if (!food.owner.equals(user?.profile._id)) { %>
-        <% if (foodExistsInFoods()) { %>
-          <% function foodExistsInFoods(arg, val) %>
-          <% return profile.foods.some((argVal) => val === argVal) %>
-          <h1> DELETE FOOD</h1>
+        <% function foodExistsInFoods(eachFood) {
+          return profile.foods.some(eachFood => eachFood.equals(food._id))
+        } %>
+        <% if (!foodExistsInFoods()) { %>
+          <!-- <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
+            <button type="submit"> Delete From Profile</button>
+          </form> -->
+          <form action="/foods/<%= food._id %>/add-to-profile" method="POST">
+            <button type="submit"> Add To My Profile</button>
+          </form> 
         <% } %>
         <% } else { %>
-          <h1>ADD FOOD</h1>
+          <!-- <form action="/foods/<%= food._id %>/add-to-profile" method="POST">
+            <button type="submit"> Add To My Profile</button>
+          </form>  -->
+          <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
+          <button type="submit"> Delete From Profile</button>
+          </form>
       <% } %>
     <% }) %>
   <% } else { %>

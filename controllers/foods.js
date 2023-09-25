@@ -190,21 +190,18 @@ function addToProfile(req, res){
 }
 
 function deleteFromProfile(req, res){
-  console.log('delete function')
-  //find the id of the user
-  // Profile.findById(req.params.profileId)
-
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    console.log('console profile', profile)
-    profile.foods.id(req.params.foodId).deleteOne()
-    profile.save()
-    .then(() => {
+    Food.findById(req.params.foodId)
+    .then(food => {
+      profile.foods.remove(req.params.foodId)
+      profile.save()
+      .then(() => {
         res.redirect(`/profiles/${profile._id}`)
       })
     })
-
-  }
+  })
+}
 
 export {
   index,
