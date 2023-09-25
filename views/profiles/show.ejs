@@ -25,23 +25,23 @@
 
         <!-- START OF IF STATEMENT profile.foods.some(eachFood => eachFood.equals(food._id)) -->
         <% if (profile.foods.some(eachFood => eachFood.equals(food._id))) { %>
+
           <!-- the logged in user doesn't own the food but the food exists in the foods array-->
             <!-- <h1>logged in user owns this food, nothing to do</h1> -->
-            <h2>I DONT OWN THIS FOOD AND ITS IN MY ARRAY - i'm logged in</h2>
-            <!-- NEED TO ADJUST SO THIS IS ONLY TRUE WHEN ON OWN PROFILE -->
-            <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
-              <button type="submit"> Delete From Profile</button>
-            </form> 
+          <h2>I DONT OWN THIS FOOD AND ITS IN MY ARRAY - i'm logged in</h2>
+          <!-- NEED TO ADJUST SO THIS IS ONLY TRUE WHEN ON OWN PROFILE -->
+          <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
+            <button type="submit"> Delete From Profile</button>
+          </form> 
         <% } else { %>
           <H2> I DONT OWN THIS FOOD AND ITS NOT IN MY ARRAY - im logged in</H2>
           <form action="/foods/<%= food._id %>/add-to-profile" method="POST">
             <button type="submit"> Add To My Profile</button>
           </form>  
         <% } %>  <!-- END OF IF STATEMENT profile.foods.some(eachFood => eachFood.equals(food._id)) -->
-         
         <!-- END OF IF STAMEMENT !food.owner.equals(user?.profile._id) -->
         
-      <% } else { %>        
+      <% } else { %>
           <!-- START OF ELSE STATEMENT FOR !food.owner.equals(user?.profile._id) -->
           <!-- I SEE THIS MESSAGE ON MY PAGE AND OTHERS -->
           <H2>I OWN THIS FOOD AND ITS IN MY ARRAY!</H2>
@@ -52,8 +52,8 @@
           <!-- EITHER SHOW NOTHING OR DELETE -->
           <!-- WHEN ANOTHER USER IS LOGGED IN THIS IS WHAT THEY SEE FOR MILK WHEN VIEWING MY PROFILE -->
 
-         <% } %>  
-         <!-- END ELSE STATEMENT FOR profile.foods.some(eachFood => eachFood.equals(food._id)) -->
+      <% } %>  
+      <!-- END ELSE STATEMENT FOR profile.foods.some(eachFood => eachFood.equals(food._id)) -->
       
     <!-- END FOREACH LOOP: profile foods -->
     <% }) %>
