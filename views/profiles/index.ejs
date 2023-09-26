@@ -1,17 +1,26 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/profile.css" />
 <%- include('../partials/nav') %>
 
-<h1> <%= title %></h1>
+<h1 class="title"> <%= title %></h1>
 
   <section class="card-container">
     <article class="card">
       <% profiles.forEach(profile => { %>
+        <div class="indv-card">
         <a class="" href="/profiles/<%= profile._id %>">
   
             <img src="<%= profile.avatar %>" alt="<%= profile.name %>">
 
               <h1 class="card-title" > <%= profile.name %></h1>
+              <h3 class="joined-date" > Joined: <%= profile.createdAt.toLocaleDateString() %></h3>
+              <!-- reference the mongoose movies show view  -->
+              <h4> foods added: <% profile.foods.length %></h4>
+            
           </div>
+          <!-- include the number of foods the user has added -->
+          <!-- number of reactions contributed -->
+
         </a>
       <% }) %>
 

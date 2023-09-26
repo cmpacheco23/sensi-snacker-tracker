@@ -1,10 +1,61 @@
+.title{
+  text-align: center;
+}
+.card-container{
+  display: flex;
+  direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
 .card{
   display: flex;
   direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(15, 14, 14);
+  border-radius: 10px;
+  margin: 40px 20px 40px 20px;
+  width: 70%;
 }
 
 .card-title{
   align-items: center;
+}
+
+.indv-card{
+  display: flex;
+  direction: column;
+  margin: 10px 40px 10px 40px;
+  
+}
+
+.card-title{
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.joined-date{
+  text-align: center;
+  color: aliceblue;
+  font-size: 14px;
+}
+
+img{
+  border-radius: 50%;
+  align-items: center;
+}
+
+a{
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+}
+
+h4{
+  text-align: center;
+  font-size: 14px;
+  color: salmon;
 }
