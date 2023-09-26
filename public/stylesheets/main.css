@@ -99,11 +99,11 @@ main {
 
 }
 
-.nav-btns :hover{
+.nav-btns:hover{
   background-color: rgb(232, 232, 168);
   color: black;
 }
 
-.nav-btns :active {
+.nav-btn-container:active > button{
   background-color: rgb(150, 5, 111);
 }

@@ -2,7 +2,7 @@
   background-color: rgb(10, 109, 96);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 30px;
   justify-content: center;
 }
 
@@ -24,14 +24,14 @@
 
 .body-allFoods {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 20px;
+  /* align-items: center; */
+  /* justify-content: space-evenly; */
   background-color: rgba(141, 223, 175, 0.356);
   width: 1600px;
 }
+
+
 
 
 
@@ -59,7 +59,7 @@
 .food-h3 { 
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 20px 20px 20px 0;
   color: white;
 }
 
@@ -85,40 +85,39 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;
+  align-items: flex-start;
 }
 
-.card{
-  flex: 0 0 200px;
-  margin: 10px;
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
   border: 2px solid #ccc;
   box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
   background-color: #aee2e4;
-  min-height: 200px;
-  min-width: 250px;
-  margin: 30px;
+  align-items: stretch;
+  height: 200px;
+  width: 250px; 
 }
-
-
 
 .card .text {
-  padding: 0 20px 20px;
+  padding: 8px 20px 20px;
   text-align: center;
   font-size: 18px;
+  color: black;
 }
 
-.card .text > button {
-  background: #bfc4e1;
-  border: 0;
-  color: white;
-  padding: 10px;
-  width: 50%;
-  text-align: center;
-  }
 
 
 #trash-btn{
-  font-size: 30px;
+  background: #bfc4e1;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  width:55px;
+  font-size: 20px;
+  border-radius: 50%;
+  border: 2px solid rgb(174, 150, 187);
 }
 .cardImg {
   background-image: url('../images/greenCloth.svg');
@@ -129,8 +128,10 @@
 .form-divs-btns{
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 15px;
   height: 62px;
+  margin: 10px 0px 20px 0px;
 }
 
 .form-divs-btns > button{
@@ -164,11 +165,28 @@
 /* .edit-btn {
 
 } */
-.foods-card-form{
-display: flex;
-padding: 15px;
-}
+
 
 input{
   min-height: 40px;
+}
+
+.food-details-header{
+  background-color: rgba(0, 0, 0, 0.353);
+  min-width: 85%;
+  min-height: 80px;
+
+}
+#layout-food-details-header{
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  justify-content: center;
+}
+
+#layout-body-allFoods{
+  display: flex;
+  gap: 0px;
+  justify-content: center;
+  
 }
