@@ -3,7 +3,7 @@
   <% } %>
 </head>
 <body>
-  <nav>
+  <nav class="nav-bar">
     <a href="/foods" class="nav-btn-container">
       <button type="submit" class="nav-btns">Foods</button>
     </a>
@@ -16,8 +16,8 @@
       <button type="submit" class="nav-btns">Recipes</button>
     </a>
     <% if (user) { %>
-      <a href="/auth/logout" class="right">
-        <button type="submit">Logout</button>
+      <a href="/auth/logout" class="logout-container">
+        <button type="submit" class="logout-btn">Logout</button>
       </a>
     <% } else { %>
       <div 

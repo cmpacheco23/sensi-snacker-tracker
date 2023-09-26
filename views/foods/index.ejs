@@ -1,51 +1,52 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/foods.css" />
 <%- include('../partials/nav') %>
-
-<h1 class="food-h1s"><%= title %></h1>
-<p class="food-ps">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores optio odit officia repellendus iste sint rem impedit tempore. Vitae, nihil fugit beatae cumque nulla impedit non dicta repellendus illum.</p>
-
-<% if (user) { %>
-  <section class="add-form-section">
-    <h1 class="food-h1s" ></h1>
-    <form action="/foods" method="POST">
-      <label for="food-name-input"> Food Name: </label>
-      <input type="text" name="name" id="food-name-input">
-      <label for="food-cat-input"> Category: </label>
-      <input type="text" name="category" id="food-cat-input">
-      <label for="vitamin-input"> Vitamins: </label> 
-      <input type="text" name="vitamins" id="vitamin-input">
-      <div class="form-divs-btns">
-        <button type="submit" class="form-btns">Add Food</button>
-      </div>
+<main class="layout" >
+  <section class="header">
+    <h1 class="food-h1"><%= title %></h1>
+    <p class="food-ps">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores optio odit officia repellendus iste sint rem impedit tempore. Vitae, nihil fugit beatae cumque nulla impedit non dicta repellendus illum.</p>
+  </section>
+  <section class="body-newFood">
+    <% if (user) { %>
+      <h1 class="food-h2"> Add New Food</h1>
+      <form action="/foods" method="POST" id="newFood-form" class="addFood-Form">
+        <label for="food-name-input" class="form-labels"> Food Name: </label>
+        <input type="text" name="name" id="food-name-input">
+        <label for="food-cat-input" class="form-labels"> Category: </label>
+        <input type="text" name="category" id="food-cat-input">
+        <label for="vitamin-input" class="form-labels"> Vitamins: </label> 
+        <input type="text" name="vitamins" id="vitamin-input">
+        <div class="form-divs-btns">
+          <button type="submit" class="form-btns">Add Food</button>
+        </div>
+      </form>
+    <% } %>
+    </section>
+  <section>
+    <h2 class="food-h3"> Click on a food to view its details and make edits.</h2>
+  </section>
+  <section class="body-allFoods">
+    <form action="/foods" method="GET" class="foods-card-form">
+      <% foods.forEach(food => { %>
+        <article class="card">
+          <div class="cardImg"></div>
+          <div class="text">
+            <a href="/foods/<%= food._id %>"><label><b>Food Name:</b></label> <%= food.name %> <br></a>
+            <label> <b> Category:</b> </label> <%= food.category %> <br>
+            <label><b>Vitamins:</b> </label> <%= food.vitamins %> <br>
+            <% if (food.owner.equals(user?.profile._id)) { %>
+              <br> <form action="/foods/<%= food._id %>?_method=DELETE" method="POST">
+                <button type="submit" id="trash-btn">🗑️</button>
+              </form>
+            <% } %>
+          </div>
+        </article>
+      <% }) %>
     </form>
   </section>
-<% } %>
+  <section class="body-sortedFoods"></section>
 
-<h2 class="foods-h2"> Click on a food to view its details and make edits.</h2>
-
-<section class="items-all">
-
-  <form action="/foods" method="GET" class="display-form">
-    <% foods.forEach(food => { %>
-      <div>
-        <ul>
-          <a href="/foods/<%= food._id %>">
-            <label>Food Name:</label>
-            <%= food.name %>
-          </a>
-          <% if (food.owner.equals(user?.profile._id)) { %>
-            <form action="/foods/<%= food._id %>?_method=DELETE" method="POST" class="delete-form">
-              <button type="submit">Delete</button>
-            </form>
-          <% } %>
-          <li> <label>Category:</label> <%= food.category %></li>
-          <li> <label>Vitamins:</label> <%= food.vitamins %></li>
-        </ul>
-      </div>
-  
-    <% }) %>
-  </form>
-</section>
+</main>
 
 <!-- sort by food category -->
 

@@ -1,0 +1,103 @@
+html {
+  box-sizing: border-box;
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after {
+  /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default but can be overridden as needed */
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #f6f6f6;
+  /* Use a system font, if none are available use any found sans-sarif font */
+  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+    'Helvetica Neue', sans-serif;
+  margin: 0;
+}
+
+nav {
+  background-color: #0b0101;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  min-height: 60px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.nav-btn-container {  
+  /* container of buttons  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  padding: 10px;
+}
+
+.nav-bar{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 0 20px 40px;
+}
+
+.nav-btn-container{
+  display: flex;
+  row-gap: 40px;
+  padding: 10px;
+  margin:0 35px 0 20px;
+}
+.nav-btns {
+  display: flex;
+  align-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(4, 93, 84);
+  color: white;
+  min-width: 120px;
+  min-height: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  padding-top: 8px;
+  border-radius: 8px;
+
+}
+
+
+
+.logout-container{
+  display: flex;
+  margin-left: auto;
+  height: 40px;
+  width: 200px;
+
+}
+
+.logout-btn{
+  display: flex;
+  font-size: 18px;
+  min-width: 120px;
+  min-height: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(164, 236, 128);
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 800;
+
+}

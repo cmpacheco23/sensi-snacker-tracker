@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/foods.css" />
 <%- include('../partials/nav') %>
 
 <h1 class="food-h1s"><%= food.name %> <%= title %></h1>
@@ -11,9 +12,9 @@
 <% } %>
 <section class="items-all">
 
-  <form action="/foods/<%= food._id %>" method="GET" class="display-form">
-      <label>Category:</label> <%= food.category %>
-      <label>Vitamins:</label> <%= food.vitamins %>
+  <form action="/foods/<%= food._id %>" method="GET" class="foods-card-form">
+      <label>Category: </label> <%= food.category %>
+      <label>Vitamins: </label> <%= food.vitamins %>
   </form>
 </section>
 
