@@ -31,21 +31,24 @@
   </section>
     <section class="body-allFoods" id="layout-body-allFoods">
       <form action="/foods" method="GET" class="foods-card-form">
-        <% foods.forEach(food => { %>
-          <article class="card">
-            <div class="cardImg"></div>
-            <div class="text">
-              <a href="/foods/<%= food._id %>"><label><b>Food Name:</b></label> <%= food.name %> <br></a>
-              <label> <b> Category:</b> </label> <%= food.category %> <br>
-              <label><b>Vitamins:</b> </label> <%= food.vitamins %> <br>
-              <% if (food.owner.equals(user?.profile._id)) { %>
-                <br> <form action="/foods/<%= food._id %>?_method=DELETE" method="POST">
-                  <button type="submit" id="trash-btn">🗑️</button>
-                </form>
-              <% } %>
+        <div class="cards">
+
+          <% foods.forEach(food => { %>
+            <article class="card">
+              <div class="cardImg"></div>
+              <div class="text">
+                <a href="/foods/<%= food._id %>"><label><b>Food Name:</b></label> <%= food.name %> <br></a>
+                <label> <b> Category:</b> </label> <%= food.category %> <br>
+                <label><b>Vitamins:</b> </label> <%= food.vitamins %> <br>
+                <% if (food.owner.equals(user?.profile._id)) { %>
+                  <br> <form action="/foods/<%= food._id %>?_method=DELETE" method="POST">
+                    <button type="submit" id="trash-btn">🗑️</button>
+                  </form>
+                  <% } %>
+                </div>
+              </article>
+              <% }) %>
             </div>
-          </article>
-        <% }) %>
     </section>
   <section class="body-sortedFoods"></section>
 
