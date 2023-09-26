@@ -2,19 +2,21 @@
 <%- include('../partials/nav') %>
 
 <h1> <%= title %></h1>
-<main>
-  <div class="card-container">
-    <% profiles.forEach(profile => { %>
-      <a class="" href="/profiles/<%= profile._id %>">
-        <div class="card">
-          <img src="<%= profile.avatar %>" alt="<%= profile.name %>"
-          >
-          <div class="card-body">
-            <h1 class="card-title" > <%= profile.name %></h1>
+
+  <section class="card-container">
+    <article class="card">
+      <% profiles.forEach(profile => { %>
+        <a class="" href="/profiles/<%= profile._id %>">
+  
+            <img src="<%= profile.avatar %>" alt="<%= profile.name %>">
+
+              <h1 class="card-title" > <%= profile.name %></h1>
           </div>
-        </div>
-      </a>
-    <% }) %>
-  </div>
-</main>
+        </a>
+      <% }) %>
+
+    </article>
+
+  </section>
+
 <%- include('../partials/footer') %>
