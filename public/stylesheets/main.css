@@ -75,10 +75,7 @@ main {
   font-weight: 700;
   padding-top: 8px;
   border-radius: 8px;
-
 }
-
-
 
 .logout-container{
   display: flex;
@@ -100,4 +97,13 @@ main {
   border-radius: 8px;
   font-weight: 800;
 
+}
+
+.nav-btns :hover{
+  background-color: rgb(232, 232, 168);
+  color: black;
+}
+
+.nav-btns :active {
+  background-color: rgb(150, 5, 111);
 }

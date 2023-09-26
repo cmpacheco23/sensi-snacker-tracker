@@ -10,12 +10,16 @@
     <% if (user) { %>
       <h1 class="food-h2"> Add New Food</h1>
       <form action="/foods" method="POST" id="newFood-form" class="addFood-Form">
-        <label for="food-name-input" class="form-labels"> Food Name: </label>
-        <input type="text" name="name" id="food-name-input">
-        <label for="food-cat-input" class="form-labels"> Category: </label>
-        <input type="text" name="category" id="food-cat-input">
-        <label for="vitamin-input" class="form-labels"> Vitamins: </label> 
-        <input type="text" name="vitamins" id="vitamin-input">
+        <div class="form-labels">
+          <label for="food-name-input" class="form-labels"> Food Name: </label>
+          <label for="food-cat-input" class="form-labels"> Category: </label>
+          <label for="vitamin-input" class="form-labels"> Vitamins: </label> 
+        </div>
+        <div class="form-input">
+          <input type="text" name="name" id="food-name-input">
+          <input type="text" name="category" id="food-cat-input">
+          <input type="text" name="vitamins" id="vitamin-input">
+        </div>
         <div class="form-divs-btns">
           <button type="submit" class="form-btns">Add Food</button>
         </div>

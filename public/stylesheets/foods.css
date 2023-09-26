@@ -74,6 +74,7 @@
 
 #newFood-form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 15px;
@@ -134,14 +135,31 @@
 
 .form-divs-btns > button{
 
-  width: 100px;
-  font-size: 16px;
+  min-width: 120px;
+  min-height: 40px;
+  font-size: 18px;
+  background-color: black;
+  color: white;
+  font-weight: 700;
 }
 
-.form-labels {
+.form-labels{
+  width: fit-content;
   font-size: 20px;
+  padding: 0 100px 0 100px;
+  text-align: center;
+  font-weight: 700;
+  text-shadow:1px 1px 2px black;
+  letter-spacing: 1px;
 }
 
+.form-input, #food-name-input, #food-cat-input, #vitamin-input {
+  margin: 0 30px 0 30px;
+  min-width: 230px;
+  font-size: 20px;
+  text-align: center;
+
+}
 
 /* .edit-btn {
 
@@ -149,4 +167,8 @@
 .foods-card-form{
 display: flex;
 padding: 15px;
+}
+
+input{
+  min-height: 40px;
 }
