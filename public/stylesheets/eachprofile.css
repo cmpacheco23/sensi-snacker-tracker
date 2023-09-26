@@ -14,9 +14,9 @@ main {
   margin: 20px 0 40px 0;
   text-align: center;
   padding: 20px;
-  background-color: #f0f0f0; /* Background color for the header */
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
 
 }
 
@@ -47,7 +47,7 @@ main {
 .header h3 {
   font-size: 18px; /* Font size for additional information */
   margin: 5px 0; /* Adjust spacing as needed */
-  color: #333; /* Text color for additional information */
+  color: white; /* Text color for additional information */
 }
 
 /* Style for each food card container */
@@ -58,9 +58,8 @@ main {
   right: -10px; /* Adjust the right position to overlap with the card */
   bottom: -10px; /* Adjust the bottom position to overlap with the card */
   left: -10px; /* Adjust the left position to overlap with the card */
-
   border-radius: 20px; /* Increase border radius to match the desired style */
-  background: linear-gradient(45deg, #794ce4, #830281); /* Gradient border */
+  background: linear-gradient(45deg, #2f1d5a, #590358); /* Gradient border */
   transform: translate3d(0px, 10px, 0) scale(1);
   opacity: 0.7;
   transition: opacity 0.3s;
@@ -77,13 +76,27 @@ main {
   width: calc(50% - 20px); /* Two cards per row with spacing between them */
   box-sizing: border-box;
   text-align: center;
-  background: linear-gradient(45deg, #1a0121, #532d94); /* Gradient background for even cards */
-    -webkit-mask: none; /* Remove the mask */
-    mask: none; /* Remove the mask */
-
+  background: linear-gradient(45deg, #a80fd2, #230558); /* Gradient background for even cards */
+  -webkit-mask: none; /* Remove the mask */
+  mask: none; /* Remove the mask */
   border-radius: 30px; /* Increase border radius to match the desired style */
-  border: 20px solid black; /* Set the border width and make it transparent */
+  border: 15px solid transparent; /* Set the border width and make it transparent */
   position: relative; /* Add relative positioning for pseudo-elements */
+  box-shadow: 0 0 20px rgba(151, 30, 211, 0.575); /* Modify the values as needed */
+
+}
+
+
+/* Style for the overlay */
+.food-card::before {
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(51, 7, 66, 0.2); /* Adjust the alpha channel for transparency */
+  z-index: -2; /* Place the overlay behind the card content */
 }
 
 
@@ -95,18 +108,6 @@ main {
   bottom: 0;
   left: 0;
   z-index: -1; /* Send it to the back */
-}
-
-/* Style for oddcards */
-.food-card:nth-child(4n-3),
-.food-card:nth-child(4n) {
-  background: linear-gradient(45deg, #1a0121, #532d94); /* Gradient background for even cards */
-}
-
-/* Style for even cards */
-.food-card:nth-child(4n-2),
-.food-card:nth-child(4n-1) {
-  background: linear-gradient(45deg, #3e024f, #11022b); /* Gradient background for even cards */
 }
 
 .food-card-container {
@@ -165,4 +166,9 @@ main {
 
 #food-reaction p{
   color: rgb(245, 235, 235);
+}
+
+a {
+  color: white;
+  font-weight: 700;
 }

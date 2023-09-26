@@ -142,8 +142,6 @@ img{
   align-items: center;
   border: 5px solid rgba(136, 64, 199, 0.29); /* Add a black border around the image */
   box-shadow: 0 0 0 5px rgba(106, 4, 94, 0.5); /* Add a gradient border using box-shadow */
-
-
 }
 
 a{
