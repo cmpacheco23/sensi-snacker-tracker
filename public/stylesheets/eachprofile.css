@@ -1,0 +1,168 @@
+/* Style for the main content area */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+/* Style for the header section */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0 40px 0;
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0; /* Background color for the header */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Style for the profile avatar */
+.profile-avatar {
+  width: 150px; /* Adjust the width as needed */
+  height: 150px; /* Adjust the height as needed */
+  border-radius: 50%; /* Create a circular avatar */
+  object-fit: cover; /* Ensure the image covers the entire container */
+  border: 5px solid rgba(136, 64, 199, 0.29); /* Add a border with a gradient effect */
+  box-shadow: 0 0 0 5px rgba(106, 4, 94, 0.5); /* Add a gradient border using box-shadow */
+  transition: transform 0.3s ease-in-out; /* Add a transition for a hover effect */
+}
+
+/* Add a hover effect to the avatar */
+.profile-avatar:hover {
+  transform: rotate(360deg); /* Rotate the avatar 360 degrees on hover */
+}
+
+/* Style for the header title */
+.header h1 {
+  font-size: 24px; /* Font size for the title */
+  margin: 0; /* Remove default margin to ensure proper spacing */
+}
+
+/* Style for the additional information */
+.header h2,
+.header h3 {
+  font-size: 18px; /* Font size for additional information */
+  margin: 5px 0; /* Adjust spacing as needed */
+  color: #333; /* Text color for additional information */
+}
+
+/* Style for each food card container */
+.food-card:before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust the top position to overlap with the card */
+  right: -10px; /* Adjust the right position to overlap with the card */
+  bottom: -10px; /* Adjust the bottom position to overlap with the card */
+  left: -10px; /* Adjust the left position to overlap with the card */
+
+  border-radius: 20px; /* Increase border radius to match the desired style */
+  background: linear-gradient(45deg, #794ce4, #830281); /* Gradient border */
+  transform: translate3d(0px, 10px, 0) scale(1);
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  filter: blur(10px);
+}
+
+/* Style for each food card */
+.food-card {
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+  align-items: center; /* Center-align text vertically */
+  padding: 15px;
+  margin: 0 10px 40px 10px; /* Add horizontal margin to create spacing between cards */
+  width: calc(50% - 20px); /* Two cards per row with spacing between them */
+  box-sizing: border-box;
+  text-align: center;
+  background: linear-gradient(45deg, #1a0121, #532d94); /* Gradient background for even cards */
+    -webkit-mask: none; /* Remove the mask */
+    mask: none; /* Remove the mask */
+
+  border-radius: 30px; /* Increase border radius to match the desired style */
+  border: 20px solid black; /* Set the border width and make it transparent */
+  position: relative; /* Add relative positioning for pseudo-elements */
+}
+
+
+.food-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1; /* Send it to the back */
+}
+
+/* Style for oddcards */
+.food-card:nth-child(4n-3),
+.food-card:nth-child(4n) {
+  background: linear-gradient(45deg, #1a0121, #532d94); /* Gradient background for even cards */
+}
+
+/* Style for even cards */
+.food-card:nth-child(4n-2),
+.food-card:nth-child(4n-1) {
+  background: linear-gradient(45deg, #3e024f, #11022b); /* Gradient background for even cards */
+}
+
+.food-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+  border-radius: 10px; /* Apply border radius to match the desired style */
+}
+
+.food-text-container {
+  display: flex;
+  position: relative;
+  flex-direction: column; /* Stack text vertically */
+  align-items: center; /* Center-align text horizontally */
+  text-align: center; /* Center-align text horizontally */
+}
+
+.food-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px; /* Adjust spacing between food card content and actions */
+  text-align: center;
+}
+
+.food-actions-label {
+  font-size: 18px;
+  margin: 10px 0; /* Adjust spacing as needed */
+  color: #333; /* Text color for food actions label */
+  text-align: center;
+}
+/* Style for food name */
+.food-info#food-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Style for food category and vitamins */
+.food-info {
+  font-size: 16px; /* Font size for category and vitamins */
+  margin-top: 5px; /* Spacing between food name and category/vitamins */
+  color: rgb(243, 237, 237); /* Add black font color to .food-info */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style for food reaction */
+.food-reaction {
+  font-size: 16px; /* Font size for the reaction */
+  margin-top: 10px; /* Spacing between vitamins and reaction */
+}
+
+#food-reaction p{
+  color: rgb(245, 235, 235);
+}
