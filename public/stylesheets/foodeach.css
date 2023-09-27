@@ -1,19 +1,20 @@
+/* editfood.css */
+
 .layout {
   background-color: #4F4789;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
 
 }
 
 .header {
   width: 100%;
-  background-color: #201f1f; /* Black background color */
-  color: #ffffff; /* White text on black background */
+  background-color: #201f1f;
+  color: #ffffff;
   text-align: center;
-  box-shadow: 0px -3px 3px 0px rgb(134, 56, 129), 0px -6px 3px 0px rgb(114, 29, 66), 0px -12px 9px 0px rgba(122, 5, 55, 1); /* Thinner shadow with fully opaque pink color */
+  box-shadow: 0px -3px 3px 0px rgb(134, 56, 129), 0px -6px 3px 0px rgb(114, 29, 66), 0px -12px 9px 0px rgba(122, 5, 55, 1);
   margin: 0px 0 15px 0;
   padding-bottom: 40px;
 }
@@ -24,9 +25,7 @@
   align-items: center;
   color: #ffffff;
   font-size: 40px;
-  
 }
-
 
 .add-items {
   display: flex;
@@ -44,7 +43,6 @@
   margin: 10px;
 }
 
-/* Add this CSS to center the add-reaction section */
 .add-section {
   display: flex;
   flex-direction: column;
@@ -52,18 +50,17 @@
   justify-content: center;
   background-color: #09023f;
   text-align: center;
-  min-height: 100vh; /* Ensure the section covers the full viewport height */
+  min-height: 100vh;
 }
 
 .add-reaction {
   width: 600px;
-  max-width: 90%; /* Limit the width to 90% of the parent container */
+  max-width: 90%;
   position: relative;
-  padding: 20px; /* Add some padding to the section */
+  padding: 20px;
   background-color: rgba(235, 225, 247, 0.204);
 }
 
-/* Additional styles for your form elements if needed */
 form {
   display: flex;
   flex-direction: column;
@@ -104,11 +101,28 @@ label {
   margin-bottom: 20px;
 }
 
-h2{
+h2 {
   align-items: flex-start;
   text-align: center;
   background-color: #09023f;
   padding: 20px 0 20px 0;
-  margin:auto
+  margin: auto;
 }
 
+/* Add styles for the .body-newFoods, .body-allFoods, and other sections here */
+
+.food-info {
+  align-items: center;
+}
+
+.header, .food-info label{
+  align-items: center;
+}
+
+.food-details-header{
+  width: 400px;
+}
+
+.food-entry{
+width: auto;
+}

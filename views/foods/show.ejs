@@ -12,19 +12,16 @@
       </a>
     </div>
   <% } %>
-</section>
+  <div class="food-info">
+    <form action="/foods/<%= food._id %>" method="GET">
+        <label class="food-details-header">Category: </label> 
+        <p class="food-entry"><%= food.category %> </p>
 
-<section class="food-details">
-  <form action="/foods/<%= food._id %>" method="GET">
-    <div class="info">
-      <label>Category: </label>
-      <%= food.category %>
-    </div>
-    <div class="info">
-      <label>Vitamins: </label>
-      <%= food.vitamins %>
-    </div>
-  </form>
+        <label class="food-details-header">Vitamins: </label>
+        <p class="food-entry"> <%= food.vitamins %></p>
+    </form>
+
+  </div>
 </section>
 
 

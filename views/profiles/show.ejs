@@ -34,8 +34,8 @@
         <div class="form-divs-btns">
           <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST"> <button type="submit" class="form-btns"> Delete | I own</button></form>
         </div>
-
-      <% } else { %>
+      
+      <% } else if (!profile.foods.some(eachFood => eachFood._id === food._id)){ %>
         <div class="form-divs-btns" id="add-btn">
           <form action="/foods/<%= food._id %>/add-to-profile" method="POST">
             <button type="submit" class="form-btns" "> Add To My Profile</button> </form>
