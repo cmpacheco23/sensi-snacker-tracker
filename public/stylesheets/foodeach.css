@@ -1,27 +1,7 @@
-/* Reset default margin and padding */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Universal Styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Styles for the main layout */
+/* Food Details Page Styles */
 .layout {
-  background-color: rgb(10, 109, 96);
-  display: flex; /* Add display: flex here */
+  background-color: #4F4789;
+  display: flex;
   flex-direction: column;
   gap: 30px;
   justify-content: center;
@@ -31,183 +11,31 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #3d044d;
-  color: rgb(255, 253, 253);
+  align-content: center;
+  background-color: #201335;
+  color: #ffffff;
   width: 100%;
-  box-shadow: rgba(213, 61, 237, 0.8) 0px 10px 40px, rgba(0, 0, 0, 0.6) 0px 5px 15px;
+  box-shadow: rgba(92, 47, 148, 0.8) 0px 10px 20px, rgba(43, 2, 85, 0.6) 0px 5px 5px;
 }
 
 .food-h1s {
-  text-align: center;
-  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 40px;
 }
 
 .form-divs-btns {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.edit-btn {
-  all: unset;
-  width: 120px;
-  height: 40px;
-  font-size: 18px;
-  background-color: black;
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-/* Styles for the food details section */
-.food-details {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 20px;
-}
-
-.food-details label {
-  font-weight: bold;
-}
-
-/* Styles for the add items section */
-.add-items {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 20px;
-}
-
-.food-h4 {
-  margin: 10px 0;
-}
-
-#vitamins-select {
-  margin: 10px 0;
-}
-
-.form-btns {
-  all: unset;
-  width: 120px;
-  height: 40px;
-  font-size: 18px;
-  background-color: black;
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-/* Styles for the add reaction section */
-.add-reaction {
-  position: relative;
-  margin: 20px;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  width: 900px;
-  background-color: black;
-  color: white;
-  height: 450px;
-}
-
-.button-holder {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 10px 0 10px 0;
+  padding: 15px;
+  height: 62px;
+  margin: 10px 0px 20px 0px;
 }
 
-
-.bottom-form-labels {
-  font-size: 18px;
-  text-align: center;
-  font-weight: 700;
-  text-shadow:1px 1px 2px black;
-  letter-spacing: 2px;
-}
-
-label{
-  margin: 20px 30px 20px 30px;
-  text-align: center;
-
-}
-
-.bottom-form-input {
-  display: flex; /* Use flex to align inputs side by side */
-  align-items: center;
-  justify-content: center;
-  margin: 10px 0;
-}
-
-.bottom-form-input label {
-  margin-right: 10px; /* Add some spacing between the label and input */
-  text-align: center;
-}
-
-#allergen-input, #condition-input {
-  width: 100%; /* Allow input fields to take full width */
-  margin: 0 30px 0;
-}
-
-.add-reaction h2 {
-  text-align: center;
-  margin: 20px 0 20px 0;
-}
-
-.add-reaction p {
-  margin: 10px 0;
-}
-
-#name-textarea,
-#allergen-input,
-#condition-input {
-  margin: 10px 0;
-  width: 100%;
-  padding: 5px;
-}
-
-
-/* Styles for the reactions-listed section */
-.reactions-listed {
-  margin: 20px;
-  text-align: center;
-}
-
-.reactions-listed h2 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-table th,
-table td {
-  padding: 10px;
-  text-align: left;
-}
-
-table th {
-  background-color: #3d044d;
-  color: white;
-}
-
-table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-/* Add more styles for the remaining elements as needed */
-
-/* You can continue adding more styles for the remaining elements in your HTML pages here */
-
-
-
-/* add food CSS button */
-.btn{
+.form-divs-btns > button {
   all: unset;
   width: 100px;
   height: 30px;
@@ -216,7 +44,7 @@ table tr:nth-child(even) {
   background: transparent;
   border: none;
   position: relative;
-  color: #f0f0f0;
+  color: #E2CFEA;
   cursor: pointer;
   z-index: 1;
   padding: 10px 20px;
@@ -229,7 +57,8 @@ table tr:nth-child(even) {
   touch-action: manipulation;
 }
 
-.btn:after,:before {
+.form-divs-btns > button:after,
+.form-divs-btns > button:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -237,48 +66,76 @@ table tr:nth-child(even) {
   z-index: -99999;
   transition: all .4s;
 }
-.btn:before {
+
+.form-divs-btns > button:before {
   transform: translate(0%, 0%);
   width: 100%;
   height: 100%;
-  background: #0e0e10;
+  background: #051014;
   border-radius: 10px;
 }
 
-.btn:after {
+.form-divs-btns > button:after {
   transform: translate(10px, 10px);
   width: 35px;
   height: 35px;
-  background: #ffffff15;
+  background: #a06cd577;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border-radius: 50px;
 }
 
-.btn:hover::before {
+.form-divs-btns > button:hover::before {
   transform: translate(5%, 20%);
   width: 110%;
   height: 110%;
 }
 
-.btn:hover::after {
+.form-divs-btns > button:hover::after {
   border-radius: 10px;
   transform: translate(0, 0);
   width: 100%;
   height: 100%;
 }
 
-.btn:active::after {
+.form-divs-btns > button:active::after {
   transition: 0s;
   transform: translate(0, 5%);
 }
 
-
-
-.form-input, #food-name-input, #food-cat-input, #vitamin-input {
-  margin: 0 30px 0 30px;
-  min-width: 230px;
+.food-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
   font-size: 20px;
-  text-align: center;
+  margin-top: 20px;
+}
 
+.add-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.food-h4 {
+  color: salmon;
+  font-size: 18px;
+  margin: 10px;
+}
+
+/* Add more styles as needed for your specific page content */
+h2{
+  text-align: center;
+}
+
+/* Add this CSS to your existing stylesheet */
+.food-details .info {
+  display: block; /* Display each info block as a block element (stacked vertically) */
+  margin-bottom: 10px; /* Add some space between the blocks */
 }

@@ -15,12 +15,18 @@
 </section>
 
 <section class="food-details">
-
   <form action="/foods/<%= food._id %>" method="GET">
-      <label>Category: </label> <%= food.category %>
-      <label>Vitamins: </label> <%= food.vitamins %>
+    <div class="info">
+      <label>Category: </label>
+      <%= food.category %>
+    </div>
+    <div class="info">
+      <label>Vitamins: </label>
+      <%= food.vitamins %>
+    </div>
   </form>
 </section>
+
 
 <section class="add-items">
 
