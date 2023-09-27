@@ -86,25 +86,20 @@ function edit(req, res){
 }
 
 function update(req, res){  
-  //if input is blank delete it so it retains the information currently in database
   for (let key in req.body) {
     if (req.body[key] === '') {
-      delete req.body[key];
-      
+      delete req.body[key]
     }
   }
-  //find food by id
-  // ensure we only show the new changes
   Food.findByIdAndUpdate(req.params.foodId, req.body, {new:true})
   .then(food => {
-    // redirect to foodId page
     res.redirect (`/foods/${food._id}`)
     })
-  .catch (err => {
-  console.log(err)
-  res.redirect('/foods')
-  })
-  }
+    .catch (err => {
+    console.log(err)
+    res.redirect('/foods')
+    })
+}
 
 function deleteFood(req, res){
   //find food by id and delete
@@ -177,8 +172,20 @@ function addToProfile(req, res){
       .then(() => {
         res.redirect(`/profiles/${profile._id}`)
       })
+      .catch (err => {
+        console.log(err)
+        res.redirect('/foods')
+      })
+    })
+    .catch (err => {
+      console.log(err)
+      res.redirect('/foods')
     })
   })
+  .catch (err => {
+    console.log(err)
+    res.redirect('/foods')
+    })
 }
 
 
@@ -188,22 +195,33 @@ function deleteFromProfile(req, res){
     Food.findById(req.params.foodId)
     .then(food => {
       if (profile._id.equals(req.user.profile._id) && food.owner.equals(req.user.profile._id)) {
-      Food.findByIdAndDelete(req.params.foodId)  
-      .then(() => {
-        res.redirect(`/profiles/${profile._id}`)
-      })
+
+        Food.findByIdAndDelete(req.params.foodId)  
+        .then(() => {
+          res.redirect(`/profiles/${profile._id}`)
+        })
       } else {
-        //deletes only from my profile
         profile.foods.remove(req.params.foodId)
         profile.save()
         .then(() => {
           res.redirect(`/profiles/${profile._id}`)
         })
+        .catch (err => {
+          console.log(err)
+          res.redirect('/foods')
+        })
       }
     })
+    .catch (err => {
+      console.log(err)
+      res.redirect('/foods')
+    })
+  })
+  .catch (err => {
+    console.log(err)
+    res.redirect('/foods')
   })
 }
-
 
 
 
