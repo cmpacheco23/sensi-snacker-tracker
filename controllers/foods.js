@@ -167,42 +167,19 @@ function deleteReaction(req, res){
 }
 
 function addToProfile(req, res){
-  //find the logged in user
   Profile.findById(req.user.profile._id)
   .then(profile => {
     Food.findById(req.params.foodId)
-    //find the id of the food they want to add
     .then(food => {
-      //push food into their foods array
       profile.foods.push(food)
-      console.log(`check food id added: ${food._id}`)
-      console.log('profile with new food', profile.foods)
-      // save their profile?
       profile.save()
       .then(() => {
-        //redirect
-        // console.log(`check food id added: ${food._id}`)
         res.redirect(`/profiles/${profile._id}`)
-
       })
     })
   })
 }
 
-
-// function deleteFromProfile(req, res){
-//   Profile.findById(req.user.profile._id)
-//   .then(profile => {
-//     Food.findById(req.params.foodId)
-//     .then(food => {
-//       profile.foods.remove(req.params.foodId)
-//       profile.save()
-//       .then(() => {
-//         res.redirect(`/profiles/${profile._id}`)
-//       })
-//     })
-//   })
-// }
 
 function deleteFromProfile(req, res){
   Profile.findById(req.user.profile._id)
@@ -216,7 +193,8 @@ function deleteFromProfile(req, res){
         })
       } else {
         console.log('ELSE TRIGGERED!')
-        profile.foods.remove({_id: req.params.foodId})
+        // profile.foods.remove({_id: req.params.foodId})
+        profile.foods.id(req.params.foodId).deleteOne()
         profile.save()
         .then(() => {
         res.redirect(`/profiles/${profile._id}`)
