@@ -108,6 +108,7 @@ function update(req, res){
 
 function deleteFood(req, res){
   //find food by id and delete
+  //this doesn't work anymore
   Food.findByIdAndDelete(req.params.foodId)
   .then(food => {
     // redirect
@@ -186,25 +187,24 @@ function deleteFromProfile(req, res){
   .then(profile => {
     Food.findById(req.params.foodId)
     .then(food => {
-      if (profile._id.equals(req.user.profile._id) && food.owner.equals(req.user.profile._id)){
-        Food.findByIdAndDelete(req.params.foodId)
-        .then(food => {
-          res.redirect(`/profiles/${profile._id}`)
-        })
+      if (profile._id.equals(req.user.profile._id) && food.owner.equals(req.user.profile._id)) {
+      Food.findByIdAndDelete(req.params.foodId)  
+      .then(() => {
+        res.redirect(`/profiles/${profile._id}`)
+      })
       } else {
-        console.log('ELSE TRIGGERED!')
-        // profile.foods.remove({_id: req.params.foodId})
-        profile.foods.id(req.params.foodId).deleteOne()
+        //deletes only from my profile
+        profile.foods.remove(req.params.foodId)
         profile.save()
         .then(() => {
-        res.redirect(`/profiles/${profile._id}`)
+          res.redirect(`/profiles/${profile._id}`)
         })
       }
     })
   })
 }
-//profile._id.equals(user?.profile._id) && food.owner.equals(user?.profile._id)
-//  Food.findByIdAndDelete(req.params.foodId)
+
+
 
 
 export {
