@@ -1,44 +1,62 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/eachprofile.css" />
+
 <%- include('../partials/nav') %>
 
+
 <main>
-  <div>
+  <section class="header">
     <img class="profile-avatar" src="<%= profile.avatar %>" alt="<%= profile.name %>'s avatar">
-  </div>
-  <h1> It's <%= isSelf ? "you" : profile.name %>!</h1>
-  <% if (profile.foods.length) { %>
-    <h2> <%= isSelf ? 'You have' : `${profile.name} has` %> foods see them here! </h2>
-    <h3>
-      <%= isSelf ? 'You have' : `${profile.name} has`%>
-      been tracking your foods since <%= profile.createdAt.toLocaleDateString() %>
-    </h3>
-    <% profile.foods.forEach(food => { %>
-      <ul>
-        <li> Food Name: <a href="<%= food.name %>">
-        <%= food.name %> </a> </li>
-        <li> Category: <%= food.category %></li>
-        <li> Vitamin: <%= food.vitamins?.join(', ') %></li>
-        <li> Reaction: <%= food.reactions ? "Yes" : "No" %></li>
-      </ul>
-      <% if (!food.owner.equals(user?.profile._id)) { %>
-        <% function foodExistsInFoods() {
-          return profile.foods.some(eachFood => eachFood.equals(food._id))} %>
-        <% if (foodExistsInFoods()) { %>
-          <% if (food.owner.equals(user?.profile._id)) { %>
-            <h1>logged in user owns this food, nothing to do</h1>
-          <% } %>
-        <% } else { %>
-          <h1>logged isnt the owner of this food but its already in foods array you may delete</h1>
-        <% } %>
-      <% } else { %>
-        <h1>logged isnt the owner of this food AND its not in YOUR foods array you may ADD IT</h1>
-        <% } else { %>
-          <h1>logged user owns this food, nothing to do!</h1>
-          <% } %>
+    <h1> It's <%= isSelf ? "you" : profile.name %>!</h1>
+    <% if (profile.foods.length) { %>
+      <h2><%= isSelf ? 'You have' : `${profile.name} has` %> foods see them here!</h2>
+      <h3><%= isSelf ? 'You have' : `${profile.name} has`%> been tracking your foods since <%=profile.createdAt.toLocaleDateString() %></h3>
+  </section>
+
+      <!-- START OF FOREACH LOOP -->
+  <section class="food-card-container">
+    <% profile.foods.forEach(food=> { %>
+      <article class="food-card">
+        <div class="food-text-container">
+          <h3 class="food-info" id="food-name"><a href="<%= food.name %>"><%= food.name %></a></h3>
+          <p class="food-info" id="food-category"> <b>Category:</b><%= food.category %></p>
+          <p class="food-info" id="food-vitamin"><b> Vitamins:</b><%= food.vitamins?.join(', ') %></p>
+          <p class="food-info" id="food-reaction"><b>Reaction:</b> <%= food.reactions ? "Yes" : "No" %></p>
+        </div>
+      </article>
+      <% if (profile._id.equals(user?.profile._id) && food.owner.equals(user?.profile._id) && profile.foods.some(eachFood => eachFood._id === food._id)) { %>
+        <span>I AM LOGGED IN + THIS IS MY PROFILE + I OWN THIS FOOD + ITS IN MY ARRAY!</span>
+        <!-- this code works -->
+        <div class="food-actions">
+          <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
+            <button type="submit"> Delete From Profile</button>
+          </form>
+        </div>
+      <% } %>
+
+      <% if (profile._id.equals(user?.profile._id) && !food.owner.equals(user?.profile._id) && profile.foods.some(eachFood => eachFood._id === food._id)) { %>
+        <span>I AM LOGGED IN + THIS IS MY PROFILE + I DO NOT OWN THIS FOOD + ITS IN MY ARRAY!</span>
+        <div class="food-actions">
+          <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
+            <button type="submit"> Delete From Profile</button>
+          </form>
+        </div>
+      <% } %>
+
+      <% if (!profile._id.equals(user?.profile._id) && !food.owner.equals(user?.profile._id) && !profile.foods.some(eachFood => eachFood._id === food._id)) { %>
+        <span> THIS IS NOT MY PROFILE + IDO NOT OWN THIS FOOD + ITS  NOT IN MY ARRAY!</span>
+        <!-- this code works -->
+      <% } %>
     <% }) %>
+
+          <!-- END OF IF STAMEMENT profile.foods.length -->
   <% } else { %>
-    <h2><%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any foods added!</h2>
-  <% } %>
+    <h2>
+      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any foods added!
+    </h2>
+    <% } %>
+  </section>
+
 </main>
 
 <%- include('../partials/footer') %>

@@ -1,16 +1,20 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/foods.css" />
+<link rel="stylesheet" href="/stylesheets/foodeach.css" />
 <%- include('../partials/nav') %>
 
-<h1 class="food-h1s"><%= food.name %> <%= title %></h1>
-<% if (food.owner.equals(user?.profile._id)) { %>
-  <div class="form-divs-btns">
-    <a href="/foods/<%= food._id %>/edit">
-      <button type="submit" class="edit-btn"> Edit Details</button>
-    </a>
-  </div>
-<% } %>
-<section class="items-all">
+<main class="layout">
+<section class="header">
+  <h1 class="food-h1s"><%= food.name %> <%= title %></h1>
+  <% if (food.owner.equals(user?.profile._id)) { %>
+    <div class="form-divs-btns">
+      <a href="/foods/<%= food._id %>/edit">
+        <button type="submit" class="btn"> Edit Details</button>
+      </a>
+    </div>
+  <% } %>
+</section>
+
+<section class="food-details">
 
   <form action="/foods/<%= food._id %>" method="GET" class="foods-card-form">
       <label>Category: </label> <%= food.category %>
@@ -28,26 +32,32 @@
       <% }) %>
     </select>
     <div class="form-divs-btns">
-      <button type="submit" class="form-btns">Add Vitamin</button>
+      <button type="submit" class="btn">Add Vitamin</button>
     </div>
 </section>
 
-<section>
+<section class="add-reaction">
   <h2>Experience</h2>
 <% if (user) { %>
   <p>Add your experience such as symptoms or reactions</p>
   <form action="/foods/<%= food._id %>/reactions" method="POST">
     <label for="name-textarea">Reaction:</label>
-    <textarea name="text" id="name-textarea" cols="40" rows="6"></textarea>
-    <label for="allergen-input">Potential Allergen: </label>
-    <input type="text" name="potentialAllergen" id="allergen-input">
-    <label for="condition-input">Potential Condition: </label>
-    <input type="text" name="potentialCondition" id="condition-input">
-    <button type="submit">Add Experience</button>
+    <textarea name="text" id="name-textarea" cols="40" rows="6" class="form-input-text"></textarea>
+    <div class="bottom-form-labels">
+      <label for="allergen-input">Potential Allergen: </label>
+      <label for="condition-input">Potential Condition: </label>
+    </div>
+    <div class="bottom-form-input">
+      <input type="text" name="potentialAllergen" id="allergen-input" class="inputbottom">
+      <input type="text" name="potentialCondition" id="condition-input" class="inputbottom">
+    </div>
+    <div class="button-holder">
+      <button type="submit" class="btn" id="add-reaction">Add Experience</button>
+    </div>
   </form>
 <% } %>
 </section>
-<section class="items-all">
+<section class="reactions-listed">
   <h2></h2>
   <% if (food.reactions.length) { %>
     <table>
@@ -81,4 +91,5 @@
     </table>
   <% } %>
 </section>
+</main>
 <%- include('../partials/footer') %>

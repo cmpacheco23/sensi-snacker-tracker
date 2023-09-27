@@ -3,7 +3,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 /* Style for the header section */
@@ -17,130 +16,107 @@ main {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: white;
-
 }
 
 /* Style for the profile avatar */
 .profile-avatar {
-  width: 150px; /* Adjust the width as needed */
-  height: 150px; /* Adjust the height as needed */
-  border-radius: 50%; /* Create a circular avatar */
-  object-fit: cover; /* Ensure the image covers the entire container */
-  border: 5px solid rgba(136, 64, 199, 0.29); /* Add a border with a gradient effect */
-  box-shadow: 0 0 0 5px rgba(106, 4, 94, 0.5); /* Add a gradient border using box-shadow */
-  transition: transform 0.3s ease-in-out; /* Add a transition for a hover effect */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(136, 64, 199, 0.29);
+  box-shadow: 0 0 0 5px rgba(106, 4, 94, 0.5);
+  transition: transform 0.3s ease-in-out;
 }
 
 /* Add a hover effect to the avatar */
 .profile-avatar:hover {
-  transform: rotate(360deg); /* Rotate the avatar 360 degrees on hover */
+  transform: rotate(360deg);
 }
 
 /* Style for the header title */
 .header h1 {
-  font-size: 24px; /* Font size for the title */
-  margin: 0; /* Remove default margin to ensure proper spacing */
+  font-size: 24px;
+  margin: 0;
 }
 
 /* Style for the additional information */
 .header h2,
 .header h3 {
-  font-size: 18px; /* Font size for additional information */
-  margin: 5px 0; /* Adjust spacing as needed */
-  color: white; /* Text color for additional information */
+  font-size: 18px;
+  margin: 5px 0;
+  color: white;
 }
 
-/* Style for each food card container */
-.food-card:before {
-  content: "";
-  position: absolute;
-  top: -10px; /* Adjust the top position to overlap with the card */
-  right: -10px; /* Adjust the right position to overlap with the card */
-  bottom: -10px; /* Adjust the bottom position to overlap with the card */
-  left: -10px; /* Adjust the left position to overlap with the card */
-  border-radius: 20px; /* Increase border radius to match the desired style */
-  background: linear-gradient(45deg, #2f1d5a, #590358); /* Gradient border */
-  transform: translate3d(0px, 10px, 0) scale(1);
-  opacity: 0.7;
-  transition: opacity 0.3s;
-  filter: blur(10px);
+.background-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for the food card container */
+.food-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Center the cards horizontally with space between them */
+  gap: 20px; /* Add spacing between cards */
+  text-align: center;
+  margin: 20px;
+  border-radius: 10px;
 }
 
 /* Style for each food card */
 .food-card {
   display: flex;
-  flex-direction: column; /* Stack text vertically */
-  align-items: center; /* Center-align text vertically */
-  padding: 15px;
-  margin: 0 10px 40px 10px; /* Add horizontal margin to create spacing between cards */
-  width: calc(50% - 20px); /* Two cards per row with spacing between them */
+  flex-direction: column; /* Stack text and buttons vertically */
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 200px;
   box-sizing: border-box;
   text-align: center;
-  background: linear-gradient(45deg, #a80fd2, #230558); /* Gradient background for even cards */
-  -webkit-mask: none; /* Remove the mask */
-  mask: none; /* Remove the mask */
-  border-radius: 30px; /* Increase border radius to match the desired style */
-  border: 15px solid transparent; /* Set the border width and make it transparent */
-  position: relative; /* Add relative positioning for pseudo-elements */
-  box-shadow: 0 0 20px rgba(151, 30, 211, 0.575); /* Modify the values as needed */
-
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(151, 30, 211, 0.575);
+  margin-bottom: 20px; /* Add bottom margin to separate cards */
+  position: relative;
 }
 
-
-/* Style for the overlay */
-.food-card::before {
-
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(51, 7, 66, 0.2); /* Adjust the alpha channel for transparency */
-  z-index: -2; /* Place the overlay behind the card content */
-}
-
-
-.food-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1; /* Send it to the back */
-}
-
-.food-card-container {
+/* Style for the buttons container */
+.buttons-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column; /* Stack buttons vertically */
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 20px;
-  border-radius: 10px; /* Apply border radius to match the desired style */
+  margin-top: 10px; /* Add top margin to separate buttons */
 }
 
-.food-text-container {
-  display: flex;
-  position: relative;
-  flex-direction: column; /* Stack text vertically */
-  align-items: center; /* Center-align text horizontally */
-  text-align: center; /* Center-align text horizontally */
+/* Style for the buttons */
+button {
+  width: auto;
+  padding: 5px 10px;
+  background-color: rgb(87, 4, 87);
+  border: 1px solid #2f1d5a;
+  color: #2f1d5a;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px 0; /* Adjust spacing between buttons */
+  color: white;
+  height: 40px;
 }
 
-.food-actions {
+/* Style for the buttons on hover */
+button:hover {
+  background-color: #2f1d5a;
+  color: white;
+}
+
+.buttons-background{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  margin-top: 15px; /* Adjust spacing between food card content and actions */
-  text-align: center;
-}
 
-.food-actions-label {
-  font-size: 18px;
-  margin: 10px 0; /* Adjust spacing as needed */
-  color: #333; /* Text color for food actions label */
-  text-align: center;
 }
 /* Style for food name */
 .food-info#food-name {
@@ -150,21 +126,19 @@ main {
 
 /* Style for food category and vitamins */
 .food-info {
-  font-size: 16px; /* Font size for category and vitamins */
-  margin-top: 5px; /* Spacing between food name and category/vitamins */
-  color: rgb(243, 237, 237); /* Add black font color to .food-info */
+  font-size: 16px;
+  margin-top: 5px;
+  color: rgb(243, 237, 237);
   text-align: center;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Style for food reaction */
 .food-reaction {
-  font-size: 16px; /* Font size for the reaction */
-  margin-top: 10px; /* Spacing between vitamins and reaction */
+  font-size: 16px;
+  margin-top: 10px;
 }
 
-#food-reaction p{
+#food-reaction p {
   color: rgb(245, 235, 235);
 }
 
