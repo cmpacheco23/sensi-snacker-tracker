@@ -1,42 +1,32 @@
-  <% if (!user) { %>
-    <script defer src="https://accounts.google.com/gsi/client"></script>
-    <script src="https://kit.fontawesome.com/3683a08fe0.js" crossorigin="anonymous"></script>
-  <% } %>
+<% if (!user) { %>
+  <script defer src="https://accounts.google.com/gsi/client"></script>
+  <script src="https://kit.fontawesome.com/3683a08fe0.js" crossorigin="anonymous"></script>
+<% } %>
 </head>
 <body>
   <nav class="nav-bar">
+    <a href="/" class="nav-btn-container">
+      <button type="submit" class="nav-btns">Home</button>
+    </a>
     <a href="/foods" class="nav-btn-container">
       <button type="submit" class="nav-btns">Foods</button>
     </a>
     <% if (user) { %>
       <a href="/profiles" class="nav-btn-container">
         <button type="submit" class="nav-btns">Profiles</button>
+      </a>
     <% } %>
-    </a>
     <a href="/recipes" class="nav-btn-container">
       <button type="submit" class="nav-btns">Recipes</button>
     </a>
     <% if (user) { %>
-      <a href="/auth/logout" class="logout-container">
-        <button type="submit" class="logout-btn">Logout</button>
+      <a href="/auth/logout" class="nav-btn-container user-btn">
+        <button type="submit" class="logout-btn">
+          <%= user.profile.name %> Logout
+        </button>
       </a>
     <% } else { %>
-      <div 
-        id="g_id_onload"
-        data-client_id="<%= googleClientID %>"
-        data-login_uri="/auth/google"
-        data-auto_prompt="false"
-        data-prompt_parent_id="g_id_onload"
-      ></div>
-      <div 
-        class="g_id_signin right"
-        data-type="standard"
-        data-size="large"
-        data-theme="outline"
-        data-text="sign_in_with"
-        data-shape="rectangular"
-        data-logo_alignment="left"
-      ></div>
+      <div id="g_id_onload" data-client_id="<%= googleClientID %>" data-login_uri="/auth/google" data-auto_prompt="false" data-prompt_parent_id="g_id_onload"></div>
+      <div class="g_id_signin right" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
     <% } %>
-
   </nav>

@@ -1,5 +1,5 @@
 .layout {
-  background-color: rgb(10, 109, 96);
+  background-color: #4F4789;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -10,27 +10,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center ;
-  background-color: linear;
-  background-color: #3d044d;
-  color: rgb(255, 253, 253);
+  align-content: center;
+  background-color: #201335;
+  color: #ffffff;
   width: 100%;
-  box-shadow: rgba(213, 61, 237, 0.8) 0px 10px 40px, rgba(0, 0, 0, 0.6) 0px 5px 15px; /* Change the box shadow color when hovering */
+  box-shadow: rgba(92, 47, 148, 0.8) 0px 10px 20px, rgba(43, 2, 85, 0.6) 0px 5px 5px;
 }
 
 .body-newFoods {
   display: flex;
   flex-direction: row;
   align-items: center;
+  background-color: #4F4789;
 }
 
 .body-allFoods {
   display: flex;
   flex-wrap: wrap;
-  /* align-items: center; */
-  /* justify-content: space-evenly; */
-  background-color: rgba(141, 223, 175, 0.356);
-  width: 1600px;
+  width: 100%;
+  background-color: #191D32;
 }
 
 .body-sortedFoods {
@@ -42,30 +40,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(247, 242, 242);
+  color: #ffffff;
   font-size: 40px;
 }
 
-.food-h1:hover{
-  opacity: 0.8; /* Adjust opacity as needed */
+.food-h1:hover {
+  opacity: 0.8;
   background-clip: text;
   -webkit-background-clip: text;
-  text-shadow: 5px 5px 10px #df156dca;
-  background-image: linear-gradient(45deg, rgba(103, 39, 171, 0.8) 50%, rgba(158, 94, 214, 0.8) -50%, rgba(118, 17, 189, 0.8) 50%, rgba(172, 7, 205, 0.8) 100%);
+  text-shadow: 5px 5px 10px #A06CD5;
+  background-image: linear-gradient(45deg, rgba(172, 189, 186, 0.8) 50%, rgba(205, 221, 221, 0.8) -50%, rgba(165, 153, 181, 0.8) 50%, rgba(45, 43, 47, 0.8) 100%);
 }
-.food-h2 { 
+
+.food-h2 {
   display: flex;
   justify-content: center;
   margin: 20px;
-  color: white;
+  color: #ffffff;
   font-size: 30px;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 2px #102B3F;
 }
-.food-h3 { 
+
+.food-h3 {
   display: flex;
   justify-content: center;
   margin: 20px 20px 20px 0;
-  color: white;
+  color: #CDDDDD;
 }
 
 .food-ps {
@@ -85,9 +85,7 @@
   gap: 15px;
 }
 
-
-
-.form-divs-btns{
+.form-divs-btns {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,19 +94,7 @@
   margin: 10px 0px 20px 0px;
 }
 
-/* .form-divs-btns > button{
-
-  min-width: 120px;
-  min-height: 40px;
-  font-size: 18px;
-  background-color: black;
-  color: white;
-  font-weight: 700;
-} */
-
-
-/* add food CSS button */
-.form-divs-btns > button{
+.form-divs-btns > button {
   all: unset;
   width: 100px;
   height: 30px;
@@ -117,7 +103,7 @@
   background: transparent;
   border: none;
   position: relative;
-  color: #f0f0f0;
+  color: #E2CFEA;
   cursor: pointer;
   z-index: 1;
   padding: 10px 20px;
@@ -144,7 +130,7 @@
   transform: translate(0%, 0%);
   width: 100%;
   height: 100%;
-  background: #0e0e10;
+  background: #051014;
   border-radius: 10px;
 }
 
@@ -152,7 +138,7 @@
   transform: translate(10px, 10px);
   width: 35px;
   height: 35px;
-  background: #ffffff15;
+  background: #a06cd577;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border-radius: 50px;
@@ -176,99 +162,165 @@
   transform: translate(0, 5%);
 }
 
-.form-labels{
+.form-labels {
   width: fit-content;
   font-size: 20px;
   padding: 0 100px 0 100px;
   text-align: center;
   font-weight: 700;
-  text-shadow:1px 1px 2px black;
+  text-shadow: 1px 1px 2px #102B3F;
   letter-spacing: 1px;
 }
 
-.form-input, #food-name-input, #food-cat-input, #vitamin-input {
+.form-input,
+#food-name-input,
+#food-cat-input,
+#vitamin-input {
   margin: 0 30px 0 30px;
   min-width: 230px;
   font-size: 20px;
   text-align: center;
-
 }
 
-/* .edit-btn {
-
-} */
-
-
-input{
+input {
   min-height: 40px;
 }
 
-.food-details-header{
+.food-details-header {
   background-color: rgba(0, 0, 0, 0.353);
   min-width: 85%;
   min-height: 80px;
-
 }
-#layout-food-details-header{
+
+#layout-food-details-header {
   display: flex;
   flex-direction: column;
   gap: 0px;
   justify-content: center;
 }
 
-#layout-body-allFoods{
+#layout-body-allFoods {
   display: flex;
   gap: 0px;
   justify-content: center;
-  
 }
 
-
+/* Style for the card container */
 .cards {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  justify-content: center;
   gap: 20px;
   margin: 20px 5px 20px 5px;
+  width: 100%;
 }
 
+/* Style for each card */
 .card {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  justify-content: center;
+  align-items: center;
   margin: 15px;
-  height: 200px;
-  width: 250px; 
-  /* flex-basis: calc(25% - 60px); */
-  background: (from 90deg at 40% -25%);
-  background-color: #aee2e4;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  /* border: 2px solid #423d3d; */
+  height: 250px;
+  width: 250px;
+  background-color: #051014;
+  box-shadow: rgba(167, 62, 228, 0.8) 2px 10px 20px, rgba(125, 6, 165, 0.6) 0px 5px 10px;
+  border-radius: 10px;
+  position: relative;
 }
 
-
+/* Style for the card text */
 .card .text {
-  padding: 8px 20px 20px;
+  padding: 20px;
   text-align: center;
   font-size: 18px;
-  color: black;
+  color: #E2CFEA;
+  align-items: flex-start;
+  letter-spacing: 1px;
+  line-height: 1.5;
 }
 
-
-.cardImg {
-  background-image: url('../images/greenCloth.svg');
-  max-width: 250px;
-  height: 80px;
-  }
-
-#trash-btn{
-  background: #bfc4e1;
+/* Style for the delete button */
+#trash-btn {
+  background: transparent;
   text-align: center;
   color: white;
   padding: 10px;
-  width:48px;
+  width: 48px;
   font-size: 14px;
   border-radius: 50%;
-  border: 2px solid rgb(174, 150, 187);
-  box-shadow: rgba(30, 3, 38, 0.4) 0px 2px 4px, rgba(92, 6, 58, 0.527) 0px 7px 13px -3px, rgba(118, 10, 173, 0.2) 0px -3px 0px inset;
+  border: 2px solid rgb(164, 7, 145);
+  box-shadow: rgba(100, 4, 129, 0.4) 0px 3px 5px, rgba(92, 6, 58, 0.527) 0px 12px 20px -3px, rgba(145, 3, 90, 0.2) 5px 10px 5px;
 }
+
+/* Style for the profile card container */
+.profile-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, rgba(84, 25, 147, 0.529) 50%, rgba(158, 94, 214, 0.529) -50%, rgba(118, 17, 189, 0.529) 50%, rgba(172, 7, 205, 0.529) 100%);
+  border-radius: 10px;
+  width: 100%;
+  min-height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 20px 40px, rgba(0, 0, 0, 0.3) 0px 15px 15px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Style for the card hover effect */
+.card:hover .profile-card-container {
+  background-color: rgb(224, 43, 97);
+  box-shadow: rgba(211, 8, 133, 0.8) 0px 10px 40px, rgba(0, 0, 0, 0.6) 0px 5px 15px;
+}
+
+/* Style for the card title */
+.card-title {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 2px 2.5px 2.5px rgba(27, 25, 25, 0.854);
+  letter-spacing: 1.3px;
+}
+
+/* Style for the joined date */
+.joined-date {
+  text-align: center;
+  color: aliceblue;
+  font-size: 14px;
+  text-shadow: 2px 1.75px 2px rgba(27, 25, 25, 0.854);
+  letter-spacing: 1px;
+}
+
+/* Style for the card image */
+img {
+  border-radius: 50%;
+  border: 5px solid rgba(136, 64, 199, 0.29);
+  box-shadow: 0 0 0 5px rgba(106, 4, 94, 0.5);
+}
+
+/* Style for the link */
+a {
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  color: rgb(148, 114, 250);;
+  font-size: 22px;
+}
+
+/* Style for the h4 element */
+h4 {
+  text-align: center;
+  font-size: 14px;
+  color: salmon;
+  letter-spacing: .75px;
+  text-shadow: 2px 1.75px 1.5px rgba(27, 25, 25, 0.854);
+}
+
+

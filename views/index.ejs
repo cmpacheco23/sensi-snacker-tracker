@@ -13,30 +13,25 @@
   <!-- make this into a banner or call out of some sort -->
   <!-- when user isnt logged in encourage them to log in to unlock more features -->
 
-  <section class="user">
-    <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-    <% if (user?.profile.avatar) { %>
-      <div>
-        <img
-          src="<%= user.profile.avatar %>"
-          alt="<%= user.profile.name %> avatar"
-        />
-      </div>
-    <% } %>
+  <section class="content-container">
+    <section class="about-me">
+      <h2>About the Creator</h2>
+      <p>Hi, I'm Carla Pacheco, the creator of Sensi Tracker. I was diagnosed with Hashimoto's disease and have been navigating its symptoms through lifestyle adjustments. This includes avoiding foods that irritate the body and cause inflammation and discomfort. I understand the frustration of keeping track of foods and how difficult it can be to cross-reference allergens, reactions, and food groups.</p>
+      <p>Sensi Tracker is designed to simplify healthy eating to fit your lifestyle. It's your personal ally in managing food sensitivities and promoting a healthier life.</p>
+      <a href="https://www.linkedin.com/in/thecarlapacheco/" target="_blank" class="button-64 linkedin">
+        <button class="linkedin">View My LinkedIn</button>
+      </a>
+      
+    </section>
 
-  </section>
+
 
   <!-- add an image here - create in canva -->
-  <section class="buttons-section">
-      <a href="/foods" class="buttons-container">
-        <button class="hero-btns"> View Foods </button>
-      </a>
-      <!-- <button> View Allergens </button> -->
-  </section>
 
   <section class="app-features">
     <h2>Explore App Features</h2>
   </section>
+</section>
 </main>
 
 
