@@ -189,19 +189,45 @@ function addToProfile(req, res){
   })
 }
 
+
+// function deleteFromProfile(req, res){
+//   Profile.findById(req.user.profile._id)
+//   .then(profile => {
+//     Food.findById(req.params.foodId)
+//     .then(food => {
+//       profile.foods.remove(req.params.foodId)
+//       profile.save()
+//       .then(() => {
+//         res.redirect(`/profiles/${profile._id}`)
+//       })
+//     })
+//   })
+// }
+
 function deleteFromProfile(req, res){
   Profile.findById(req.user.profile._id)
   .then(profile => {
     Food.findById(req.params.foodId)
     .then(food => {
-      profile.foods.remove(req.params.foodId)
-      profile.save()
-      .then(() => {
+      if (profile._id.equals(req.user.profile._id) && food.owner.equals(req.user.profile._id)){
+        Food.findByIdAndDelete(req.params.foodId)
+        .then(food => {
+          res.redirect(`/profiles/${profile._id}`)
+        })
+      } else {
+        console.log('ELSE TRIGGERED!')
+        profile.foods.remove({_id: req.params.foodId})
+        profile.save()
+        .then(() => {
         res.redirect(`/profiles/${profile._id}`)
-      })
+        })
+      }
     })
   })
 }
+//profile._id.equals(user?.profile._id) && food.owner.equals(user?.profile._id)
+//  Food.findByIdAndDelete(req.params.foodId)
+
 
 export {
   index,
