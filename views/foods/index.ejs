@@ -1,5 +1,6 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/foods.css" />
+
 <%- include('../partials/nav') %>
 <main class="layout" >
   <section class="header">
@@ -27,27 +28,25 @@
     <% } %>
     </section>
     <section class="body-allFoods" id="layout-body-allFoods">
-      <form action="/foods" method="GET">
         <div class="cards">
-
           <% foods.forEach(food => { %>
             <article class="card">
               <div class="text">
                 <a href="/foods/<%= food._id %>"> <b><%= food.name %></b> <br></a>
                 <label> <b> Category:</b> </label> <%= food.category %> <br>
                 <label><b>Vitamins:</b> </label> <%= food.vitamins %> <br>
-                <% if (food.owner.equals(user?.profile._id)) { %>
-                  <br> <form action="/foods/<%= food._id %>?_method=DELETE" method="POST">
+                <% if (food.owner.equals(user?.profile._id)) { %> 
+                  <form action="/foods/<%= food._id %>?_method=DELETE" method="POST">
                     <button type="submit" id="trash-btn">❌</button>
                   </form>
-                  <% } %>
-                </div>
-              </article>
-              <% }) %>
-
+                      <!-- <span>food is owned by logged in user</span> -->
+                <% } %>
+              </div>
+            </article>
+          <% }) %>
+        </div>
     </section>
-  <section class="body-sortedFoods"></section>
-
+  <!-- <section class="body-sortedFoods"></section> -->
 </main>
 
 <!-- sort by food category -->

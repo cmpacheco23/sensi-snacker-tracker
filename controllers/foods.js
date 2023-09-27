@@ -101,9 +101,8 @@ function update(req, res){
     })
 }
 
+//original function
 function deleteFood(req, res){
-  //find food by id and delete
-  //this doesn't work anymore
   Food.findByIdAndDelete(req.params.foodId)
   .then(food => {
     // redirect
@@ -114,6 +113,8 @@ function deleteFood(req, res){
     res.redirect('/')
     })
 } 
+
+
 
 function createReaction(req, res){
   //find food by id
@@ -168,6 +169,7 @@ function addToProfile(req, res){
     Food.findById(req.params.foodId)
     .then(food => {
       profile.foods.push(food)
+      //remove class
       profile.save()
       .then(() => {
         res.redirect(`/profiles/${profile._id}`)
@@ -189,6 +191,7 @@ function addToProfile(req, res){
 }
 
 
+
 function deleteFromProfile(req, res){
   Profile.findById(req.user.profile._id)
   .then(profile => {
@@ -208,18 +211,18 @@ function deleteFromProfile(req, res){
         })
         .catch (err => {
           console.log(err)
-          res.redirect('/foods')
+          res.redirect('/profiles')
         })
       }
     })
     .catch (err => {
       console.log(err)
-      res.redirect('/foods')
+      res.redirect('/profiles')
     })
   })
   .catch (err => {
     console.log(err)
-    res.redirect('/foods')
+    res.redirect('/profiles')
   })
 }
 

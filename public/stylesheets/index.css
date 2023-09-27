@@ -1,28 +1,22 @@
 /* Dark theme with pops of color */
 .layout {
-  background-color: #1a1a1a; /* Dark background color */
+  background-color: #000; /* Black background color */
   display: flex;
   flex-direction: column;
   gap: 30px;
   justify-content: center;
+  align-items: center; /* Center content vertically */
 }
 
 .header {
   width: 100%;
-  background-color: #000; /* Black background color */
+  background-color: #201f1f; /* Black background color */
   color: #ffffff; /* White text on black background */
   text-align: center;
-  box-shadow: 0px 0px 10px #ca81d6, 0px 0px 20px #df156d, 0px 0px 30px rgba(122, 5, 55, 0.79); /* Shadow with pops of color */
-}
-
-.user {
-  width: 100%;
-  color: #ffffff; /* White text */
-  text-align: center;
-}
-
-.app-description {
-  text-align: center;
+  box-shadow: 0px -3px 3px 0px rgb(134, 56, 129), 0px -6px 3px 0px rgb(114, 29, 66), 0px -12px 9px 0px rgba(122, 5, 55, 1); /* Thinner shadow with fully opaque pink color */
+  margin-top: 20px;
+  padding-bottom: 30px;
+  padding-top: 18px;
 }
 
 .header h1 {
@@ -31,35 +25,16 @@
   text-shadow: 1px 1px 5px #7a0537ca;
 }
 
-.buttons-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #df156d; /* Pop of color */
+.user {
   width: 100%;
-  height: 100px;
-}
-
-.buttons-container {
-  align-items: center;
-}
-
-.hero-btns {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #53226c; /* Pop of color */
-  color: #ffffff; /* White text on pop of color */
-  height: 40px;
-  width: 110px;
-  font-size: 16px;
-  font-weight: 700;
+  color: #ffffff; /* White text */
   text-align: center;
 }
 
 .content-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
+  flex-direction: row; /* Layout in a row */
+  justify-content: space-between; /* Space columns evenly */
   align-items: flex-start;
   width: 100%;
   max-width: 1200px; /* Adjust as needed */
@@ -67,49 +42,68 @@
   padding: 20px;
 }
 
-
-.about-me {
-  flex: 1;
-  margin-right: 20px; /* Add some spacing between sections */
+.left-column {
+  flex: 1; /* Expand to fill available space */
+  margin-right: 20px; /* Add some spacing between columns */
   color: #ffffff; /* White text */
+  max-width: 600px; /* Limit max width for responsiveness */
+  text-align: center; /* Center the text */
 }
 
-.user {
-  flex: 1;
-  margin-left: 20px; /* Add some spacing between sections */
+.right-column {
+  flex: 1; /* Expand to fill available space */
   color: #ffffff; /* White text */
+  max-width: 600px; /* Limit max width for responsiveness */
+  text-align: center; /* Center the text */
 }
 
+/* Center the text within app-description and app-features */
+.app-description, .app-features {
+  text-align: center;
+}
+
+/* Reduce the width of app-features */
 .app-features {
-  flex: 1;
-  color: #ffffff; /* White text */
+  max-width: 800px; /* Adjust as needed */
+}
+
+.app-features ul {
+  list-style: none; /* Remove default list-style */
+  padding-left: 0; /* Remove left padding */
 }
 
 p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 30px;
   padding: 40px;
   font-size: 18px;
+  text-align: center;
 }
-
 
 h2 {
   text-align: center;
 }
-/* Style for the LinkedIn button */
+
+ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.app-creator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Center text within .app-creator */
+}
+
 .linkedin {
   all: unset;
-  width: auto; /* Adjusted width to fit the text */
-  min-width: 140px; /* Minimum width to ensure it's not too narrow */
-  height: 55px;
-  font-size: 20px;
-  font-weight: 700;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
   background: transparent;
   border: none;
   position: relative;
-  color: #E2CFEA;
+  color: #f0f0f0; /* Adjusted color to match the desired style */
   cursor: pointer;
   z-index: 1;
   padding: 10px 20px;
@@ -120,11 +114,10 @@ h2 {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  text-align: center;
 }
 
-.linkedin:after,
-.linkedin:before {
+.linkedin::after,
+.linkedin::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -133,20 +126,19 @@ h2 {
   transition: all .4s;
 }
 
-
-.linkedin:before {
+.linkedin::before {
   transform: translate(0%, 0%);
   width: 100%;
   height: 100%;
-  background: #051014;
-  border-radius: 20px; /* Adjusted border-radius to match the nav buttons */
+  background: #28282d;
+  border-radius: 10px;
 }
 
-.linkedin:after {
+.linkedin::after {
   transform: translate(10px, 10px);
   width: 35px;
   height: 35px;
-  background: #a06cd577;
+  background: #ffffff15;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border-radius: 50px;
@@ -159,7 +151,7 @@ h2 {
 }
 
 .linkedin:hover::after {
-  border-radius: 20px; /* Adjusted border-radius to match the nav buttons */
+  border-radius: 10px;
   transform: translate(0, 0);
   width: 100%;
   height: 100%;
@@ -168,18 +160,4 @@ h2 {
 .linkedin:active::after {
   transition: 0s;
   transform: translate(0, 5%);
-}
-
-a{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* Style for the LinkedIn photo */
-.about-me img {
-  border-radius: 50%; /* Makes the image round */
-  border: 4px solid transparent; /* Initial transparent border */
-  padding: 4px; /* Padding to create space for the gradient border */
-  background-image: linear-gradient(45deg, #ca81d6, #df156d); /* Gradient border */
-  background-clip: content-box; /* Clip the background to the content box */
 }

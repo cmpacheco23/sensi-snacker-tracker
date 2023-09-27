@@ -8,32 +8,54 @@
     <h3> Your Food Sensitivity Ally</h3>
     <h1> Sensi Tracker </h1>
     <h3> Navigating Food Sensitivities, One Entry at a Time</h3>
-    <p>Sensi Tracker: Your central hub for simplifying your food journey and promoting healthier living. Easily monitor your food sensitivities, track reactions, and explore a community of users' food insights. Plus, discover delectable recipes tailored to your dietary restrictions, ensuring you never sacrifice flavor on the path to a vibrant, worry-free lifestyle.</p>
   </section>
   <!-- make this into a banner or call out of some sort -->
-  <!-- when user isnt logged in encourage them to log in to unlock more features -->
+  <!-- when the user isn't logged in, encourage them to log in to unlock more features -->
 
   <section class="content-container">
-    <section class="about-me">
-      <h2>About the Creator</h2>
-      <!-- <img src="../public/images/carla.svg" alt="Carla Pacheco's LinkedIn Photo"> -->
-      <p>Hi, I'm Carla Pacheco, the creator of Sensi Tracker. I was diagnosed with Hashimoto's disease and have been navigating its symptoms through lifestyle adjustments. This includes avoiding foods that irritate the body and cause inflammation and discomfort. I understand the frustration of keeping track of foods and how difficult it can be to cross-reference allergens, reactions, and food groups.</p>
-      <a href="https://www.linkedin.com/in/thecarlapacheco/" target="_blank">
-        <button class="linkedin">View My LinkedIn</button>
-      </a>
-      
-    </section>
+    <div class="left-column">
+      <section class="app-description">
+        <h2>About Sensi Tracker</h2>
+        <p>Your central hub for simplifying your food journey and fostering a healthier life. Sensi Tracker goes beyond data management; it's a collaborative platform that streamlines healthy eating to match your lifestyle, empowering you to manage food sensitivities effortlessly. Whether you're tracking sensitivities, discovering new foods, or sharing your experiences, Sensi Tracker is your personal ally for a vibrant, worry-free lifestyle.</p>
+      </section>
+    </div>
 
-
-
-  <!-- add an image here - create in canva -->
+    <div class="right-column">
+      <section class="app-creator">
+        <h2>About the Creator</h2>
+        <p>Hi, I'm Carla Pacheco, the creator of Sensi Tracker. I was diagnosed with Hashimoto's disease and have been navigating its symptoms through lifestyle adjustments. This includes avoiding foods that irritate the body and cause inflammation and discomfort. I understand the frustration of keeping track of foods and how difficult it can be to cross-reference allergens, reactions, and food groups.</p>
+        <a href="https://www.linkedin.com/in/thecarlapacheco/" target="_blank">
+          <button class="linkedin">View My LinkedIn</button>
+        </a>
+      </section>
+    </div>
+  </section>
 
   <section class="app-features">
     <h2>Explore App Features</h2>
-    <p>Sensi Tracker is designed to simplify healthy eating to fit your lifestyle. It's your personal ally in managing food sensitivities and promoting a healthier life.</p>
+    <ul>
+      <li>
+        <%= randomFoodEmoji %>
+        Collaborative Food Database: Access a community-driven platform for diverse food choices and dietary monitoring. Edit foods you've added for accuracy.
+      </li>
+      <li>
+        <%= randomFoodEmoji %>
+        Personal Food Profile: Effortlessly create, manage, and edit your food preferences and sensitivities.
+      </li>
+      <li>
+        <%= randomFoodEmoji %>
+        React and Comment: Share your experiences and insights with the community, enhancing the food database. Edit your contributions as needed.
+      </li>
+      <li>
+        <%= randomFoodEmoji %>
+        Expand Your Food Horizons: Discover and add foods from other users to diversify your profile. Edit your added foods for accuracy.
+      </li>
+      <li>
+        <%= randomFoodEmoji %>
+        Community Support: Access valuable tips and knowledge from the Sensi Tracker community for a healthier lifestyle.
+      </li>
+    </ul>
   </section>
-</section>
 </main>
-
 
 <%- include('./partials/footer') %>

@@ -6,7 +6,7 @@
 <section class="header">
   <h1 class="food-h1s"><%= food.name %> <%= title %></h1>
   <% if (food.owner.equals(user?.profile._id)) { %>
-    <div class="form-divs-btns">
+    <div class="form-divs-btns" id="edit-btn">
       <a href="/foods/<%= food._id %>/edit">
         <button type="submit" class="btn"> Edit Details</button>
       </a>
@@ -47,16 +47,14 @@
 <% if (user) { %>
   <p>Add your experience such as symptoms or reactions</p>
   <form action="/foods/<%= food._id %>/reactions" method="POST">
-    <label for="name-textarea">Reaction:</label>
-    <textarea name="text" id="name-textarea" cols="40" rows="6" class="form-input-text"></textarea>
-    <div class="bottom-form-labels">
+    <div class="input-labels">
       <label for="allergen-input">Potential Allergen: </label>
-      <label for="condition-input">Potential Condition: </label>
-    </div>
-    <div class="bottom-form-input">
       <input type="text" name="potentialAllergen" id="allergen-input" class="inputbottom">
+      <label for="condition-input">Potential Condition: </label>
       <input type="text" name="potentialCondition" id="condition-input" class="inputbottom">
     </div>
+    <label for="name-textarea">Reaction:</label>
+    <textarea name="text" id="name-textarea" cols="40" rows="6" class="form-input-text"></textarea>
     <div class="button-holder">
       <button type="submit" class="btn" id="add-reaction">Add Experience</button>
     </div>

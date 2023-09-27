@@ -1,6 +1,5 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/eachprofile.css" />
-
 <%- include('../partials/nav') %>
 
 
@@ -32,35 +31,31 @@
       <% if (profile._id.equals(user?.profile._id) && food.owner.equals(user?.profile._id) && profile.foods.some(eachFood => eachFood._id === food._id)) { %>
       <!-- <span>I AM LOGGED IN + THIS IS MY PROFILE + I OWN THIS FOOD + ITS IN MY ARRAY!</span> -->
       <!-- this code works -->
-        <div class="buttons-container">
-          <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST"> <button type="submit"> Delete | I own</button></form>
+        <div class="form-divs-btns">
+          <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST"> <button type="submit" class="form-btns"> Delete | I own</button></form>
         </div>
+
       <% } else { %>
-        <div class="buttons-container">
+        <div class="form-divs-btns" id="add-btn">
           <form action="/foods/<%= food._id %>/add-to-profile" method="POST">
-            <button type="submit"> Add To My Profile</button> </form>
+            <button type="submit" class="form-btns" "> Add To My Profile</button> </form>
         </div>
       <% }%> 
 
 
       <% if (profile._id.equals(user?.profile._id) && !food.owner.equals(user?.profile._id) && profile.foods.some(eachFood => eachFood._id === food._id)) { %>
         <!-- <span>I AM LOGGED IN + THIS IS MY PROFILE + I DO NOT OWN THIS FOOD + ITS IN MY ARRAY!</span> -->
-        <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
-          <button type="submit"> Delete From Profile</button>
-        </form>
+        <div class="form-divs-btns">
+          <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">
+            <button type="submit" class="form-btns"> Delete From Profile</button>
+          </form>
+        </div>
       <% } %>
-
 
     </section>
 
   <% }) %>
-
-
-
-          <!-- END OF IF STAMEMENT profile.foods.length -->
-
-
-
+</section>
 </main>
 
 <%- include('../partials/footer') %>

@@ -48,6 +48,11 @@ main {
   color: white;
 }
 
+h2{
+  background-color: #2f1d5a;
+  color: white;
+}
+
 .background-card-container {
   display: flex;
   justify-content: center;
@@ -146,3 +151,5 @@ a {
   color: white;
   font-weight: 700;
 }
+
+
