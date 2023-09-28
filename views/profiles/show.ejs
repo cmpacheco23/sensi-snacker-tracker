@@ -8,7 +8,7 @@
     <h1><%= isSelf ? 'Your' : `${profile.name}'s` %> Profile</h1>
     <% if (profile.foods.length) { %>
       <h2><%= isSelf ? 'You have' : `${profile.name} has` %> foods. Check them out!</h2>
-      <h3><%= isSelf ? 'You have' : `${profile.name} has`%> been tracking your foods since <%=profile.createdAt.toLocaleDateString() %></h3>
+      <h3><%= isSelf ? 'You have' : 'Has'%> been tracking foods since <%=profile.createdAt.toLocaleDateString() %></h3>
     <% } else { %>
       <h2><%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any foods added yet.</h2>
     <% } %>  
@@ -40,7 +40,6 @@
               </form>
             </div>
           <% } %>
-
 
 
           <% if (profile._id.equals(user?.profile._id) && !food.owner.equals(user?.profile._id) && profile.foods.some(eachFood => eachFood._id === food._id)) { %>
