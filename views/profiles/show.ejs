@@ -21,7 +21,7 @@
           <h3 class="food-info" id="food-name"><a href="/foods/<%= food._id%>"><%= food.name %></a></h3>
           <p class="food-info" id="food-category"><b>Category:</b> <%= food.category %></p>
           <p class="food-info" id="food-vitamin"><b>Vitamins:</b> <%= food.vitamins?.join(', ') %></p>
-          <p class="food-info" id="food-reaction"><b>Reaction:</b> <%= food.reactions ? "Yes" : "No" %></p>
+          <p class="food-info" id="food-reaction"><b>Reaction:</b> <%= food.reactions.length ? "Yes" : "No" %></p>
         </div>
 
         <section class="buttons-background">
@@ -33,7 +33,7 @@
             </div>
           <% } %>
 
-          <% if (!profile._id.equals(user?.profile._id) && !food.owner.equals(user?.profile._id) && profile.foods.some(eachFood => eachFood._id === food._id)) { %>
+          <% if (!profile._id.equals(user?.profile._id) && !food.owner.equals(user?.profile._id) && !myFoods.some(eachFood => eachFood._id.equals(food._id))) { %>
             <div class="form-divs-btns" id="add-btn">
               <form action="/foods/<%= food._id %>/add-to-profile" method="POST">
                 <button type="submit" class="form-btns button-86">Add To My Profile</button>

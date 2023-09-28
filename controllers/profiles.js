@@ -23,18 +23,25 @@ function show(req, res){
   Profile.findById(req.params.profileId)
   .populate('foods')
   .then(profile => {
-    // create isSelf constant
-    const isSelf = profile._id.equals(req.user.profile._id)
-    console.log('profile with new food', profile.foods)
-    // resolve promise
-    res.render('profiles/show', {
-      // render show page
-      title: `${profile.name}'s Profile`,
-      profile,
-      isSelf
-        // title
-        // profile
+    Profile.findById(req.user.profile._id)
+    .populate('foods')
+    .then(loggedinUserProfile => {
+      const myFoods = loggedinUserProfile.foods
+      const isSelf = profile._id.equals(req.user.profile._id)
+      console.log(myFoods)
+      console.log('profile with new food', profile.foods)
+      // resolve promise
+      res.render('profiles/show', {
+        // render show page
+        title: `${profile.name}'s Profile`,
+        profile,
+        isSelf,
+        myFoods
+          // title
+          // profile
+      })
     })
+    // create isSelf constant
   })
   .catch(err => {
     console.log(err)

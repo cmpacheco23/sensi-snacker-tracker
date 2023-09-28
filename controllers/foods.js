@@ -63,6 +63,7 @@ function show(req, res){
       food,
       title: 'Details'
     })
+    //this is undefined
     console.log(`the food id issss!${food.reactions._id}`)
 
   })
@@ -234,7 +235,16 @@ function deleteFromProfile(req, res){
   })
 }
 
-
+function addToVitamin(req, res){
+  Food.findById(req.params.foodId)
+  .then(food => {
+    food.vitamins.push(req.body.vitamin)
+    food.save()
+    .then(() => {
+      res.redirect(`/foods/${food._id}`)
+    })
+  })
+}
 
 export {
   index,
@@ -247,4 +257,5 @@ export {
   deleteReaction,
   addToProfile,
   deleteFromProfile,
+  addToVitamin,
 }

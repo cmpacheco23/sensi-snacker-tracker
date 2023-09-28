@@ -32,17 +32,18 @@
 
 <section class="add-items">
   <h4 class="food-h4"> Want to add a vitamin to <%= food.name %>?</h4>
-  <div class="dropdown">
-    <select name="vitamins" id="vitamins-select">
-      <% food.vitamins.forEach(vitamin => { %>
-        <option value="<%= vitamin %>"> <%= vitamin %></option>
-      <% }) %>
-    </select>
-    <div class="form-divs-btns">
-      <button type="submit" class="btn button-86 add-items-button">Add Vitamin</button>
+  <form action="/foods/<%= food._id %>/add-vitamin" method="POST">
+    <div class="dropdown">
+      <select name="vitamins" id="vitamins-select">
+        <% food.vitamins.forEach(vitamin => { %>
+          <option value="<%= vitamin %>"> <%= vitamin %></option>
+        <% }) %>
+      </select>
+      <div class="form-divs-btns">
+        <button type="submit" class="btn button-86 add-items-button">Add Vitamin</button>
+      </div>
     </div>
-
-  </div>
+  </form>
 
 </section>
 
