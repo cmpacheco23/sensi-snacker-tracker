@@ -209,7 +209,6 @@ function addToProfile(req, res){
     Food.findById(req.params.foodId)
     .then(food => {
       profile.foods.push(food)
-      //remove class
       profile.save()
       .then(() => {
         res.redirect(`/profiles/${profile._id}`)
