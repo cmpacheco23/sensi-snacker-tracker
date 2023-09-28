@@ -1,8 +1,8 @@
 # Sensi Food Tracker
 
-![Screenshot of the Home Page](images/index.png) 
-![Screenshot of the Foods Page](images/foods.png) 
-![Screenshot of the Foods Page](images/profiles.png) 
+![Screenshot of the Home Page](public/images/index.png) 
+![Screenshot of the Foods Page](public/images/foods.png) 
+![Screenshot of the Foods Page](public/images/profiles.png) 
 
 ### Background:
 
