@@ -5,8 +5,8 @@
 <main class="layout">
 <section class="header">
   <h1 class="food-h1s"><%= food.name %> <%= title %></h1>
+  <h3 class="created-date" > Created on: <%= food.createdAt.toLocaleDateString() %></h3>
 </section>
-
 
 <section class="food-info">
   <form action="/foods/<%= food._id %>" method="GET" class="top-form">
@@ -16,7 +16,7 @@
     </div>
     <div class="form-content">
       <p class="food-entry"><%= food.category %></p>
-      <p class="food-entry"><%= food.vitamins %></p>
+      <p class="food-entry"><%= food.vitamins.join(', ') %></p>
     </div>
 </form>
 
@@ -31,6 +31,7 @@
 </section>
 
 <section class="add-items">
+<% if (user) { %>
   <h4 class="food-h4"> Want to add a vitamin to <%= food.name %>?</h4>
   <form action="/foods/<%= food._id %>/add-vitamin" method="POST">
     <div class="dropdown">
@@ -44,8 +45,8 @@
       </div>
     </div>
   </form>
-
-</section>
+    <% } %>
+  </section>
 
 <section class="add-reaction">
   <h2>Experience</h2>
@@ -85,12 +86,15 @@
         <% food.reactions.forEach(reaction => { %>
           <tbody>
             <tr>
-              <% if (food.owner.equals(user?.profile._id)) { %>
-                <td> <form action="/foods/<%= food._id %>/reactions/<%= reaction._id %>?_method=DELETE" method="POST">
+              <td>
+              <% if (reaction.owner.equals(user?.profile._id)) { %>
+                  <form action="/foods/<%= food._id %>/reactions/<%= reaction._id %>?_method=DELETE" method="POST">
                   <button type="submit">x</button>
                 </form>
+                <% } else { %>
+                  
+                <% } %>
               </td>
-              <% } %>
               <td> <%= reaction.owner.name %></td>
               <td> <%= reaction.createdAt.toLocaleDateString() %></td>
               <td> <%= reaction.text %></td>
