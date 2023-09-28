@@ -19,6 +19,9 @@ function index(req, res){
 
 function create(req, res) {
 	req.body.owner = req.user.profile._id
+
+  if (req.body.vitamins) {
+    req.body.vitamins = req.body.vitamins.split(', ')
 	Food.create(req.body)
 	.then(food => {
     console.log('console FOOD', food)
@@ -46,6 +49,8 @@ function create(req, res) {
     res.redirect('/')
   })
 }
+}
+
 function show(req, res){
   Food.findById(req.params.foodId)
   .populate('owner')
@@ -53,7 +58,7 @@ function show(req, res){
   
   //deep populate ref taco cat lecture
   .then(food => {
-    console.log(food)
+    console.log('Vitamins:', food.vitamins);
     res.render('foods/show', {
       food,
       title: 'Details'
@@ -66,6 +71,38 @@ function show(req, res){
     res.redirect('/')
   })
 }
+
+
+// test out this theory tomorrow:
+// function show(req, res) {
+//   // Retrieve the specific food item
+//   Food.findById(req.params.foodId)
+//     .populate('owner')
+//     .populate('reactions.owner')
+//     .then(food => {
+//       // Create a separate query to retrieve all vitamins
+//       Food.find({}, 'vitamins')
+//         .then(vitamins => {
+//           // Add the console.log statement to see all vitamins
+//           console.log('All Vitamins:', vitamins);
+
+//           res.render('foods/show', {
+//             food,
+//             vitamins, // Pass the vitamins to the EJS template
+//             title: 'Details'
+//           });
+//         })
+//         .catch(err => {
+//           console.log(err);
+//           res.redirect('/');
+//         });
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.redirect('/');
+//     });
+// }
+
 
 function edit(req, res){
   //find the id of the food I want to edit

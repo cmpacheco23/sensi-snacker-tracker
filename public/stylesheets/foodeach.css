@@ -27,12 +27,11 @@ input {
 }
 
 
-.joined-date {
+.created-date {
   text-align: center;
-  color: aliceblue;
+  color: rgb(215, 168, 235);
   font-size: 14px;
   text-shadow: 2px 1.75px 2px rgba(27, 25, 25, 0.854);
-  letter-spacing: 1px;
 }
 
 
@@ -438,25 +437,28 @@ p {
 
 .inputbottom {
   min-width: 230px;
-  font-size: 20px;
-  text-align: center;
+  font-size: 18px;
+  text-align: center; /* Center text horizontally */
   min-height: 40px;
   border: none;
   background-color: #051014;
   color: #E2CFEA;
   border-radius: 5px;
   padding: 5px;
+  line-height: 40px; /* Center text vertically */
 }
 
-textarea.form-input-text {
+input[type="text"],
+input[type="text"]:focus {
   width: 100%;
-  min-height: 100px;
-  font-size: 16px;
+  font-size: 18px; /* Adjust the font size as needed */
+  text-align: center !important; /* Ensure centered text */
   padding: 5px;
   background-color: #051014;
   color: #E2CFEA;
   border: none;
   border-radius: 5px;
+  min-height: 40px;
 }
 
 .button-holder {
@@ -548,4 +550,74 @@ textarea.form-input-text {
   min-width: auto; 
   text-align: left; 
   margin-top: 5px; 
+}
+
+textarea.form-input-text {
+  width: 100%;
+  min-height: 100px;
+  font-size: 18px; /* Adjust the font size as needed */
+  text-align: center; /* Update text alignment to center */
+  padding: 5px;
+  background-color: #051014;
+  color: #E2CFEA;
+  border: none;
+  border-radius: 5px;
+}
+
+
+
+textarea.form-input-text {
+  width: 100%;
+  min-height: 100px;
+  font-size: 18px; /* Common font size */
+  padding: 5px;
+  background-color: #051014;
+  color: #E2CFEA;
+  border: none;
+  border-radius: 5px;
+  text-align: center; /* Common text alignment */
+}
+
+/* Dropdown Styles */
+.dropdown select {
+  width: 100%;
+  max-width: 130px;
+  padding: 10px;
+  background-color: #a69b9b5c;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: .75px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  appearance: none; /* Remove default arrow in some browsers */
+  -webkit-appearance: none; /* Remove default arrow in WebKit browsers */
+  -moz-appearance: none; /* Remove default arrow in Firefox */
+  box-shadow: 0px 0px 6px 0px rgb(221, 141, 216), 0px 0px 6px 0px rgb(114, 29, 66), 0px 0px 6px 0px rgba(122, 5, 56, 0.373);
+  margin-bottom: 15px;
+
+}
+
+/* Style the arrow icon */
+.dropdown::after {
+  content: "\25BC"; /* Unicode character for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevent clicking on the arrow */
+}
+
+/* Style the options */
+.dropdown select option {
+  padding: 10px;
+  background-color: #7a6f6f;
+  cursor: pointer;
+}
+
+/* Rest of your CSS styles here */
+
+.created-date{
+  font-size: 20px;
 }

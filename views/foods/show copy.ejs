@@ -5,7 +5,6 @@
 <main class="layout">
 <section class="header">
   <h1 class="food-h1s"><%= food.name %> <%= title %></h1>
-  <h3 class="created-date" > Created on: <%= food.createdAt.toLocaleDateString() %></h3>
 </section>
 
 
@@ -39,10 +38,12 @@
         <option value="<%= vitamin %>"> <%= vitamin %></option>
       <% }) %>
     </select>
+    <div class="form-divs-btns">
+      <button type="submit" class="btn button-86 add-items-button">Add Vitamin</button>
+    </div>
+
   </div>
-  <div class="form-divs-btns">
-    <button type="submit" class="btn button-86 add-items-button">Add Vitamin</button>
-  </div>
+
 </section>
 
 <section class="add-reaction">
