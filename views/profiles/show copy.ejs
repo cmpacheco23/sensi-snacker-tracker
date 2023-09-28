@@ -31,16 +31,13 @@
                 <button type="submit" class="form-btns button-86">Delete</button>
               </form>
             </div>
-          <% } %>
-
-          <% if (!profile._id.equals(user?.profile._id) && !food.owner.equals(user?.profile._id) && profile.foods.some(eachFood => eachFood._id === food._id)) { %>
+          <% } else if (!profile.foods.some(eachFood => eachFood._id === food._id)) { %>
             <div class="form-divs-btns" id="add-btn">
               <form action="/foods/<%= food._id %>/add-to-profile" method="POST">
                 <button type="submit" class="form-btns button-86">Add To My Profile</button>
               </form>
             </div>
           <% } %>
-
 
           <% if (profile._id.equals(user?.profile._id) && !food.owner.equals(user?.profile._id) && profile.foods.some(eachFood => eachFood._id === food._id)) { %>
             <div class="form-divs-btns">

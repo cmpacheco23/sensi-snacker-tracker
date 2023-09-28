@@ -73,36 +73,6 @@ function show(req, res){
 }
 
 
-// test out this theory tomorrow:
-// function show(req, res) {
-//   // Retrieve the specific food item
-//   Food.findById(req.params.foodId)
-//     .populate('owner')
-//     .populate('reactions.owner')
-//     .then(food => {
-//       // Create a separate query to retrieve all vitamins
-//       Food.find({}, 'vitamins')
-//         .then(vitamins => {
-//           // Add the console.log statement to see all vitamins
-//           console.log('All Vitamins:', vitamins);
-
-//           res.render('foods/show', {
-//             food,
-//             vitamins, // Pass the vitamins to the EJS template
-//             title: 'Details'
-//           });
-//         })
-//         .catch(err => {
-//           console.log(err);
-//           res.redirect('/');
-//         });
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.redirect('/');
-//     });
-// }
-
 
 function edit(req, res){
   //find the id of the food I want to edit
@@ -141,7 +111,6 @@ function update(req, res){
     })
 }
 
-//original function
 function deleteFood(req, res){
   Food.findByIdAndDelete(req.params.foodId)
   .then(food => {
