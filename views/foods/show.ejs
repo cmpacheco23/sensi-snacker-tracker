@@ -84,12 +84,15 @@
         <% food.reactions.forEach(reaction => { %>
           <tbody>
             <tr>
-              <% if (food.owner.equals(user?.profile._id)) { %>
-                <td> <form action="/foods/<%= food._id %>/reactions/<%= reaction._id %>?_method=DELETE" method="POST">
+              <td>
+              <% if (reaction.owner.equals(user?.profile._id)) { %>
+                  <form action="/foods/<%= food._id %>/reactions/<%= reaction._id %>?_method=DELETE" method="POST">
                   <button type="submit">x</button>
                 </form>
+                <% } else { %>
+                  
+                <% } %>
               </td>
-              <% } %>
               <td> <%= reaction.owner.name %></td>
               <td> <%= reaction.createdAt.toLocaleDateString() %></td>
               <td> <%= reaction.text %></td>

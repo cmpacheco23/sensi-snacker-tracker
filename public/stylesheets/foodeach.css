@@ -6,7 +6,6 @@
   justify-content: center;
 }
 
-
 .header {
   width: 100%;
   background-color: #201f1f; 
@@ -17,15 +16,13 @@
   font-size: 26px;
 }
 
-.food-entry{
+.food-entry {
   width: 50%;
 }
-
 
 input {
   min-height: 40px;
 }
-
 
 .created-date {
   text-align: center;
@@ -34,8 +31,6 @@ input {
   text-shadow: 2px 1.75px 2px rgba(27, 25, 25, 0.854);
 }
 
-
-
 h4 {
   text-align: center;
   font-size: 20px;
@@ -43,7 +38,6 @@ h4 {
   letter-spacing: .75px;
   text-shadow: 2px 1.75px 1.5px rgba(27, 25, 25, 0.854);
 }
-
 
 .button-86 {
   all: unset;
@@ -66,7 +60,6 @@ h4 {
   touch-action: manipulation;
   font-weight: 700;
 }
-
 
 .button-86::after,
 .button-86::before {
@@ -129,7 +122,6 @@ form.top-form {
   margin-left: 130px;
 }
 
-
 form.top-form .form-labels {
   display: flex;
   flex-direction: column;
@@ -143,22 +135,20 @@ form.top-form label {
   white-space: nowrap;
 }
 
-
 form.top-form .form-content {
   display: flex;
   flex-direction: column; 
-  line-height: 2
+  line-height: 2;
 }
 
-.form-content{
+.form-content {
   width: 20%;
 }
+
 form.top-form p {
   font-size: 20px;
   margin: 0;
 }
-
-
 
 .label-group {
   display: flex;
@@ -172,12 +162,10 @@ label {
   white-space: nowrap;
 }
 
-
 p {
   font-size: 20px;
   margin: 0; 
 }
-
 
 .form-divs-btns {
   display: flex;
@@ -188,8 +176,7 @@ p {
   margin: 10px 0px 20px 0px;
 }
 
-
-.add-items{
+.add-items {
   display: flex;
   flex-direction: column;
   background-color: #28282d;
@@ -200,7 +187,7 @@ p {
   padding-bottom: 30px;
 }
 
-.food-info{
+.food-info {
   align-items: center;
   justify-content: center;
 }
@@ -226,7 +213,6 @@ p {
   touch-action: manipulation;
   font-weight: 700;
 }
-
 
 .add-items-button::after,
 .add-items-button::before {
@@ -259,8 +245,6 @@ p {
   rgba(125, 6, 165, 0.6) 0px 5px 10px,
   inset 0 0 0 2px transparent; 
 }
-
-
 
 .add-items-button:hover::before {
   transform: translate(5%, 20%);
@@ -305,7 +289,6 @@ p {
   margin-bottom: 20px;
 }
 
-
 .reactions-listed table th,
 .reactions-listed table td {
   padding: 8px;
@@ -314,7 +297,6 @@ p {
   line-height: 35px;
   font-size: 18px;
 }
-
 
 .reactions-listed table button {
   background-color: #5e2f60;
@@ -329,27 +311,22 @@ p {
     inset 0 0 0 1px transparent;
 }
 
-
 .reactions-listed table button:hover {
   background-color: #cc0000;
 }
 
-
 .reactions-listed table tbody tr:nth-child(even) {
   background-color: #181313;
 }
-
 
 .reactions-listed table th:first-child,
 .reactions-listed table td:first-child {
   padding-left: 20px;
 }
 
-
 .reactions-listed table th {
   text-align: center;
 }
-
 
 .reactions-listed .no-reactions {
   text-align: center;
@@ -364,9 +341,13 @@ p {
 }
 
 .reactions-listed table td {
-  border: 2px solid #413939bc;
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #413939;
+  line-height: 35px;
+  font-size: 18px;
+  width: 30px;
 }
-
 
 .reactions-listed table thead th {
   border-left: 1px solid #2e0233;
@@ -374,7 +355,6 @@ p {
   border-bottom: 1px solid #2e0233;
   border-top: 1px solid #2e023a;  
 }
-
 
 .add-reaction {
   display: flex;
@@ -389,8 +369,6 @@ p {
   margin-bottom: 75px;
   margin-top: 40px;
 }
-
-
 
 .add-reaction h2 {
   color: #ffffff;
@@ -439,21 +417,21 @@ p {
 .inputbottom {
   min-width: 230px;
   font-size: 18px;
-  text-align: center; /* Center text horizontally */
+  text-align: center;
   min-height: 40px;
   border: none;
   background-color: #051014;
   color: #E2CFEA;
   border-radius: 5px;
   padding: 5px;
-  line-height: 40px; /* Center text vertically */
+  line-height: 40px;
 }
 
 input[type="text"],
 input[type="text"]:focus {
   width: 100%;
-  font-size: 18px; /* Adjust the font size as needed */
-  text-align: center !important; /* Ensure centered text */
+  font-size: 18px;
+  text-align: center !important;
   padding: 5px;
   background-color: #051014;
   color: #E2CFEA;
@@ -487,7 +465,6 @@ input[type="text"]:focus {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  
 }
 
 #add-reaction::after,
@@ -556,8 +533,8 @@ input[type="text"]:focus {
 textarea.form-input-text {
   width: 100%;
   min-height: 100px;
-  font-size: 18px; /* Adjust the font size as needed */
-  text-align: center; /* Update text alignment to center */
+  font-size: 18px;
+  text-align: center;
   padding: 5px;
   background-color: #051014;
   color: #E2CFEA;
@@ -565,18 +542,16 @@ textarea.form-input-text {
   border-radius: 5px;
 }
 
-
-
 textarea.form-input-text {
   width: 100%;
   min-height: 100px;
-  font-size: 18px; /* Common font size */
+  font-size: 18px;
   padding: 5px;
   background-color: #051014;
   color: #E2CFEA;
   border: none;
   border-radius: 5px;
-  text-align: center; /* Common text alignment */
+  text-align: center;
 }
 
 /* Dropdown Styles */
@@ -592,22 +567,21 @@ textarea.form-input-text {
   border: none;
   border-radius: 25px;
   cursor: pointer;
-  appearance: none; /* Remove default arrow in some browsers */
-  -webkit-appearance: none; /* Remove default arrow in WebKit browsers */
-  -moz-appearance: none; /* Remove default arrow in Firefox */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   box-shadow: 0px 0px 6px 0px rgb(221, 141, 216), 0px 0px 6px 0px rgb(114, 29, 66), 0px 0px 6px 0px rgba(122, 5, 56, 0.373);
   margin-bottom: 15px;
-
 }
 
 /* Style the arrow icon */
 .dropdown::after {
-  content: "\25BC"; /* Unicode character for down arrow */
+  content: "\25BC";
   position: absolute;
   top: 50%;
   right: 15px;
   transform: translateY(-50%);
-  pointer-events: none; /* Prevent clicking on the arrow */
+  pointer-events: none;
 }
 
 /* Style the options */
@@ -619,6 +593,6 @@ textarea.form-input-text {
 
 /* Rest of your CSS styles here */
 
-.created-date{
+.created-date {
   font-size: 20px;
 }
