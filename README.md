@@ -1,6 +1,8 @@
 # Sensi Food Tracker
 
-![Screenshot of the Sensi Food Tracker app interface](./images/homepage.png)
+![Screenshot of the Home Page](/images/index.png) 
+![Screenshot of the Foods Page](/images/foods.png) 
+![Screenshot of the Foods Page](/images/profiles.png) 
 
 ### Background:
 
@@ -40,10 +42,9 @@ After selecting your first card, choose another one.
 * Box shadow design from [Get CSS Scan](https://getcssscan.com/css-box-shadow-examples): #3
 * Box shadow design from [Alvaro Trigo](https://alvarotrigo.com/shadow-gradients/)
 * Generated CSS layout using [CSS Layout Generator](https://layout.bradwoods.io/)
+* Noto Serif NP Hmong font from [Google Fonts](https://fonts.google.com/noto/specimen/Noto+Serif+NP+Hmong)
+* Open Sans font from [Google Fonts](https://fonts.google.com/specimen/Open+Sans)
 
-
-#### Animations:
-* Animation 1 - [Animate Jello by Animate.Style](https://animate.style/)
 
 ***
 ### Technologies Used 💾
