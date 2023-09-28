@@ -36,8 +36,11 @@ main {
 
 
 .header h1 {
-  font-size: 24px;
+  font-size: 26px;
   margin: 0;
+  font-family: 'Noto Serif NP Hmong', serif;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
 
@@ -46,6 +49,11 @@ main {
   font-size: 18px;
   margin: 5px 0;
   color: white;
+  font-family: 'Open Sans', sans-serif;
+  
+}
+h3{
+  font-weight: 400;
 }
 
 h2{
@@ -53,6 +61,7 @@ h2{
   color: white;
   width: 100%;
   max-width: 400px;
+  font-weight: 600;
 }
 
 .background-card-container {
@@ -73,8 +82,8 @@ h2{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 230px;
+  width: 330px;
+  height: 250px;
   box-sizing: border-box;
   text-align: center;
   border-radius: 30px;
@@ -137,11 +146,18 @@ h2{
 
 #food-reaction p {
   color: rgb(245, 235, 235);
+  
 }
 
+p{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
 a {
   color: white;
   font-weight: 700;
+  font-family: 'Noto Serif NP Hmong', serif;
+  font-size: 22px;
 }
 
 
@@ -190,7 +206,7 @@ a {
 .button-86::after {
   transform: translate(10px, 10px);
   width: 35px;
-  height: 35px;
+  height: 30px;
   background: #a06cd577;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);

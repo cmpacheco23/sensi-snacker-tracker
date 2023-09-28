@@ -18,7 +18,7 @@
     <% profile.foods.forEach(food => { %>
       <article class="food-card">
         <div class="food-text-container">
-          <h3 class="food-info" id="food-name"><a href="<%= food.name %>"><%= food.name %></a></h3>
+          <h3 class="food-info" id="food-name"><a href="/foods/<%= food._id%>"><%= food.name %></a></h3>
           <p class="food-info" id="food-category"><b>Category:</b> <%= food.category %></p>
           <p class="food-info" id="food-vitamin"><b>Vitamins:</b> <%= food.vitamins?.join(', ') %></p>
           <p class="food-info" id="food-reaction"><b>Reaction:</b> <%= food.reactions ? "Yes" : "No" %></p>
@@ -40,6 +40,7 @@
               </form>
             </div>
           <% } %>
+
 
 
           <% if (profile._id.equals(user?.profile._id) && !food.owner.equals(user?.profile._id) && profile.foods.some(eachFood => eachFood._id === food._id)) { %>

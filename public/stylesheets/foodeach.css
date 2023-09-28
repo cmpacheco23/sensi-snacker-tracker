@@ -13,7 +13,11 @@
   text-align: center;
   box-shadow: 0px -3px 3px 0px rgb(134, 56, 129), 0px -6px 3px 0px rgb(114, 29, 66), 0px -12px 9px 0px rgba(122, 5, 55, 1); 
   margin-top: 20px;
-  font-size: 26px;
+  color: #ca81d6; 
+  text-shadow: 1px 1px 5px #7a0537ca;
+  font-size: 40px;
+  font-family: 'Noto Serif NP Hmong', serif;
+  margin-bottom: 15px;
 }
 
 .food-entry {

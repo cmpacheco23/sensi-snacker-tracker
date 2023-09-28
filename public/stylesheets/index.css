@@ -20,9 +20,12 @@
 }
 
 .header h1 {
-  font-size: 40px;
+  font-size: 50px;
   color: #ca81d6; 
   text-shadow: 1px 1px 5px #7a0537ca;
+  font-family: 'Noto Serif NP Hmong', serif;
+  margin-top: 20px;
+  margin-bottom: 25px;
 }
 
 .user {
@@ -85,6 +88,7 @@
   border: 3px solid #827e7e40; 
   margin-bottom: 20px; 
   font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -126,6 +130,7 @@ p {
   font-size: 18px;
   text-align: center;
   line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h2 {
@@ -216,4 +221,12 @@ a{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+h3{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  word-spacing: 1px;
+  letter-spacing: .5px;
 }
