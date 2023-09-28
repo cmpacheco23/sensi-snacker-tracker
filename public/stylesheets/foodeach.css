@@ -119,23 +119,20 @@ h4 {
   transform: translate(0, 5%);
 }
 
-/* Center the top form both vertically and horizontally */
-/* Center the top form both vertically and horizontally */
 form.top-form {
   display: flex;
-  grid-template-columns: max-content 1fr; /* First column for labels, second column for content */
+  grid-template-columns: max-content 1fr;
   gap: 15px;
   align-items: center;
   justify-content: center;
-  text-align: center; /* Center the form content */
+  text-align: center; 
   margin-left: 120px;
 }
 
 
-/* Style for labels */
 form.top-form .form-labels {
   display: flex;
-  flex-direction: column; /* Stack labels vertically */
+  flex-direction: column;
   line-height: 2;
 }
 
@@ -146,10 +143,10 @@ form.top-form label {
   white-space: nowrap;
 }
 
-/* Style for content (p tags) */
+
 form.top-form .form-content {
   display: flex;
-  flex-direction: column; /* Stack content vertically */
+  flex-direction: column; 
   line-height: 2
 }
 
@@ -158,14 +155,14 @@ form.top-form .form-content {
 }
 form.top-form p {
   font-size: 20px;
-  margin: 0; /* Remove default margin for p tags */
+  margin: 0;
 }
 
 
-/* Style for labels */
+
 .label-group {
   display: flex;
-  flex-direction: column; /* Stack labels vertically */
+  flex-direction: column; 
 }
 
 label {
@@ -175,10 +172,10 @@ label {
   white-space: nowrap;
 }
 
-/* Style for content (p tags) */
+
 p {
   font-size: 20px;
-  margin: 0; /* Remove default margin for p tags */
+  margin: 0; 
 }
 
 
@@ -263,6 +260,8 @@ p {
   inset 0 0 0 2px transparent; 
 }
 
+
+
 .add-items-button:hover::before {
   transform: translate(5%, 20%);
   width: 110%;
@@ -284,8 +283,8 @@ p {
 .table-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
-
 
 .reactions-listed table {
   width: 100%;
@@ -295,10 +294,10 @@ p {
   border-radius: 10px;
   max-width: 1200px; 
   box-shadow:
-    0px 5px 10px rgba(97, 28, 137, 0.8), /* Top glow */
-    0px -5px 10px rgba(127, 30, 183, 0.8), /* Bottom glow */
-    5px 0px 10px rgba(125, 6, 165, 0.6), /* Right glow */
-    -5px 0px 10px rgba(125, 6, 165, 0.6); /* Left glow */
+    0px 5px 10px rgba(97, 28, 137, 0.8), 
+    0px -5px 10px rgba(127, 30, 183, 0.8), 
+    5px 0px 10px rgba(125, 6, 165, 0.6),
+    -5px 0px 10px rgba(125, 6, 165, 0.6); 
 }
 
 .reactions-listed h2 {
@@ -310,13 +309,13 @@ p {
 .reactions-listed table th,
 .reactions-listed table td {
   padding: 8px;
-  text-align: center; /* Center-align text */
+  text-align: center; 
   border-bottom: 1px solid #413939;
   line-height: 35px;
   font-size: 18px;
 }
 
-/* Style for the "x" button */
+
 .reactions-listed table button {
   background-color: #5e2f60;
   color: #fff;
@@ -335,23 +334,23 @@ p {
   background-color: #cc0000;
 }
 
-/* Style for alternating rows */
+
 .reactions-listed table tbody tr:nth-child(even) {
   background-color: #181313;
 }
 
-/* Add some spacing */
+
 .reactions-listed table th:first-child,
 .reactions-listed table td:first-child {
   padding-left: 20px;
 }
 
-/* Center table headings */
+
 .reactions-listed table th {
   text-align: center;
 }
 
-/* Style for the "No reactions" message */
+
 .reactions-listed .no-reactions {
   text-align: center;
   color: #9a909051;
@@ -374,4 +373,179 @@ p {
   border-right: 1px solid #2e0233;
   border-bottom: 1px solid #2e0233;
   border-top: 1px solid #2e023a;  
+}
+
+
+.add-reaction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #4f4f5386;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto; 
+  max-width: 650px; 
+  width: 100%; 
+  margin-bottom: 75px;
+  margin-top: 40px;
+}
+
+
+
+.add-reaction h2 {
+  color: #ffffff;
+  font-size: 30px;
+  margin: 20px;
+  text-align: center;
+  text-shadow: 
+  0px 3px 6px rgba(97, 28, 137, 0.6),
+  0px -3px 6px rgba(88, 21, 127, 0.6),
+  3px 0px 6px rgba(84, 3, 111, 0.4),
+  -3px 0px 6px rgba(125, 6, 165, 0.4),  
+  1px 1px 2px #102B3F; 
+  letter-spacing: 1.5px;
+}
+
+.add-reaction p {
+  color: #CDDDDD;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.add-reaction form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.input-labels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.input-labels label {
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px #102B3F;
+  padding: 5px;
+}
+
+.inputbottom {
+  min-width: 230px;
+  font-size: 20px;
+  text-align: center;
+  min-height: 40px;
+  border: none;
+  background-color: #051014;
+  color: #E2CFEA;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+textarea.form-input-text {
+  width: 100%;
+  min-height: 100px;
+  font-size: 16px;
+  padding: 5px;
+  background-color: #051014;
+  color: #E2CFEA;
+  border: none;
+  border-radius: 5px;
+}
+
+.button-holder {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#add-reaction {
+  all: unset;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #E2CFEA;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  
+}
+
+#add-reaction::after,
+#add-reaction::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+#add-reaction::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #051014;
+  border-radius: 10px;
+}
+
+#add-reaction::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #a06cd577;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+  box-shadow: 
+    rgba(167, 62, 228, 0.8) 0px 10px 20px, 
+    rgba(125, 6, 165, 0.6) 0px 5px 10px,
+    inset 0 0 0 2px transparent; 
+}
+
+#add-reaction:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+#add-reaction:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+#add-reaction:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+.add-reaction .input-labels label {
+  text-align: center; /* Align labels to the left */
+  width: 200px; /* Adjust the width of the labels as needed */
+  padding: 5px; /* Add some padding for spacing */
+}
+
+.add-reaction .inputbottom {
+  width: 100%; /* Make the input fields take up the full width */
+  min-width: auto; /* Remove any minimum width */
+  text-align: left; /* Align input fields to the left */
+  margin-top: 5px; /* Add some top margin for spacing */
 }

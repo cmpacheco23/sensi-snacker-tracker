@@ -97,6 +97,10 @@ input[type="text"] {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border-radius: 50px;
+  box-shadow: 
+  rgba(167, 62, 228, 0.8) 0px 10px 20px, 
+  rgba(125, 6, 165, 0.6) 0px 5px 10px,
+  inset 0 0 0 2px transparent; 
 }
 
 .button-86:hover::before {
