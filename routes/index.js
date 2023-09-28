@@ -8,7 +8,7 @@ function getRandomFoodEmoji() {
 }
 
 router.get('/', function (req, res) {
-  res.render('index', { title: 'Home Page', randomFoodEmoji: getRandomFoodEmoji() });
+  res.render('index', { title: 'Sensi Food Tracker | Home', randomFoodEmoji: getRandomFoodEmoji() });
 });
 
 export { router, getRandomFoodEmoji };

@@ -61,7 +61,7 @@ function show(req, res){
     console.log('Vitamins:', food.vitamins);
     res.render('foods/show', {
       food,
-      title: 'Details'
+      title: `${food.name} Details`
     })
     //this is undefined
     console.log(`the food id issss!${food.reactions._id}`)
