@@ -19,7 +19,24 @@ Ready to embark on your food sensitivity journey with Sensi Tracker?
 ### [Access Sensi Tracker](https://carla-minina-match-game.netlify.app/)
 
 
-🎉 **Fun Fact:** Every time you refresh the home page, the app features "bullets" transform into new food emojis! 🍔🥦🍕🍇
+🎉 **Fun FactS:** 
+🍕 Every time you refresh the home page, the app features "bullets" transform into new food emojis! 
+
+```
+function getRandomFoodEmoji() {
+  const foodEmojis = ["🍔", "🍕", "🥗", "🍝", "🍜", "🍲", "🌮", "🍱", "🥪", "🍛", "🍣", "🍦", "🍩", "🍪", "🥤"];
+  return foodEmojis[Math.floor(Math.random() * foodEmojis.length)];
+}
+```
+
+🌀 When you hover over a profile avatar while viewing their profile, their avatar will spin.
+
+```
+.profile-avatar:hover {
+  transform: rotate(360deg);
+}
+```
+
 
 #### App Highlights:
 __Discover the key features that make Sensi Tracker your go-to food sensitivity ally:__
