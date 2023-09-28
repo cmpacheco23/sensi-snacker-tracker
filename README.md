@@ -3,9 +3,11 @@
 ![Screenshot of the Sensi Food Tracker app interface](./images/homepage.png)
 
 ### Background:
-Welcome to Sensi Tracker, your trusted companion for simplifying your food journey and promoting a healthier lifestyle through a comprehensive CRUD (Create, Read, Update, Delete) application. This platform is meticulously designed to empower individuals managing food sensitivities by providing a collaborative environment that streamlines healthy eating to match your unique needs and preferences.
 
-Sensi Tracker goes beyond being a mere data management tool; it's your personal ally for effortless food sensitivity management. Whether you're creating, reading, updating, or deleting sensitivities, discovering new foods, or sharing your experiences, Sensi Tracker is here to support your vibrant, worry-free lifestyle.
+Welcome to Sensi Tracker, your holistic food sensitivity companion and comprehensive CRUD (Create, Read, Update, Delete) application. Developed with a personal journey in mind, Sensi Tracker aims to simplify food management for individuals with sensitivities, just like the creator, who battles Hashimoto's disease.
+
+Struggling to track what triggers your sensitivities? Sensi Tracker provides a user-friendly platform to manage and understand your dietary needs. It goes beyond data management, offering effortless food sensitivity management, catering to those on a journey towards a healthier lifestyle.
+
 
 #### Click to view [planning materials](https://trello.com/invite/b/1kDFsFqH/ATTI419f20d6e1d089108174349a9a5048203BE558DA/unit-2-project-food-sensitivity)
 ***
@@ -37,7 +39,6 @@ After selecting your first card, choose another one.
 * Button design from [Get CSS Scan](https://getcssscan.com/css-buttons-examples?ref=beautifulboxshadow-bottom): Button #86 & #56
 * Box shadow design from [Get CSS Scan](https://getcssscan.com/css-box-shadow-examples): #3
 * Box shadow design from [Alvaro Trigo](https://alvarotrigo.com/shadow-gradients/)
-
 
 
 #### Animations:
