@@ -41,14 +41,15 @@
   align-items: center;
   color: #ffffff;
   font-size: 40px;
+
 }
 
 .food-h1:hover {
   opacity: 0.8;
   background-clip: text;
   -webkit-background-clip: text;
-  text-shadow: 5px 5px 10px #A06CD5;
-  background-image: linear-gradient(45deg, rgba(172, 189, 186, 0.8) 50%, rgba(205, 221, 221, 0.8) -50%, rgba(165, 153, 181, 0.8) 50%, rgba(45, 43, 47, 0.8) 100%);
+  text-shadow: 5px 5px 10px #a307a6;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.8) 50%, rgba(246, 250, 250, 0.8) -50%, rgba(255, 255, 255, 0.8) 50%, rgba(45, 43, 47, 0.8) 100%);
 }
 
 .food-h2 {
@@ -58,6 +59,7 @@
   color: #ffffff;
   font-size: 30px;
   text-shadow: 1px 1px 2px #102B3F;
+  margin-bottom: 50px;
 }
 
 .food-h3 {
@@ -69,11 +71,15 @@
 
 .food-ps {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 20px;
-  margin: 30px;
+  margin: 30px auto; 
+  font-size: 20px;
+  line-height: 2;
+  max-width: 750px;
 }
 
 #newFood-form {
@@ -254,7 +260,9 @@ input {
   border-radius: 50%;
   border: 2px solid rgb(164, 7, 145);
   box-shadow: rgba(100, 4, 129, 0.4) 0px 3px 5px, rgba(92, 6, 58, 0.527) 0px 12px 20px -3px, rgba(145, 3, 90, 0.2) 5px 10px 5px;
+  margin-top: 20px;
 }
+
 
 
 .profile-card-container {
@@ -325,4 +333,9 @@ h4 {
   text-shadow: 2px 1.75px 1.5px rgba(27, 25, 25, 0.854);
 }
 
+
+.food-announce{
+  font-size: 30px;
+  padding-top: 20px;
+}
 

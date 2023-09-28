@@ -5,7 +5,7 @@
 <main class="layout" >
   <section class="header">
     <h1 class="food-h1"><%= title %></h1>
-    <p class="food-ps">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores optio odit officia repellendus iste sint rem impedit tempore. Vitae, nihil fugit beatae cumque nulla impedit non dicta repellendus illum.</p>
+    <p class="food-ps">Explore, Share, and Learn with Sensi Tracker's Food Hub. Add your favorite foods, discover new options from others, and delve into the details of each entry. Empower your food journey with community-driven insights.</p>
   </section>
   <section class="body-newFood">
     <% if (user) { %>
@@ -28,6 +28,7 @@
     <% } %>
     </section>
     <section class="body-allFoods" id="layout-body-allFoods">
+      <h2 class="food-announce">View all added foods here</h2>
         <div class="cards">
           <% foods.forEach(food => { %>
             <article class="card">

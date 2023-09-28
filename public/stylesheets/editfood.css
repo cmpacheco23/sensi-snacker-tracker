@@ -17,7 +17,7 @@
 
 .form-layout {
   display: grid;
-  grid-template-columns: max-content 1fr; /* First column for labels, second column for inputs */
+  grid-template-columns: max-content 1fr; 
   gap: 15px;
   align-items: center;
 }
