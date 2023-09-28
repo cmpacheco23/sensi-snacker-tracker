@@ -10,10 +10,10 @@
 
 .header {
   width: 100%;
-  background-color: #242222; /* Black background color */
-  color: #ffffff; /* White text on black background */
+  background-color: #242222; 
+  color: #ffffff; 
   text-align: center;
-  box-shadow: 0px -3px 3px 0px rgb(134, 56, 129), 0px -6px 3px 0px rgb(114, 29, 66), 0px -12px 9px 0px rgba(122, 5, 55, 1); /* Thinner shadow with fully opaque pink color */
+  box-shadow: 0px -3px 3px 0px rgb(134, 56, 129), 0px -6px 3px 0px rgb(114, 29, 66), 0px -12px 9px 0px rgba(122, 5, 55, 1); 
   margin-top: 20px;
   padding-bottom: 30px;
   padding-top: 18px;
@@ -21,49 +21,49 @@
 
 .header h1 {
   font-size: 40px;
-  color: #ca81d6; /* Pop of color */
+  color: #ca81d6; 
   text-shadow: 1px 1px 5px #7a0537ca;
 }
 
 .user {
   width: 100%;
-  color: #ffffff; /* White text */
+  color: #ffffff; 
   text-align: center;
 }
 
 .content-container {
   display: flex;
-  flex-direction: row; /* Layout in a row */
-  justify-content: space-between; /* Space columns evenly */
+  flex-direction: row; 
+  justify-content: space-between; 
   align-items: flex-start;
   width: 100%;
-  max-width: 1200px; /* Adjust as needed */
-  margin: 0 auto; /* Center horizontally by setting left and right margins to auto */
+  max-width: 1200px; 
+  margin: 0 auto; 
   padding: 20px;
   background-color: #50505312;
 }
 
 .left-column {
-  flex: 1; /* Expand to fill available space */
-  margin-right: 20px; /* Add some spacing between columns */
-  color: #ffffff; /* White text */
-  max-width: 600px; /* Limit max width for responsiveness */
-  text-align: center; /* Center the text */
+  flex: 1; 
+  margin-right: 20px; 
+  color: #ffffff; 
+  max-width: 600px; 
+  text-align: center; 
 }
 
 .right-column {
-  flex: 1; /* Expand to fill available space */
-  color: #ffffff; /* White text */
-  max-width: 600px; /* Limit max width for responsiveness */
-  text-align: center; /* Center the text */
+  flex: 1; 
+  color: #ffffff; 
+  max-width: 600px; 
+  text-align: center; 
 
 }
 
-/* Center the text within app-description and app-features */
+
 .app-description, .app-features {
   text-align: center;
-  margin-top: 0; /* Reset the top margin */
-  margin-bottom: 20px; /* Add a bottom margin to create space between sections */
+  margin-top: 0; 
+  margin-bottom: 20px; 
 }
 
 .app-features {
@@ -72,59 +72,51 @@
 }
 
 .app-features ul {
-  list-style: none; /* Remove default list-style */
-  padding-left: 0; /* Remove left padding */
+  list-style: none; 
+  padding-left: 0;
 }
 
 .app-features li {
-  max-width: 625px; /* Adjust the maximum width as needed */
-  margin: 0 auto; /* Center the list items horizontally */
+  max-width: 625px; 
+  margin: 0 auto; 
   line-height: 2;
-  border-radius: 10px; /* Add a rounded border to each <li> */
-  padding: 10px; /* Add some padding inside each <li> */
-  
-  /* Set the border properties */
-  border: 3px solid #827e7e40; /* Light gray border color */
-  
-  /* Add space between each box vertically */
-  margin-bottom: 20px; /* Adjust the margin-bottom value as needed */
+  border-radius: 10px; 
+  padding: 10px; 
+  border: 3px solid #827e7e40; 
+  margin-bottom: 20px; 
 }
 
-
-
-
 .app-features {
-  max-width: 800px; /* Adjust as needed */
-  padding: 20px; /* Add padding for spacing */
-  border-radius: 10px; /* Add border-radius */
-  position: relative; /* Create a stacking context */
+  max-width: 800px; 
+  padding: 20px; 
+  border-radius: 10px; 
+  position: relative; 
   box-shadow: 
     rgba(167, 62, 228, 0.8) 0px 10px 20px, 
     rgba(125, 6, 165, 0.6) 0px 5px 10px,
-    inset 0 0 0 2px transparent; /* Add a box shadow with a transparent inner shadow for the border */
+    inset 0 0 0 2px transparent; 
 }
 
 .app-features::before {
-  content: ""; /* Create a pseudo-element for the gradient border */
+  content: ""; 
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1; /* Place it behind .app-features */
+  z-index: -1; 
   background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
-  border-radius: 10px; /* Match the border-radius of .app-features */
+  border-radius: 10px; 
 }
 
 .app-creator button{
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center items horizontally */
+  align-items: center; 
   text-align: center;
-  margin-top: 0; /* Reset the top margin */
-  margin-bottom: 20px; /* Add a bottom margin to create space between sections */
+  margin-top: 0; 
+  margin-bottom: 20px; 
 }
-
 
 p {
   margin: 20px;
@@ -144,8 +136,6 @@ ul {
   padding-left: 20px;
 }
 
-
-
 .linkedin {
   all: unset;
   width: 130px;
@@ -155,7 +145,7 @@ ul {
   background: transparent;
   border: none;
   position: relative;
-  color: #f0f0f0; /* Adjusted color to match the desired style */
+  color: #f0f0f0; 
   cursor: pointer;
   z-index: 1;
   padding: 10px 20px;

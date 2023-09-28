@@ -15,7 +15,6 @@
   margin-top: 40px;
 }
 
-/* Keep labels on the left and make input fields wider */
 .form-layout {
   display: grid;
   grid-template-columns: max-content 1fr; /* First column for labels, second column for inputs */
@@ -26,19 +25,19 @@
 label {
   font-size: 24px;
   font-weight: 700;
-  text-align: right; /* Right-align the label */
-  margin-bottom: 5px; /* Add some space below each label */
-  white-space: nowrap; /* Prevent labels from wrapping to the next line */
+  text-align: right; 
+  margin-bottom: 5px; 
+  white-space: nowrap; 
   margin-right: 15px;
 }
 
 input[type="text"] {
   padding: 5px;
-  margin-bottom: 10px; /* Add more space below each input */
+  margin-bottom: 10px; 
   height: 40px;
-  width: 170%; /* Set the input width to 100% of the available space */
+  width: 170%; 
+  font-size: 24px;
 }
-
 
 
 .form-divs-btns {
@@ -47,7 +46,6 @@ input[type="text"] {
   align-items: center;
 }
 
-/* Push the button 20px to the left */
 .button-86 {
   all: unset;
   width: 100px;
@@ -68,7 +66,7 @@ input[type="text"] {
   -webkit-user-select: none;
   touch-action: manipulation;
   font-weight: 700;
-  margin-left: 150px; /* Add margin to the right side of the button */
+  margin-left: 240px; 
   margin-top: 35px;
 }
 
@@ -126,6 +124,6 @@ form {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  margin-right: 95px;
+  margin-right: 210px;
   line-height: 3;
 }

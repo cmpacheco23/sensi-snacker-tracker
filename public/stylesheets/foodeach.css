@@ -1,128 +1,377 @@
-/* editfood.css */
-
 .layout {
-  background-color: #4F4789;
+  background-color: #000; 
   display: flex;
   flex-direction: column;
+  gap: 30px;
   justify-content: center;
-  align-items: center;
-
 }
+
 
 .header {
   width: 100%;
-  background-color: #201f1f;
-  color: #ffffff;
+  background-color: #201f1f; 
+  color: #ffffff; 
   text-align: center;
-  box-shadow: 0px -3px 3px 0px rgb(134, 56, 129), 0px -6px 3px 0px rgb(114, 29, 66), 0px -12px 9px 0px rgba(122, 5, 55, 1);
-  margin: 0px 0 15px 0;
-  padding-bottom: 40px;
-}
-
-.food-h1s {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
-  font-size: 40px;
-}
-
-.add-items {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 20px;
+  box-shadow: 0px -3px 3px 0px rgb(134, 56, 129), 0px -6px 3px 0px rgb(114, 29, 66), 0px -12px 9px 0px rgba(122, 5, 55, 1); 
   margin-top: 20px;
-}
-
-.food-h4 {
-  color: salmon;
-  font-size: 18px;
-  margin: 10px;
-}
-
-.add-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #09023f;
-  text-align: center;
-  min-height: 100vh;
-}
-
-.add-reaction {
-  width: 600px;
-  max-width: 90%;
-  position: relative;
-  padding: 20px;
-  background-color: rgba(235, 225, 247, 0.204);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 20px;
-  padding: 20px 0 20px 0;
-}
-
-textarea {
-  margin-bottom: 30px;
-}
-
-label {
-  margin-top: 15px;
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 1px;
-  text-shadow: 2px 1.5px 2.5px rgba(51, 47, 47, 0.854);
-}
-
-.input-labels {
-  width: 400px;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  margin: 0 0 0 40px;
-}
-
-.inputbottom {
-  margin-bottom: 20px;
-}
-
-h2 {
-  align-items: flex-start;
-  text-align: center;
-  background-color: #09023f;
-  padding: 20px 0 20px 0;
-  margin: auto;
-}
-
-/* Add styles for the .body-newFoods, .body-allFoods, and other sections here */
-
-.food-info {
-  align-items: center;
-}
-
-.header, .food-info label{
-  align-items: center;
-}
-
-.food-details-header{
-  width: 400px;
+  font-size: 26px;
 }
 
 .food-entry{
-width: auto;
+  width: 50%;
+}
+
+
+input {
+  min-height: 40px;
+}
+
+
+.joined-date {
+  text-align: center;
+  color: aliceblue;
+  font-size: 14px;
+  text-shadow: 2px 1.75px 2px rgba(27, 25, 25, 0.854);
+  letter-spacing: 1px;
+}
+
+
+
+h4 {
+  text-align: center;
+  font-size: 20px;
+  color: salmon;
+  letter-spacing: .75px;
+  text-shadow: 2px 1.75px 1.5px rgba(27, 25, 25, 0.854);
+}
+
+
+.button-86 {
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #E2CFEA;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-weight: 700;
+}
+
+
+.button-86::after,
+.button-86::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.button-86::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+  border-radius: 10px;
+}
+
+.button-86::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #a06cd577;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+  box-shadow: 
+  rgba(167, 62, 228, 0.8) 0px 10px 20px, 
+  rgba(125, 6, 165, 0.6) 0px 5px 10px,
+  inset 0 0 0 2px transparent; 
+}
+
+.button-86:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button-86:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button-86:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+/* Center the top form both vertically and horizontally */
+/* Center the top form both vertically and horizontally */
+form.top-form {
+  display: flex;
+  grid-template-columns: max-content 1fr; /* First column for labels, second column for content */
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Center the form content */
+  margin-left: 120px;
+}
+
+
+/* Style for labels */
+form.top-form .form-labels {
+  display: flex;
+  flex-direction: column; /* Stack labels vertically */
+  line-height: 2;
+}
+
+form.top-form label {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Style for content (p tags) */
+form.top-form .form-content {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  line-height: 2
+}
+
+.form-content{
+  width: 20%;
+}
+form.top-form p {
+  font-size: 20px;
+  margin: 0; /* Remove default margin for p tags */
+}
+
+
+/* Style for labels */
+.label-group {
+  display: flex;
+  flex-direction: column; /* Stack labels vertically */
+}
+
+label {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Style for content (p tags) */
+p {
+  font-size: 20px;
+  margin: 0; /* Remove default margin for p tags */
+}
+
+
+.form-divs-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  height: 62px;
+  margin: 10px 0px 20px 0px;
+}
+
+
+.add-items{
+  display: flex;
+  flex-direction: column;
+  background-color: #28282d;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  margin-top: 35px;
+  padding-bottom: 30px;
+}
+
+.food-info{
+  align-items: center;
+  justify-content: center;
+}
+
+.add-items-button {
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #E2CFEA;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-weight: 700;
+}
+
+
+.add-items-button::after,
+.add-items-button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.add-items-button::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #1e0915;
+  border-radius: 10px;
+}
+
+.add-items-button::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #a06cd577;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+  box-shadow: 
+  rgba(167, 62, 228, 0.8) 0px 10px 20px, 
+  rgba(125, 6, 165, 0.6) 0px 5px 10px,
+  inset 0 0 0 2px transparent; 
+}
+
+.add-items-button:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.add-items-button:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.add-items-button:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+.reactions-listed table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #181717;
+  border: 1.5px solid #736f6f9f;
+  border-radius: 10px;
+  max-width: 1200px; 
+  box-shadow:
+    0px 5px 10px rgba(97, 28, 137, 0.8), /* Top glow */
+    0px -5px 10px rgba(127, 30, 183, 0.8), /* Bottom glow */
+    5px 0px 10px rgba(125, 6, 165, 0.6), /* Right glow */
+    -5px 0px 10px rgba(125, 6, 165, 0.6); /* Left glow */
+}
+
+.reactions-listed h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
+.reactions-listed table th,
+.reactions-listed table td {
+  padding: 8px;
+  text-align: center; /* Center-align text */
+  border-bottom: 1px solid #413939;
+  line-height: 35px;
+  font-size: 18px;
+}
+
+/* Style for the "x" button */
+.reactions-listed table button {
+  background-color: #5e2f60;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  box-shadow:
+    rgba(167, 62, 228, 0.8) 0px 0px 10px 2px,
+    rgba(125, 6, 165, 0.6) 0px 0px 10px 2px,
+    inset 0 0 0 1px transparent;
+}
+
+
+.reactions-listed table button:hover {
+  background-color: #cc0000;
+}
+
+/* Style for alternating rows */
+.reactions-listed table tbody tr:nth-child(even) {
+  background-color: #181313;
+}
+
+/* Add some spacing */
+.reactions-listed table th:first-child,
+.reactions-listed table td:first-child {
+  padding-left: 20px;
+}
+
+/* Center table headings */
+.reactions-listed table th {
+  text-align: center;
+}
+
+/* Style for the "No reactions" message */
+.reactions-listed .no-reactions {
+  text-align: center;
+  color: #9a909051;
+  font-style: italic;
+}
+
+.reactions-listed table th.header-cell {
+  background-color: rgb(51, 2, 50);
+  line-height: 25px;
+  font-size: 18px;
+}
+
+.reactions-listed table td {
+  border: 2px solid #413939bc;
+}
+
+
+.reactions-listed table thead th {
+  border-left: 1px solid #2e0233;
+  border-right: 1px solid #2e0233;
+  border-bottom: 1px solid #2e0233;
+  border-top: 1px solid #2e023a;  
 }

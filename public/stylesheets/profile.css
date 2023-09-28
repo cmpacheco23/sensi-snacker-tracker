@@ -1,7 +1,7 @@
 
 .title {
   text-align: center;
-  transition: opacity 0.3s ease; /* Add a transition for smooth hover effect */
+  transition: opacity 0.3s ease; 
   margin: 40px 0px 30px 0px;
   font-size: 50px;
   color: #ca81d6;
@@ -9,7 +9,7 @@
 }
 
 .title:hover {
-  opacity: 0.8; /* Adjust opacity as needed */
+  opacity: 0.8;
   background-clip: text;
   -webkit-background-clip: text;
   text-shadow: 5px 5px 10px #df156dca;
@@ -22,7 +22,6 @@
   direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: rgb(128, 13, 115); */
   border-radius: 10px;
 }
 
@@ -48,7 +47,6 @@
   height: 300px;
   width: 300px;
   border-radius: 10px;
-  /* overflow: hidden; */
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   z-index: 0;
 }
@@ -79,18 +77,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(10, 8, 8, 0.383); /* Adjust the transparency here */
-  border-radius: 10px; /* Match the card's border-radius */
-  z-index: -1; /* Place it behind the card */
+  background-color: rgba(10, 8, 8, 0.383); 
+  border-radius: 10px; 
+  z-index: -1; 
 }
 
 .profile-card-container:hover {
-  background-color: rgb(224, 43, 97); /* Change the background color when hovering */
-  box-shadow: rgba(211, 8, 133, 0.8) 0px 10px 40px, rgba(0, 0, 0, 0.6) 0px 5px 15px; /* Change the box shadow color when hovering */
-
-
+  background-color: rgb(224, 43, 97); 
+  box-shadow: rgba(211, 8, 133, 0.8) 0px 10px 40px, rgba(0, 0, 0, 0.6) 0px 5px 15px; 
 }
-
 
 .profile-card:before {
   content: "";
@@ -98,14 +93,14 @@
   inset: -10px;
   transform: translate3d(0, 0, -1px);
   background: conic-gradient(
-    from 90deg at 40% -5%, /* Adjust the vertical position here */
+    from 90deg at 40% -5%, 
     #df116d, #8629ce, #53226c, #6b3d94df, #c809eedf, #df116d, #8629ce, #53226c, #6b3d94df, #c809eedf
   );
   filter: blur(15px);
   clip-path: polygon(-100vmax -100vmax, 100vmax -100vmax, 100vmax 100vmax, -100vmax 100vmax, -100vmax -100vmax, 0 0, 0 100%, 100% 100%, 100% 0, 0 0) rounded-rectangle(20px 20px 20px 20px);
   border-radius: 15px;
   z-index: -1;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 20px 40px, rgba(0, 0, 0, 0.3) 0px 15px 15px; /* Add an inset shadow */
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 20px 40px, rgba(0, 0, 0, 0.3) 0px 15px 15px; 
 
 }
 
@@ -125,7 +120,7 @@
   color: white;
   font-size: 20px;
   text-align: center;
-  text-shadow: 2px 2.5px 2.5px rgba(27, 25, 25, 0.854); /* horizontal-offset vertical-offset blur-radius color */
+  text-shadow: 2px 2.5px 2.5px rgba(27, 25, 25, 0.854); 
   letter-spacing: 1.3px;
 }
 
@@ -133,15 +128,15 @@
   text-align: center;
   color: aliceblue;
   font-size: 14px;
-  text-shadow: 2px 1.75px 2px rgba(27, 25, 25, 0.854); /* horizontal-offset vertical-offset blur-radius color */
+  text-shadow: 2px 1.75px 2px rgba(27, 25, 25, 0.854);
   letter-spacing: 1px;
 }
 
 img{
   border-radius: 50%;
   align-items: center;
-  border: 5px solid rgba(136, 64, 199, 0.29); /* Add a black border around the image */
-  box-shadow: 0 0 0 5px rgba(106, 4, 94, 0.5); /* Add a gradient border using box-shadow */
+  border: 5px solid rgba(136, 64, 199, 0.29); 
+  box-shadow: 0 0 0 5px rgba(106, 4, 94, 0.5); 
 }
 
 a{
@@ -155,6 +150,5 @@ h4{
   font-size: 14px;
   color: salmon;
   letter-spacing: .75px;
-  text-shadow: 2px 1.75px 1.5px rgba(27, 25, 25, 0.854); /* horizontal-offset vertical-offset blur-radius color */
-
+  text-shadow: 2px 1.75px 1.5px rgba(27, 25, 25, 0.854); 
 }

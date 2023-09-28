@@ -5,28 +5,32 @@
 <main class="layout">
 <section class="header">
   <h1 class="food-h1s"><%= food.name %> <%= title %></h1>
-  <% if (food.owner.equals(user?.profile._id)) { %>
-    <div class="form-divs-btns" id="edit-btn">
-      <a href="/foods/<%= food._id %>/edit">
-        <button type="submit" class="btn"> Edit Details</button>
-      </a>
-    </div>
-  <% } %>
-  <div class="food-info">
-    <form action="/foods/<%= food._id %>" method="GET">
-        <label class="food-details-header">Category: </label> 
-        <p class="food-entry"><%= food.category %> </p>
-
-        <label class="food-details-header">Vitamins: </label>
-        <p class="food-entry"> <%= food.vitamins %></p>
-    </form>
-
-  </div>
 </section>
 
 
-<section class="add-items">
+<section class="food-info">
+  <form action="/foods/<%= food._id %>" method="GET" class="top-form">
+    <div class="form-labels">
+      <label class="food-details-header">Category:</label>
+      <label class="food-details-header">Vitamins:</label>
+    </div>
+    <div class="form-content">
+      <p class="food-entry"><%= food.category %></p>
+      <p class="food-entry"><%= food.vitamins %></p>
+    </div>
+</form>
 
+<section class="food-description">
+  <% if (food.owner.equals(user?.profile._id)) { %>
+    <div class="form-divs-btns" id="edit-btn">
+      <a href="/foods/<%= food._id %>/edit">
+        <button type="submit" class="btn button-86"> Edit Details</button>
+      </a>
+    </div>
+  <% } %>
+</section>
+
+<section class="add-items">
   <h4 class="food-h4"> Want to add a vitamin to <%= food.name %>?</h4>
 
     <select name="vitamins" id="vitamins-select">
@@ -35,7 +39,7 @@
       <% }) %>
     </select>
     <div class="form-divs-btns">
-      <button type="submit" class="btn">Add Vitamin</button>
+      <button type="submit" class="btn button-86 add-items-button">Add Vitamin</button>
     </div>
 </section>
 
@@ -61,35 +65,37 @@
 <section class="reactions-listed">
   <h2></h2>
   <% if (food.reactions.length) { %>
-    <table>
-      <thead>
-        <tr>
-          <th> </th>
-          <th> Added By</th>
-          <th> Created On</th>
-          <th> Experience / Reaction </th>
-          <th> Potential Allergen</th>
-          <th> Potential Condition</th>
-        </tr>
-      </thead>
-      <% food.reactions.forEach(reaction => { %>
-        <tbody>
+    <div class="table-container">
+      <table>
+        <thead>
           <tr>
-            <% if (food.owner.equals(user?.profile._id)) { %>
-              <td> <form action="/foods/<%= food._id %>/reactions/<%= reaction._id %>?_method=DELETE" method="POST">
-                <button type="submit">x</button>
-              </form>
-            </td>
-            <% } %>
-            <td> <%= reaction.owner.name %></td>
-            <td> <%= reaction.createdAt.toLocaleDateString() %></td>
-            <td> <%= reaction.text %></td>
-            <td> <%= reaction.potentialAllergen %></td>
-            <td> <%= reaction.potentialCondition %></td>
+            <th class="header-cell"> </th>
+            <th class="header-cell"> Added By</th>
+            <th class="header-cell"> Created On</th>
+            <th class="header-cell"> Experience / Reaction </th>
+            <th class="header-cell"> Potential Allergen</th>
+            <th class="header-cell"> Potential Condition</th>
           </tr>
-        </tbody>
-      <% }) %>
-    </table>
+        </thead>
+        <% food.reactions.forEach(reaction => { %>
+          <tbody>
+            <tr>
+              <% if (food.owner.equals(user?.profile._id)) { %>
+                <td> <form action="/foods/<%= food._id %>/reactions/<%= reaction._id %>?_method=DELETE" method="POST">
+                  <button type="submit">x</button>
+                </form>
+              </td>
+              <% } %>
+              <td> <%= reaction.owner.name %></td>
+              <td> <%= reaction.createdAt.toLocaleDateString() %></td>
+              <td> <%= reaction.text %></td>
+              <td> <%= reaction.potentialAllergen %></td>
+              <td> <%= reaction.potentialCondition %></td>
+            </tr>
+          </tbody>
+        <% }) %>
+      </table>
+    </div>
   <% } %>
 </section>
 </main>
