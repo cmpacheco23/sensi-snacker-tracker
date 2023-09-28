@@ -1,17 +1,131 @@
 .layout {
-  background-color: #000; /* Black background color */
+  background-color: #000;
   display: flex;
   flex-direction: column;
   gap: 30px;
   justify-content: center;
 }
 
-
 .header {
   width: 100%;
-  background-color: #201f1f; /* Black background color */
-  color: #ffffff; /* White text on black background */
+  color: #ffffff;
   text-align: center;
-  box-shadow: 0px -3px 3px 0px rgb(134, 56, 129), 0px -6px 3px 0px rgb(114, 29, 66), 0px -12px 9px 0px rgba(122, 5, 55, 1); /* Thinner shadow with fully opaque pink color */
-  margin-top: 20px;
+  font-size: 26px;
+  margin-bottom: 90px;
+  margin-top: 40px;
+}
+
+/* Keep labels on the left and make input fields wider */
+.form-layout {
+  display: grid;
+  grid-template-columns: max-content 1fr; /* First column for labels, second column for inputs */
+  gap: 15px;
+  align-items: center;
+}
+
+label {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: right; /* Right-align the label */
+  margin-bottom: 5px; /* Add some space below each label */
+  white-space: nowrap; /* Prevent labels from wrapping to the next line */
+  margin-right: 15px;
+}
+
+input[type="text"] {
+  padding: 5px;
+  margin-bottom: 10px; /* Add more space below each input */
+  height: 40px;
+  width: 170%; /* Set the input width to 100% of the available space */
+}
+
+
+
+.form-divs-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Push the button 20px to the left */
+.button-86 {
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #E2CFEA;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-weight: 700;
+  margin-left: 150px; /* Add margin to the right side of the button */
+  margin-top: 35px;
+}
+
+
+.button-86::after,
+.button-86::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.button-86::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+  border-radius: 10px;
+}
+
+.button-86::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #a06cd577;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.button-86:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button-86:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button-86:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-right: 95px;
+  line-height: 3;
 }

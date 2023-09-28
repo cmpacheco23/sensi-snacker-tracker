@@ -39,6 +39,7 @@ After selecting your first card, choose another one.
 * Button design from [Get CSS Scan](https://getcssscan.com/css-buttons-examples?ref=beautifulboxshadow-bottom): Button #86 & #56
 * Box shadow design from [Get CSS Scan](https://getcssscan.com/css-box-shadow-examples): #3
 * Box shadow design from [Alvaro Trigo](https://alvarotrigo.com/shadow-gradients/)
+* Generated CSS layout using [CSS Layout Generator](https://layout.bradwoods.io/)
 
 
 #### Animations:
