@@ -56,7 +56,7 @@ function show(req, res){
   .populate('owner')
   .populate('reactions.owner')
   
-  //deep populate ref taco cat lecture
+  // need to join the vitamins and add a space
   .then(food => {
     console.log('Vitamins:', food.vitamins);
     res.render('foods/show', {
@@ -127,6 +127,9 @@ function update(req, res){
     if (req.body[key] === '') {
       delete req.body[key]
     }
+  }
+  if (req.body.vitamins) {
+    req.body.vitamins = req.body.vitamins.split(', ')
   }
   Food.findByIdAndUpdate(req.params.foodId, req.body, {new:true})
   .then(food => {
