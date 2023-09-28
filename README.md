@@ -1,8 +1,8 @@
 # Sensi Food Tracker
 
-![Screenshot of the Home Page](/images/index.png) 
-![Screenshot of the Foods Page](/images/foods.png) 
-![Screenshot of the Foods Page](/images/profiles.png) 
+![Screenshot of the Home Page](images/index.png) 
+![Screenshot of the Foods Page](images/foods.png) 
+![Screenshot of the Foods Page](images/profiles.png) 
 
 ### Background:
 
@@ -19,7 +19,8 @@ Ready to embark on your food sensitivity journey with Sensi Tracker?
 ### [Access Sensi Tracker](https://carla-minina-match-game.netlify.app/)
 
 
-🎉 **Fun FactS:** 
+🎉 **Fun Facts:** 
+
 🍕 Every time you refresh the home page, the app features "bullets" transform into new food emojis! 
 
 ```
