@@ -31,6 +31,7 @@
 </section>
 
 <section class="add-items">
+  <!-- route for this: router.post('/:foodId/add-vitamin', isLoggedIn, foodsCtrl.addToVitamin) -->
 <% if (user) { %>
   <h4 class="food-h4"> Want to add a vitamin to <%= food.name %>?</h4>
   <form action="/foods/<%= food._id %>/add-vitamin" method="POST">

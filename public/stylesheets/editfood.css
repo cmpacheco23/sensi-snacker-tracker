@@ -29,14 +29,16 @@ label {
   margin-bottom: 5px; 
   white-space: nowrap; 
   margin-right: 15px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 input[type="text"] {
   padding: 5px;
   margin-bottom: 10px; 
-  height: 40px;
+  height: 50px;
   width: 170%; 
   font-size: 24px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -130,4 +132,14 @@ form {
   gap: 15px;
   margin-right: 210px;
   line-height: 3;
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ca81d6; 
+  text-shadow: 1px 1px 5px #7a0537ca;
+  font-size: 50px;
+  font-family: 'Noto Serif NP Hmong', serif;
 }
