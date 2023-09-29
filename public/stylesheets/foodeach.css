@@ -286,6 +286,7 @@ p {
     0px -5px 10px rgba(127, 30, 183, 0.8), 
     5px 0px 10px rgba(125, 6, 165, 0.6),
     -5px 0px 10px rgba(125, 6, 165, 0.6); 
+  margin-bottom: 40px;  
 }
 
 .reactions-listed h2 {
@@ -439,10 +440,12 @@ input[type="text"]:focus {
   text-align: center !important;
   padding: 5px;
   background-color: #051014;
-  color: #E2CFEA;
+  color: #f6f0f8;
   border: none;
   border-radius: 5px;
   min-height: 40px;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .button-holder {
@@ -542,21 +545,11 @@ textarea.form-input-text {
   text-align: center;
   padding: 5px;
   background-color: #051014;
-  color: #E2CFEA;
+  color: #eeedef;
   border: none;
   border-radius: 5px;
-}
-
-textarea.form-input-text {
-  width: 100%;
-  min-height: 100px;
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
-  padding: 5px;
-  background-color: #051014;
-  color: #E2CFEA;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
 }
 
 .dropdown select {
