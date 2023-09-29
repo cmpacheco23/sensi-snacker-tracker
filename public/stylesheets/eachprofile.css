@@ -2,6 +2,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 80vh;
+  justify-content: center;
 }
 
 
@@ -9,7 +11,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px 0 40px 0;
+  margin: 0 0 40px 0;
   text-align: center;
   padding: 20px;
   border-radius: 5px;
@@ -54,6 +56,7 @@ main {
 }
 h3{
   font-weight: 400;
+  padding-bottom: 20px;
 }
 
 h2{
@@ -257,4 +260,78 @@ a {
   touch-action: manipulation;
   font-weight: 700;
   margin-top: 10px; 
+}
+
+@media screen and (min-width: 769px) {
+  .header {
+    margin: 0 0 20px 0; /* Adjust the margin as needed */
+    padding: 20px;
+    font-size: 18px; /* Adjust the font size as needed */
+  }
+
+  .profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-width: 5px;
+    margin-top: 35px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    text-align: center;
+    height: auto;
+  }
+
+  .header {
+    margin: 10px 0 20px 0;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-width: 3px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .header h2,
+  .header h3 {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-weight: 600;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .food-card {
+    width: 80%;
+    margin: 0 auto 40px auto;
+  }
+
+  .food-card-content {
+    padding: 10px;
+  }
+
+  .button-86 {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  .add-items-button {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+}
+
+body {
+  overflow-x: hidden;
 }
