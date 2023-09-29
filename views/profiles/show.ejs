@@ -41,7 +41,6 @@
             </div>
           <% } %>
 
-
           <% if (profile._id.equals(user?.profile._id) && !food.owner.equals(user?.profile._id) && profile.foods.some(eachFood => eachFood._id === food._id)) { %>
             <div class="form-divs-btns">
               <form action="/foods/<%= food._id %>/delete-from-profile?_method=DELETE" method="POST">

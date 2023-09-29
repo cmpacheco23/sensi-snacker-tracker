@@ -8,15 +8,12 @@
 
 <% if (food.owner.equals(user?.profile._id)) { %>
 <section class="food-description">
-  
   <form action="/foods/<%= food._id %>?_method=PUT" method="POST" autocomplete="off">
     <div class="form-layout">
       <label for="food-name-input"> Food Name: </label>
       <input type="text" name="name" id="food-name-input">
-      
       <label for="food-cat-input"> Category: </label>
       <input type="text" name="category" id="food-cat-input">
-      
       <label for="vitamin-input"> Vitamins: </label>
       <input type="text" name="vitamins" id="vitamin-input">
     </div>
@@ -24,16 +21,15 @@
       <button type="submit" class="form-btns button-86">Save Food</button>
     </div>
   </form>
-  
-
-  <% } else { %>
-    <h2> <%= food.name %> can only be edited by owner</h2>
-    <p>Please select a food you created in order to gain edit access.</p>
-    <div class="form-divs-btns">
-      <a href="/foods">
-        <button type="submit" class="form-btns">Return To Foods</button>
-      </a>
-    </div>
+<% } else { %>
+  <h2> <%= food.name %> can only be edited by owner</h2>
+  <p>Please select a food you created in order to gain edit access.</p>
+  <div class="form-divs-btns">
+    <a href="/foods">
+      <button type="submit" class="form-btns">Return To Foods</button>
+    </a>
+  </div>
 </section>
 <% } %>
+
 <%- include('../partials/footer') %>

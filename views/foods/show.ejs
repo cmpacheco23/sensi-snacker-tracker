@@ -18,7 +18,7 @@
       <p class="food-entry"><%= food.category %></p>
       <p class="food-entry"><%= food.vitamins.join(', ') %></p>
     </div>
-</form>
+  </form>
 
 <section class="food-description">
   <% if (food.owner.equals(user?.profile._id)) { %>
@@ -29,7 +29,6 @@
     </div>
   <% } %>
 </section>
-
 
 <section class="add-reaction">
   <h2>Experience</h2>
@@ -52,7 +51,7 @@
 </section>
 
 <section class="reactions-listed">
-  <h2></h2>
+  <h2 class="reactions-header">Community Reactions For <%= food.name %></h2>
   <% if (food.reactions.length) { %>
     <div class="table-container">
       <table>
@@ -71,12 +70,10 @@
             <tr>
               <td>
               <% if (reaction.owner.equals(user?.profile._id)) { %>
-                  <form action="/foods/<%= food._id %>/reactions/<%= reaction._id %>?_method=DELETE" method="POST">
+                <form action="/foods/<%= food._id %>/reactions/<%= reaction._id %>?_method=DELETE" method="POST">
                   <button type="submit">x</button>
                 </form>
-                <% } else { %>
-                  
-                <% } %>
+              <% } %>
               </td>
               <td> <%= reaction.owner.name %></td>
               <td> <%= reaction.createdAt.toLocaleDateString() %></td>
@@ -91,4 +88,5 @@
   <% } %>
 </section>
 </main>
+
 <%- include('../partials/footer') %>
