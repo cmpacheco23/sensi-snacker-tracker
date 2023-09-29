@@ -7,26 +7,30 @@
     <h1 class="food-h1"><%= title %></h1>
     <p class="food-ps">Explore, Share, and Learn with Sensi Tracker's Food Hub. Add your favorite foods, discover new options from others, and delve into the details of each entry. Empower your food journey with community-driven insights.</p>
   </section>
-  <section class="body-newFood">
-    <% if (user) { %>
+  <% if (user) { %>
+    <section class="body-newFood">
       <h1 class="food-h2"> Add New Food</h1>
       <form action="/foods" method="POST" id="newFood-form" class="addFood-Form">
-        <div class="form-labels">
-          <label for="food-name-input" class="form-labels"> Food Name: </label>
-          <label for="food-cat-input" class="form-labels"> Category: </label>
-          <label for="vitamin-input" class="form-labels"> Vitamins: </label> 
+        <div class="form-label-input-container">
+          <div class="label-input-container">
+            <label for="food-name-input" class="form-labels"> Food Name: </label>
+            <input type="text" name="name" id="food-name-input">
+          </div>
+          <div class="label-input-container">
+            <label for="food-cat-input" class="form-labels"> Category: </label>
+            <input type="text" name="category" id="food-cat-input">
+          </div>
+          <div class="label-input-container">
+            <label for="vitamin-input" class="form-labels"> Vitamins: </label> 
+            <input type="text" name="vitamins" id="vitamins-input">
+          </div>
         </div>
-        <div class="form-input">
-          <input type="text" name="name" id="food-name-input">
-          <input type="text" name="category" id="food-cat-input">
-          <input type="text" name="vitamins" id="vitamins-input">
-        </div>
-        <div class="form-divs-btns">
+          <div class="form-divs-btns">
           <button type="submit" class="form-btns">Add Food</button>
         </div>
       </form>
-    <% } %>
     </section>
+    <% } %>
     <section class="body-allFoods" id="layout-body-allFoods">
       <h2 class="food-announce">View All Added Foods Here</h2>
         <div class="cards">

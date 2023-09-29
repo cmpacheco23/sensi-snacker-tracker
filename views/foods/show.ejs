@@ -30,9 +30,9 @@
   <% } %>
 </section>
 
-<section class="add-reaction">
-  <h2>Experience</h2>
 <% if (user) { %>
+  <section class="add-reaction">
+    <h2>Experience</h2>
   <p>Please provide details about your experience, including any symptoms or reactions, in the following input fields:</p>
   <form action="/foods/<%= food._id %>/reactions" method="POST">
     <div class="input-labels">
@@ -47,10 +47,10 @@
       <button type="submit" class="btn" id="add-reaction">Add Experience</button>
     </div>
   </form>
-<% } %>
 </section>
+<% } %>
 
-<section class="reactions-listed">
+<section class="reactions-listed reaction-section">
   <h2 class="reactions-header">Community Reactions For <%= food.name %></h2>
   <% if (food.reactions.length) { %>
     <div class="table-container">

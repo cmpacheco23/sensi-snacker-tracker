@@ -289,8 +289,8 @@ p {
 }
 
 .reactions-listed h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 28px;
 }
 
 .reactions-listed table th,
@@ -359,6 +359,7 @@ p {
   border-bottom: 1px solid #2e0233;
   border-top: 1px solid #2e023a;  
 }
+
 
 .add-reaction {
   display: flex;
@@ -596,7 +597,21 @@ textarea.form-input-text {
 }
 
 
-
 .created-date {
   font-size: 20px;
 }
+
+.reaction-section{
+  background-color: #201f1f; 
+  height: 100%;
+  font-family: 'Noto Serif NP Hmong', serif;
+}
+
+.reactions-header{
+  padding-top: 50px;
+  padding-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
