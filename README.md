@@ -16,7 +16,7 @@ Struggling to track what triggers your sensitivities? Sensi Tracker provides a u
 ### Getting Started:
 Ready to embark on your food sensitivity journey with Sensi Tracker? 
 
-### [Access Sensi Tracker](https://carla-minina-match-game.netlify.app/)
+### [Access Sensi Tracker](https://sensi-tracker.fly.dev/)
 
 
 🎉 **Fun Facts:** 
