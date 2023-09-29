@@ -376,3 +376,122 @@ h4 {
   font-size: 20px;
   text-align: left;
 }
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .layout {
+    gap: 10px;
+  }
+
+  .header {
+    margin-top: 10px;
+  }
+
+  .food-h1 {
+    font-size: 30px;
+  }
+
+  .food-h2 {
+    font-size: 24px;
+    margin: 10px;
+    margin-bottom: 30px;
+  }
+
+  .food-h3 {
+    margin: 10px 10px 10px 0;
+  }
+
+  .food-ps {
+    font-size: 16px;
+    margin: 20px auto;
+    padding: 10px;
+    line-height: 1.5;
+    max-width: 90%;
+  }
+
+  .body-newFood{
+    width: 100%;
+  }
+
+  #newFood-form {
+    margin: 0 0 0 42px;
+  }
+
+  .form-divs-btns > button {
+    width: 80px;
+    height: 25px;
+    font-size: 14px;
+    padding: 8px 16px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+  .form-labels {
+    width: 100px;
+    font-size: 16px;
+    margin-right: 5px;
+    text-align: left;
+  }
+
+  .form-label-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+
+  .food-details-header {
+    min-height: 50px;
+  }
+
+  .card {
+    height: 250px;
+    width: 250px;
+  }
+
+  .card .text {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  #trash-btn {
+    padding: 8px;
+    width: 40px;
+    font-size: 12px;
+    margin-top: 18px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .joined-date {
+    font-size: 12px;
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+  }
+
+  a {
+    margin: 5px;
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  h4 {
+    font-size: 12px;
+  }
+
+  .food-announce{
+    font-size: 24px;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+
+
+
+}
