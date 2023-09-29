@@ -178,3 +178,57 @@ h4 {
   text-shadow: 2px 1.75px 1.5px rgba(27, 25, 25, 0.854);
   font-family: 'Open Sans', sans-serif;
 }
+
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 38px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+  }
+
+  .background-card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  .profile-card {
+    max-width: 80%;
+  }
+
+  .profile-card-container {
+    min-width: auto;
+  }
+
+  .indv-card {
+    margin: 20px 0;
+  }
+
+  .card-title {
+    font-size: 22px;
+    padding-top: 10px;
+  }
+
+  .joined-date {
+    font-size: 18px;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+
+  a {
+    margin: 5px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+}

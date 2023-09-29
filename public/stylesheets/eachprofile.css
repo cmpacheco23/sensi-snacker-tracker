@@ -264,9 +264,9 @@ a {
 
 @media screen and (min-width: 769px) {
   .header {
-    margin: 0 0 20px 0; /* Adjust the margin as needed */
+    margin: 0 0 20px 0; 
     padding: 20px;
-    font-size: 18px; /* Adjust the font size as needed */
+    font-size: 18px; 
   }
 
   .profile-avatar {
