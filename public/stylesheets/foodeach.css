@@ -21,7 +21,7 @@
 }
 
 .food-entry {
-  width: 50%;
+  width: 100%;
 }
 
 input {
@@ -275,12 +275,12 @@ p {
 }
 
 .reactions-listed table {
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
   background-color: #181717;
   border: 1.5px solid #736f6f9f;
   border-radius: 10px;
-  max-width: 1200px; 
+  max-width: 200px; 
   box-shadow:
     0px 5px 10px rgba(97, 28, 137, 0.8), 
     0px -5px 10px rgba(127, 30, 183, 0.8), 
@@ -367,11 +367,11 @@ p {
   flex-direction: column;
   align-items: center;
   background-color: #4f4f5386;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   margin: 20px auto; 
-  max-width: 650px; 
-  width: 100%; 
+  max-width: 400px; 
+  width: 90%; 
   margin-bottom: 75px;
   margin-top: 40px;
 }
@@ -607,3 +607,285 @@ textarea.form-input-text {
   text-align: center;
 }
 
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .layout {
+    background-color: #000;
+    gap: 20px;
+  }
+
+  .header {
+    margin-top: 10px;
+    font-size: 28px;
+  }
+
+  .food-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+  }
+
+  .food-entry label {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .food-entry p {
+    font-size: 16px;
+    margin: 0;
+    text-align: left;
+  }
+
+  input {
+    min-height: 30px;
+  }
+
+  .created-date {
+    font-size: 12px;
+  }
+
+  h4 {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .button-86,
+  .add-items-button {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px 0;
+    position: relative;
+    text-align: center;
+  }
+
+  .button-86::before,
+  .add-items-button::before,
+  .button-86::after,
+  .add-items-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all 0.4s;
+  }
+
+  .button-86::before,
+  .add-items-button::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .button-86::after,
+  .add-items-button::after {
+    transform: translate(5px, 5px);
+    width: 30px;
+    height: 30px;
+    background: #a06cd577;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+    box-shadow: rgba(167, 62, 228, 0.8) 0px 5px 10px,
+      rgba(125, 6, 165, 0.6) 0px 2px 5px, inset 0 0 0 2px transparent;
+  }
+
+  .button-86:hover::before,
+  .add-items-button:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+  }
+
+  .button-86:hover::after,
+  .add-items-button:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+  }
+
+  .button-86:active::after,
+  .add-items-button:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+  }
+
+  form.top-form {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 0;
+    margin: 0;
+  }
+
+  /* Adjust the width of each item to fit 2 items per row */
+  form.top-form label,
+  form.top-form input {
+    width: calc(50% - 7.5px); /* Subtract half of the gap */
+  }
+
+  label {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .form-content {
+    width: 70%;
+    line-height: 1.5;
+  }
+
+  .form-divs-btns,
+  .add-items,
+  .food-info {
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .food-info{
+    align-items: center;
+  }
+
+  .add-items-button,
+  .add-items-button {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px 0;
+    position: relative;
+  }
+
+  .table-container {
+    margin-bottom: 20px;
+    width: 90%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center-align the table */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .reactions-listed table {
+    border: 1px solid #736f6f9f;
+    border-radius: 10px;
+    max-width: 100%;
+    box-shadow: 0px 5px 10px rgba(97, 28, 137, 0.8),
+      0px -5px 10px rgba(127, 30, 183, 0.8),
+      5px 0px 10px rgba(125, 6, 165, 0.6),
+      -5px 0px 10px rgba(125, 6, 165, 0.6);
+  }
+
+  .reactions-listed h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .reactions-listed table th,
+  .reactions-listed table td {
+    padding: 6px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .reactions-listed table button {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+
+  .reactions-listed table tbody tr:nth-child(even) {
+    background-color: #181313;
+  }
+
+  .reactions-listed table th:first-child,
+  .reactions-listed table td:first-child {
+    padding-left: 10px;
+  }
+
+  .reactions-listed .no-reactions {
+    color: #9a909051;
+    font-style: italic;
+  }
+
+  .reactions-listed table th.header-cell {
+    font-size: 14px;
+  }
+
+  .reactions-listed table thead th {
+    border-left: 1px solid #2e0233;
+    border-right: 1px solid #2e0233;
+    border-bottom: 1px solid #2e0233;
+    border-top: 1px solid #2e023a;
+  }
+
+  .add-reaction {
+    padding: 10px;
+    margin: 20px 0;
+  }
+
+  .add-reaction h2 {
+    font-size: 24px;
+    margin: 10px;
+  }
+
+  .add-reaction p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  .add-reaction .input-labels label {
+    font-size: 16px;
+  }
+
+  .add-reaction .inputbottom {
+    min-width: auto;
+    font-size: 16px;
+    text-align: center;
+    min-height: 30px;
+  }
+
+  textarea.form-input-text {
+    font-size: 16px;
+    min-height: 80px;
+    max-height: 100px;
+  }
+
+  .created-date {
+    font-size: 18px;
+  }
+
+  .reaction-section {
+    background-color: #201f1f;
+    font-family: 'Noto Serif NP Hmong', serif;
+  }
+
+  .reactions-header {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+
+}
