@@ -2,22 +2,21 @@
 <link rel="stylesheet" href="/stylesheets/profile.css" />
 <%- include('../partials/nav') %>
 
+<main>
 <h1 class="title"> <%= title %></h1>
-  <section class="card-container">
-    <article class="card">
-      <% profiles.forEach(profile => { %>
-        <div class="indv-card profile-card"> 
+  <section class="background-card-container">
+    <% profiles.forEach(profile => { %>
+      <article class="food-card profile-card">
           <a class="card-link" href="/profiles/<%= profile._id %>">
-            <div class="profile-card-container">
+            <div class="food-text-container profile-card-container">
               <img src="<%= profile.avatar %>" alt="<%= profile.name %>">
               <h1 class="card-title" > <%= profile.name %></h1>
               <h3 class="joined-date" > Joined: <%= profile.createdAt.toLocaleDateString() %></h3>
               <h4> Foods Added: <%= profile.foods.length %></h4>
             </div> 
           </a>
-        </div>
+      </article>
       <% }) %>
-    </article>
   </section>
-
+</main>
 <%- include('../partials/footer') %>

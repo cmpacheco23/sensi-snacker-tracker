@@ -1,14 +1,21 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .title {
   text-align: center;
-  transition: opacity 0.3s ease; 
+  transition: opacity 0.3s ease;
   margin: 40px 0px 30px 0px;
   font-size: 50px;
-  color: #ca81d6; 
+  color: #ca81d6;
   text-shadow: 1px 1px 5px #7a0537ca;
   font-size: 55px;
   font-family: 'Noto Serif NP Hmong', serif;
   font-weight: 700;
+  padding-bottom: 30px;
+  padding-top: 20px;
 }
 
 .title:hover {
@@ -19,36 +26,45 @@
   background-image: linear-gradient(45deg, rgba(103, 39, 171, 0.8) 50%, rgba(158, 94, 214, 0.8) -50%, rgba(118, 17, 189, 0.8) 50%, rgba(172, 7, 205, 0.8) 100%);
 }
 
-
-.card-container{
+.background-card-container {
   display: flex;
-  direction: column;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  border-radius: 10px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 25px;
 }
 
-.card{
+.card {
   display: flex;
   direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(15, 14, 14);
   border-radius: 10px;
   margin: 40px 20px 40px 20px;
-  width: 70%;
+  width: 80%;
+}
 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 900px;
 }
 
 .profile-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   margin: 15px;
   height: 350px;
-  width: 300px;
+  max-width: calc(25% - 30px);
+  width: 100%;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   z-index: 0;
@@ -73,6 +89,12 @@
   bottom: 0;
 }
 
+@media (min-width: 768px) {
+  .profile-card {
+    max-width: calc(25% - 30px);
+  }
+}
+
 .profile-card-container::before {
   content: "";
   position: absolute;
@@ -80,14 +102,14 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(10, 8, 8, 0.383); 
-  border-radius: 10px; 
-  z-index: -1; 
+  background-color: rgba(10, 8, 8, 0.383);
+  border-radius: 10px;
+  z-index: -1;
 }
 
 .profile-card-container:hover {
-  background-color: rgb(224, 43, 97); 
-  box-shadow: rgba(211, 8, 133, 0.8) 0px 10px 40px, rgba(0, 0, 0, 0.6) 0px 5px 15px; 
+  background-color: rgb(224, 43, 97);
+  box-shadow: rgba(211, 8, 133, 0.8) 0px 10px 40px, rgba(0, 0, 0, 0.6) 0px 5px 15px;
 }
 
 .profile-card:before {
@@ -96,39 +118,36 @@
   inset: -10px;
   transform: translate3d(0, 0, -1px);
   background: conic-gradient(
-    from 90deg at 40% -5%, 
+    from 90deg at 40% -5%,
     #df116d, #8629ce, #53226c, #6b3d94df, #c809eedf, #df116d, #8629ce, #53226c, #6b3d94df, #c809eedf
   );
   filter: blur(15px);
   clip-path: polygon(-100vmax -100vmax, 100vmax -100vmax, 100vmax 100vmax, -100vmax 100vmax, -100vmax -100vmax, 0 0, 0 100%, 100% 100%, 100% 0, 0 0) rounded-rectangle(20px 20px 20px 20px);
   border-radius: 15px;
   z-index: -1;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 20px 40px, rgba(0, 0, 0, 0.3) 0px 15px 15px; 
-
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 20px 40px, rgba(0, 0, 0, 0.3) 0px 15px 15px;
 }
 
-
-
-.card-title{
+.card-title {
   align-items: center;
 }
 
-.indv-card{
+.indv-card {
   display: flex;
   direction: column;
   margin: 40px;
 }
 
-.card-title{
+.card-title {
   color: white;
   font-size: 22px;
   text-align: center;
-  text-shadow: 2px 2.5px 2.5px rgba(27, 25, 25, 0.854); 
+  text-shadow: 2px 2.5px 2.5px rgba(27, 25, 25, 0.854);
   letter-spacing: 1.3px;
   font-family: 'Noto Serif NP Hmong', serif;
 }
 
-.joined-date{
+.joined-date {
   text-align: center;
   color: aliceblue;
   font-size: 16px;
@@ -137,25 +156,25 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-img{
+img {
   border-radius: 50%;
   align-items: center;
-  border: 5px solid rgba(136, 64, 199, 0.29); 
-  box-shadow: 0 0 0 5px rgba(106, 4, 94, 0.5); 
+  border: 5px solid rgba(136, 64, 199, 0.29);
+  box-shadow: 0 0 0 5px rgba(106, 4, 94, 0.5);
   margin-top: 25px;
 }
 
-a{
+a {
   align-items: center;
   text-align: center;
   margin: 5px;
 }
 
-h4{
+h4 {
   text-align: center;
   font-size: 16px;
   color: salmon;
   letter-spacing: .75px;
-  text-shadow: 2px 1.75px 1.5px rgba(27, 25, 25, 0.854); 
+  text-shadow: 2px 1.75px 1.5px rgba(27, 25, 25, 0.854);
   font-family: 'Open Sans', sans-serif;
 }
