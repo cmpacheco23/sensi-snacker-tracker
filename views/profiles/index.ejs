@@ -4,19 +4,20 @@
 
 <main>
 <h1 class="title"> <%= title %></h1>
-  <section class="background-card-container">
-    <% profiles.forEach(profile => { %>
-      <article class="food-card profile-card">
-          <a class="card-link" href="/profiles/<%= profile._id %>">
-            <div class="food-text-container profile-card-container">
-              <img src="<%= profile.avatar %>" alt="<%= profile.name %>">
-              <h1 class="card-title" > <%= profile.name %></h1>
-              <h3 class="joined-date" > Joined: <%= profile.createdAt.toLocaleDateString() %></h3>
-              <h4> Foods Added: <%= profile.foods.length %></h4>
-            </div> 
-          </a>
-      </article>
-      <% }) %>
-  </section>
+
+<section class="background-card-container">
+  <% profiles.forEach(profile => { %>
+    <article class="food-card profile-card">
+      <a class="card-link" href="/profiles/<%= profile._id %>">
+        <div class="food-text-container profile-card-container">
+          <img src="<%= profile.avatar %>" alt="<%= profile.name %>">
+          <h1 class="card-title" > <%= profile.name %></h1>
+          <h3 class="joined-date" > Joined: <%= profile.createdAt.toLocaleDateString() %></h3>
+          <h4> Foods Added: <%= profile.foods.length %></h4>
+        </div> 
+      </a>
+    </article>
+  <% }) %>
+</section>
 </main>
 <%- include('../partials/footer') %>
