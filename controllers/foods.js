@@ -24,11 +24,11 @@ function create(req, res) {
     req.body.vitamins = req.body.vitamins.split(', ')
 	Food.create(req.body)
 	.then(food => {
-    console.log('console FOOD', food)
+
     Profile.findById(req.user.profile._id)
-    // console.log('console pID', req.user.profile._id)
+
     .then(profile => {
-      console.log('console Profile', profile)
+
       profile.foods.push(food)
       profile.save()
       .then(() =>{
@@ -55,17 +55,11 @@ function show(req, res){
   Food.findById(req.params.foodId)
   .populate('owner')
   .populate('reactions.owner')
-  
-  // need to join the vitamins and add a space
   .then(food => {
-    console.log('Vitamins:', food.vitamins);
     res.render('foods/show', {
       food,
       title: `${food.name} Details`
     })
-    //this is undefined
-    console.log(`the food id issss!${food.reactions._id}`)
-
   })
   .catch (err => {
     console.log(err)
@@ -76,12 +70,12 @@ function show(req, res){
 
 
 function edit(req, res){
-  //find the id of the food I want to edit
+
   Food.findById(req.params.foodId)
   .then(food => {
-    //resolve promise
+
     res.render('foods/edit', {
-      //render view of edit form
+
       title: `Edit ${food.name} Information`,
       food,
 
@@ -127,16 +121,16 @@ function deleteFood(req, res){
 
 
 function createReaction(req, res){
-  //find food by id
+
   Food.findById(req.params.foodId)
   .then(food => {
-    //push the reaction into the food array
+
     req.body.owner = req.user.profile._id
     food.reactions.push(req.body)
-    // save the food
+
     food.save()
     .then(()=>{
-      // redirect to foods/foodId
+
       res.redirect(`/foods/${food._id}`)
     })
     .catch (err => {
@@ -151,14 +145,12 @@ function createReaction(req, res){
 }
 
 function deleteReaction(req, res){
-  //find the id of food that the reaction lives in
+
   Food.findById(req.params.foodId)
   .then(food => {
-    //delete the reaction
     food.reactions.id(req.params.reactionId).deleteOne()
-    //save the food
+
     food.save()
-    //resolve promise
     .then(() => {
       res.redirect(`/foods/${food._id}`)
     })

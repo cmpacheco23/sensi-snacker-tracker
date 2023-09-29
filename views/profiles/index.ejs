@@ -13,13 +13,10 @@
               <img src="<%= profile.avatar %>" alt="<%= profile.name %>">
               <h1 class="card-title" > <%= profile.name %></h1>
               <h3 class="joined-date" > Joined: <%= profile.createdAt.toLocaleDateString() %></h3>
-              <!-- reference the mongoose movies show view  -->
               <h4> Foods Added: <%= profile.foods.length %></h4>
             </div> 
           </a>
         </div>
-          <!-- include the number of foods the user has added -->
-          <!-- number of reactions contributed -->
       <% }) %>
     </article>
   </section>

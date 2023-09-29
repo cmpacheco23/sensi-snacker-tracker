@@ -578,7 +578,7 @@ textarea.form-input-text {
   margin-bottom: 15px;
 }
 
-/* Style the arrow icon */
+
 .dropdown::after {
   content: "\25BC";
   position: absolute;
@@ -588,14 +588,14 @@ textarea.form-input-text {
   pointer-events: none;
 }
 
-/* Style the options */
+
 .dropdown select option {
   padding: 10px;
   background-color: #7a6f6f;
   cursor: pointer;
 }
 
-/* Rest of your CSS styles here */
+
 
 .created-date {
   font-size: 20px;

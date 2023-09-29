@@ -4,8 +4,6 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-//routers:
-
 router.get('/', foodsCtrl.index)
 router.get('/:foodId', foodsCtrl.show)
 router.get('/:foodId/edit', isLoggedIn, foodsCtrl.edit)

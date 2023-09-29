@@ -11,7 +11,7 @@ Welcome to Sensi Tracker, your holistic food sensitivity companion and comprehen
 Struggling to track what triggers your sensitivities? Sensi Tracker provides a user-friendly platform to manage and understand your dietary needs. It goes beyond data management, offering effortless food sensitivity management, catering to those on a journey towards a healthier lifestyle.
 
 
-#### Click to view [planning materials](https://trello.com/invite/b/1kDFsFqH/ATTI419f20d6e1d089108174349a9a5048203BE558DA/unit-2-project-food-sensitivity)
+#### [Click here](https://trello.com/invite/b/1kDFsFqH/ATTI419f20d6e1d089108174349a9a5048203BE558DA/unit-2-project-food-sensitivity) to view planning materials
 ***
 ### Getting Started:
 Ready to embark on your food sensitivity journey with Sensi Tracker? 
