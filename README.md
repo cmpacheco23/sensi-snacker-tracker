@@ -75,6 +75,7 @@ After selecting your first card, choose another one.
 * Node.js
 * Express
 * Google OAuth Authentication
+* Passport.js
 
 ***
 ### Icebox: 🧊
