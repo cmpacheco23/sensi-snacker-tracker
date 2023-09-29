@@ -3,10 +3,8 @@ import { populate } from "dotenv";
 import { Profile } from "../models/profile.js";
 
 function index(req, res){
-
   Profile.find({})
   .then(profiles => {
-
     res.render('profiles/index', {
       profiles,
       title: 'View All Profiles'
@@ -19,7 +17,6 @@ function index(req, res){
 }
 
 function show(req, res){
-
   Profile.findById(req.params.profileId)
   .populate('foods')
   .then(profile => {
@@ -28,21 +25,22 @@ function show(req, res){
     .then(loggedinUserProfile => {
       const myFoods = loggedinUserProfile.foods
       const isSelf = profile._id.equals(req.user.profile._id)
-
       res.render('profiles/show', {
 
         title: `${profile.name}'s Profile`,
         profile,
         isSelf,
         myFoods
-
       })
     })
-
+    .catch(err => {
+      console.log(err)
+      res.redirect('/foods')
+    })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/profiles')
+    res.redirect('/foods')
   })
 }
 
